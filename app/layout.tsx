@@ -1,0 +1,28 @@
+import "./globals.css";
+import "../styles/theme.css";
+import "../styles/components.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://yourdomain.com"),
+  title: "Our Wedding",
+  description: "A simple and elegant wedding site",
+  openGraph: {
+    title: "Our Wedding",
+    description: "Join us on our special day!",
+    images: ["/images/hero.jpg"],
+  },
+  icons: { icon: "/favicon.ico" },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className="font-body bg-background text-ink">{children}</body>
+    </html>
+  );
+}

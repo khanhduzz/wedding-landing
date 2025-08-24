@@ -1,0 +1,15 @@
+:root {
+  --color-primary: #f7d2d0; /* blush pink */
+  --color-accent: #d4af37; /* gold */
+  --color-background: #ffffff;
+  --color-secondary: #fff;
+  --color-ink: #2c2c2c;
+}
+
+/* Easily swap theme by editing only these variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #111111;
+    --color-ink: #f2f2f2;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "next/core-web-vitals"
+  ],
+  "plugins": [
+    "sonarjs"
+  ],
+  "rules": {
+    "sonarjs/cognitive-complexity": [
+      "warn",
+      15
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ]
+  }
+}
