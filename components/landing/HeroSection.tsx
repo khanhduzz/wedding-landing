@@ -1,88 +1,93 @@
-// "use client";
-
-// export default function HeroSection() {
-//   const target = new Date(Date.UTC(2025, 10, 15, 8, 0, 0)).getTime(); // Nov 15, 2025
-//   return (
-//     <div className="min-h-[80vh] grid place-items-center bg-[url('/images/hero-img-2.jpg')] bg-cover bg-center relative mt-12">
-//       <div className="absolute inset-0 bg-white/60" />
-//       <div className="relative text-center px-6 py-24">
-//         <h1 className="font-script text-8xl text-primary">Alice & Bob</h1>
-//         <p className="mt-2 text-lg font-medium text-gray-800">
-//           November 15, 2025
-//         </p>
-//         <Countdown target={target} />
-//       </div>
-//     </div>
-//   );
-// }
-
-// function Countdown({ target }: { target: number }) {
-//   const [remain, setRemain] = require("react").useState(target - Date.now());
-//   require("react").useEffect(() => {
-//     const id = setInterval(() => setRemain(target - Date.now()), 1000);
-//     return () => clearInterval(id);
-//   }, [target]);
-//   const s = Math.max(0, Math.floor(remain / 1000));
-//   const d = Math.floor(s / 86400);
-//   const h = Math.floor((s % 86400) / 3600);
-//   const m = Math.floor((s % 3600) / 60);
-//   const sec = s % 60;
-//   return (
-//     <div className="mt-6 text-xl font-semibold text-white">
-//       {d}d {h}h {m}m {sec}s
-//     </div>
-//   );
-// }
-
 "use client";
 
 import { useState, useEffect } from "react";
 
 export default function HeroSection() {
-  const target = new Date(Date.UTC(2025, 8, 1, 8, 0, 0)).getTime(); // Sep 1, 2025
-  return (
-    <div className="min-h-[80vh] grid place-items-center bg-[url('/images/hero-img-2.jpg')] bg-cover bg-center relative mt-12">
-      <div className="absolute inset-0 bg-white/60" />
+  const target = new Date(Date.UTC(2025, 8, 1, 8, 0, 0)).getTime(); // Sept 1, 2025
 
-      <div className="relative text-center px-6 py-24">
-        <div className="inline-block bg-white/80 backdrop-blur-sm px-8 py-6 rounded-2xl shadow-lg">
-          <h1 className="font-script text-6xl sm:text-8xl text-secondary">
-            Alice & Bob
+  return (
+    <section className="relative min-h-[90vh] mt-10 flex items-center overflow-hidden">
+      {/* Left background image with blurred edge */}
+      <div className="absolute inset-y-0 left-0 w-3/4">
+        <img
+          src="/images/hero3.jpg"
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
+        {/* Blur fade on right side */}
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-r from-transparent to-[#faf7f2]/95 backdrop-blur-sm" />
+      </div>
+
+      {/* Right text block */}
+      <div className="relative z-10 w-2/5 ml-auto pr-10">
+        {/* <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-lg px-10 py-12 animate-fadeIn">
+          <h1 className="font-script text-7xl sm:text-8xl text-gray-800 leading-tight">
+            Alice <br />
+            <span className="pl-20 text-primary">&</span> <br />
+            <span className="pl-40">Bob</span>
           </h1>
-          <p className="mt-6 text-lg font-medium text-gray-800">
-            September 1, 2025
+
+          <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent my-6" />
+
+          <p className="text-lg sm:text-xl font-serif text-gray-600 italic">
+            September 1, 2025 — Ho Chi Minh City
           </p>
+
           <Countdown target={target} />
+
+          <div className="mt-10">
+            <a
+              href="#details"
+              className="px-6 py-3 border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition"
+            >
+              Save the Date
+            </a>
+          </div>
+        </div> */}
+        <div className="relative bg-white/80 backdrop-blur-md rounded-[2rem] shadow-xl px-10 py-12 animate-fadeIn overflow-hidden text-block">
+          {/* Artistic background image */}
+          <img
+            src="/images/paper-texture2.jpg"
+            alt="decor"
+            className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"
+          />
+
+          <div className="relative z-10">
+            <h1 className="font-script text-7xl sm:text-8xl text-gray-800 leading-tight">
+              Alice <br />
+              <span className="pl-20">&</span> <br />
+              <span className="pl-40">Bob</span>
+            </h1>
+            <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent my-6" />
+            <p className="text-lg sm:text-xl font-serif text-gray-600 italic">
+              September 1, 2025 — Ho Chi Minh City
+            </p>
+          </div>
+          <div className="mt-10">
+            <a
+              href="#details"
+              className="px-6 py-3 border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition"
+            >
+              Save the Date
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 function Countdown({ target }: { target: number }) {
-  const [remain, setRemain] = require("react").useState(0);
+  const [remain, setRemain] = useState(0);
 
-  require("react").useEffect(() => {
+  useEffect(() => {
     const update = () => setRemain(target - Date.now());
     update();
     const id = setInterval(update, 1000);
     return () => clearInterval(id);
   }, [target]);
 
-  if (remain <= 0) {
-    return (
-      <div className="mt-8 flex gap-6 justify-center">
-        {["0", "0", "0", "0"].map((val, idx) => (
-          <div key={idx} className="text-center">
-            <div className="text-5xl font-bold text-primary">0</div>
-            <div className="text-sm uppercase tracking-widest text-gray-700">
-              {["Days", "Hrs", "Min", "Sec"][idx]}
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  }
+  if (remain <= 0) return null;
 
   const s = Math.floor(remain / 1000);
   const d = Math.floor(s / 86400);
@@ -98,13 +103,16 @@ function Countdown({ target }: { target: number }) {
   ];
 
   return (
-    <div className="mt-8 flex gap-6 justify-center">
+    <div className="mt-10 flex gap-4 sm:gap-6 justify-center">
       {parts.map((p) => (
-        <div key={p.label} className="text-center">
-          <div className="text-5xl sm:text-6xl text-secondary">
+        <div
+          key={p.label}
+          className="px-5 py-4 rounded-2xl border border-yellow-600/30 bg-white/60 backdrop-blur-md shadow-sm"
+        >
+          <div className="text-3xl sm:text-4xl font-bold text-gray-800">
             {String(p.value).padStart(2, "0")}
           </div>
-          <div className="text-sm uppercase font-bold tracking-widest text-gray-700">
+          <div className="text-xs sm:text-sm uppercase tracking-wider text-gray-500 font-medium">
             {p.label}
           </div>
         </div>
@@ -112,3 +120,10 @@ function Countdown({ target }: { target: number }) {
     </div>
   );
 }
+<style jsx>{`
+  .text-block {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    clip-path: polygon(0 0, 100% 10%, 90% 100%, 10% 90%);
+  }
+`}</style>;
