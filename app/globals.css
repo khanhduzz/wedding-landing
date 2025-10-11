@@ -1,1 +1,14 @@
 @import "../styles/globals.css";
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600&display=swap");
+
+.font-script {
+  font-family: "Great Vibes", cursive;
+}
+
+.font-serif {
+  font-family: "Playfair Display", serif;
+}
+
+.text-primary {
+  color: #c5a46d; /* soft gold tone */
+}

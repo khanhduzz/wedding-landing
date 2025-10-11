@@ -1,129 +1,57 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
 export default function HeroSection() {
-  const target = new Date(Date.UTC(2025, 8, 1, 8, 0, 0)).getTime(); // Sept 1, 2025
-
   return (
-    <section className="relative min-h-[90vh] mt-10 flex items-center overflow-hidden">
-      {/* Left background image with blurred edge */}
-      <div className="absolute inset-y-0 left-0 w-3/4">
-        <img
-          src="/images/hero3.jpg"
-          alt="Background"
-          className="w-full h-full object-cover"
-        />
-        {/* Blur fade on right side */}
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-r from-transparent to-[#faf7f2]/95 backdrop-blur-sm" />
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Base background (grayscale) */}
+      <img
+        src="/images/gallery3.jpg" // Replace with your image
+        alt="Wedding background"
+        className="absolute inset-0 w-full h-full object-cover filter grayscale brightness-[0.8]"
+      />
 
-      {/* Right text block */}
-      <div className="relative z-10 w-2/5 ml-auto pr-10">
-        {/* <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-lg px-10 py-12 animate-fadeIn">
-          <h1 className="font-script text-7xl sm:text-8xl text-gray-800 leading-tight">
-            Alice <br />
-            <span className="pl-20 text-primary">&</span> <br />
-            <span className="pl-40">Bob</span>
-          </h1>
+      {/* Colored couple overlay */}
+      <img
+        src="/images/gallery3.jpg" // Same image, will mask to color only couple
+        alt="Wedding color overlay"
+        className="absolute inset-0 w-full h-full object-cover mix-blend-color"
+        style={{
+          WebkitMaskImage: "url('/images/couple-mask.png')",
+          WebkitMaskRepeat: "no-repeat",
+          WebkitMaskPosition: "center",
+          WebkitMaskSize: "contain",
+          maskImage: "url('/images/couple-mask.png')",
+          maskRepeat: "no-repeat",
+          maskPosition: "center",
+          maskSize: "contain",
+        }}
+      />
 
-          <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent my-6" />
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/40" />
 
-          <p className="text-lg sm:text-xl font-serif text-gray-600 italic">
-            September 1, 2025 — Ho Chi Minh City
-          </p>
+      {/* Text content */}
+      <div className="relative z-10 text-center text-white px-6 sm:px-10">
+        <h3 className="font-script text-4xl sm:text-5xl text-yellow-200 mb-4">
+          Happy wedding
+        </h3>
 
-          <Countdown target={target} />
+        <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-semibold mb-6 text-white">
+          Hải Nam <span className="text-yellow-300">&</span> Quỳnh Mai
+        </h1>
 
-          <div className="mt-10">
-            <a
-              href="#details"
-              className="px-6 py-3 border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition"
-            >
-              Save the Date
-            </a>
-          </div>
-        </div> */}
-        <div className="relative bg-white/80 backdrop-blur-md rounded-[2rem] shadow-xl px-10 py-12 animate-fadeIn overflow-hidden text-block">
-          {/* Artistic background image */}
-          <img
-            src="/images/paper-texture2.jpg"
-            alt="decor"
-            className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"
-          />
+        <p className="text-base sm:text-lg font-light italic mb-8">
+          25/12/2020 – Hà Nội <span className="mx-2">⇌</span> 09/01/2021 – Sài
+          Gòn
+        </p>
 
-          <div className="relative z-10">
-            <h1 className="font-script text-7xl sm:text-8xl text-gray-800 leading-tight">
-              Alice <br />
-              <span className="pl-20">&</span> <br />
-              <span className="pl-40">Bob</span>
-            </h1>
-            <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent my-6" />
-            <p className="text-lg sm:text-xl font-serif text-gray-600 italic">
-              September 1, 2025 — Ho Chi Minh City
-            </p>
-          </div>
-          <div className="mt-10">
-            <a
-              href="#details"
-              className="px-6 py-3 border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition"
-            >
-              Save the Date
-            </a>
-          </div>
-        </div>
+        <a
+          href="#details"
+          className="inline-block mt-4 px-8 py-3 text-lg font-medium border border-white/80 rounded-full hover:bg-white hover:text-gray-900 transition duration-300"
+        >
+          Xem thêm
+        </a>
       </div>
     </section>
   );
 }
-
-function Countdown({ target }: { target: number }) {
-  const [remain, setRemain] = useState(0);
-
-  useEffect(() => {
-    const update = () => setRemain(target - Date.now());
-    update();
-    const id = setInterval(update, 1000);
-    return () => clearInterval(id);
-  }, [target]);
-
-  if (remain <= 0) return null;
-
-  const s = Math.floor(remain / 1000);
-  const d = Math.floor(s / 86400);
-  const h = Math.floor((s % 86400) / 3600);
-  const m = Math.floor((s % 3600) / 60);
-  const sec = s % 60;
-
-  const parts = [
-    { label: "Days", value: d },
-    { label: "Hrs", value: h },
-    { label: "Min", value: m },
-    { label: "Sec", value: sec },
-  ];
-
-  return (
-    <div className="mt-10 flex gap-4 sm:gap-6 justify-center">
-      {parts.map((p) => (
-        <div
-          key={p.label}
-          className="px-5 py-4 rounded-2xl border border-yellow-600/30 bg-white/60 backdrop-blur-md shadow-sm"
-        >
-          <div className="text-3xl sm:text-4xl font-bold text-gray-800">
-            {String(p.value).padStart(2, "0")}
-          </div>
-          <div className="text-xs sm:text-sm uppercase tracking-wider text-gray-500 font-medium">
-            {p.label}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-<style jsx>{`
-  .text-block {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    clip-path: polygon(0 0, 100% 10%, 90% 100%, 10% 90%);
-  }
-`}</style>;
