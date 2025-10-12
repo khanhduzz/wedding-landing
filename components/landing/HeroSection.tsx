@@ -1,20 +1,28 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Base background (grayscale) */}
+      {/* Base background (coffee tone) */}
       <img
-        src="/images/gallery3.jpg" // Replace with your image
+        src="/images/gallery3.jpg"
         alt="Wedding background"
-        className="absolute inset-0 w-full h-full object-cover filter grayscale brightness-[0.8]"
+        className="absolute inset-0 w-full h-full object-cover filter brightness-[0.7] saturate-50"
       />
 
-      {/* Colored couple overlay */}
-      <img
-        src="/images/gallery3.jpg" // Same image, will mask to color only couple
-        alt="Wedding color overlay"
-        className="absolute inset-0 w-full h-full object-cover mix-blend-color"
+      {/* Warm gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#3b2f2f]/70 via-transparent to-[#a27b5c]/50 mix-blend-multiply" />
+
+      {/* Subtle vignette for depth */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/30" />
+
+      {/* Masked couple color overlay */}
+      {/* <img
+        src="/images/gallery3.jpg"
+        alt="Wedding couple color overlay"
+        className="absolute inset-0 w-full h-full object-cover mix-blend-color-dodge opacity-80"
         style={{
           WebkitMaskImage: "url('/images/couple-mask.png')",
           WebkitMaskRepeat: "no-repeat",
@@ -25,32 +33,38 @@ export default function HeroSection() {
           maskPosition: "center",
           maskSize: "contain",
         }}
-      />
+      /> */}
 
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/40" />
-
-      {/* Text content */}
-      <div className="relative z-10 text-center text-white px-6 sm:px-10">
-        <h3 className="font-script text-4xl sm:text-5xl text-yellow-200 mb-4">
-          Happy wedding
-        </h3>
-
-        <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-semibold mb-6 text-white">
-          Hải Nam <span className="text-yellow-300">&</span> Quỳnh Mai
-        </h1>
-
-        <p className="text-base sm:text-lg font-light italic mb-8">
-          25/12/2020 – Hà Nội <span className="mx-2">⇌</span> 09/01/2021 – Sài
-          Gòn
-        </p>
-
-        <a
-          href="#details"
-          className="inline-block mt-4 px-8 py-3 text-lg font-medium border border-white/80 rounded-full hover:bg-white hover:text-gray-900 transition duration-300"
+      {/* Right-aligned text, wider layout */}
+      <div className="relative z-10 flex justify-end items-center w-full h-full px-8 sm:px-16 md:px-28 lg:px-40">
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="max-w-2xl text-right text-white space-y-4"
         >
-          Xem thêm
-        </a>
+          <h3 className="font-script text-4xl sm:text-5xl md:text-8xl text-[#f2d7b6] drop-shadow-md">
+            Happy Wedding
+          </h3>
+
+          <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-semibold leading-tight mb-4">
+            Hải Nam <span className="text-[#f7e0b2]">&</span> Quỳnh Mai
+          </h1>
+
+          <p className="text-lg sm:text-xl font-light italic mb-8 text-gray-100 drop-shadow-sm">
+            25/12/2020 – Hà Nội <span className="mx-2">⇌</span> 09/01/2021 – Sài
+            Gòn
+          </p>
+
+          <motion.a
+            href="#details"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-block mt-4 px-10 py-3 text-lg font-medium border border-white/80 rounded-full bg-white/10 hover:bg-white/80 hover:text-gray-900 transition duration-300 backdrop-blur-sm shadow-lg"
+          >
+            Xem thêm
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
