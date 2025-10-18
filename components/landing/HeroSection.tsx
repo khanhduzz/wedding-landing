@@ -44,11 +44,11 @@ export default function HeroSection() {
           className="max-w-2xl text-right text-white space-y-4"
         >
           <h3 className="font-script text-4xl sm:text-5xl md:text-8xl text-[#f2d7b6] drop-shadow-md">
-            Happy Wedding
+            Lorem ipsum dolor
           </h3>
 
           <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl font-semibold leading-tight mb-4">
-            Hải Nam <span className="text-[#f7e0b2]">&</span> Quỳnh Mai
+            Lorem <span className="text-[#f7e0b2]">&</span> Isbum
           </h1>
 
           <p className="text-lg sm:text-xl font-light italic mb-8 text-gray-100 drop-shadow-sm">
