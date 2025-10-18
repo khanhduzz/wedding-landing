@@ -5,14 +5,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yourdomain.com"),
-  title: "Our Wedding",
-  description: "A simple and elegant wedding site",
+  title: "Loving",
+  description: "Welcome to our wedding website!",
   openGraph: {
     title: "Our Wedding",
     description: "Join us on our special day!",
     images: ["/images/hero.jpg"],
   },
-  icons: { icon: "/favicon.ico" },
+  icons: { icon: "/icons/icon3.png" },
 };
 
 export default function RootLayout({
