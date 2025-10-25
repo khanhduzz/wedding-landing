@@ -29,15 +29,15 @@ export default function StorySection() {
           </div>
 
           {/* Title */}
-          <h2 className="text-3xl md:text-5xl font-serif text-[#4b3a2f] mb-6 md:mb-10 text-center tracking-wide">
-            Lorem ipsum dolor
+          <h2 className="text-3xl md:text-5xl font-script text-[#4b3a2f] mb-6 md:mb-10 text-center tracking-wide">
+            Chuyện chúng mình
           </h2>
 
           {/* Divider Line */}
           <div className="w-20 md:w-24 h-[2px] bg-[#c4a484] mx-auto mb-8 opacity-70" />
 
           {/* Story Text */}
-          <p className="text-[#5e4b3c] leading-relaxed text-justify text-[16px] sm:text-[17px] md:text-[18px] font-light tracking-[0.015em] max-h-[28rem] overflow-y-auto">
+          <p className="text-[#5e4b3c] text-justify leading-relaxed font-serif text-[16px] sm:text-[17px] md:text-[18px] font-light tracking-[0.015em] max-h-[28rem] overflow-y-auto">
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
             faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi
             pretium tellus duis convallis. Tempus leo eu aenean sed diam urna

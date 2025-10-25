@@ -33,7 +33,7 @@ export default function CountdownSectionVintage() {
   }, []);
 
   return (
-    <section className="relative py-24 bg-[#f9f6f1] overflow-hidden">
+    <section className="relative py-24 bg-white overflow-hidden">
       {/* Background paper texture */}
       <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
 

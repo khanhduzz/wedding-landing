@@ -18,9 +18,11 @@ import GalleryVintage from "@/components/landing/GalleryVintage";
 import PlaylistVintageSection from "@/components/landing/PlaylistVintageSection";
 import RSVPFormVintage from "@/components/landing/RSVPFormVintage";
 import MessageFormVintage from "@/components/landing/Guestbook/MessageFormVintage";
-import Guestbook from "@/components/landing/Guestbook/Guestbook";
+import GuestbookVintage from "@/components/landing/Guestbook/GuestbookVintage";
 import GiftSectionVintage from "@/components/landing/GiftSectionVintage";
 import FooterVintage from "@/components/shared/FooterVintage";
+import Guestbook from "@/components/landing/Guestbook/Guestbook";
+import StorySectionVintage from "@/components/landing/StorySectionVintage";
 
 const Gallery = dynamic(() => import("@/components/landing/Gallery"), {
   ssr: false,
@@ -58,6 +60,9 @@ export default function Page() {
         <section id="love-story">
           <LoveStorySection />
         </section>
+        {/* <section id="love-story-vintage">
+          <StorySectionVintage />
+        </section> */}
 
         {/* Bride & Groom Info */}
         {/* <section id="info">
@@ -129,8 +134,11 @@ export default function Page() {
         {/* Guestbook (Wishes) */}
 
         <section id="guestbook">
-          <Guestbook />
+          <GuestbookVintage />
         </section>
+        {/* <section id="guestbook">
+          <Guestbook />
+        </section> */}
 
         {/* RSVP */}
         {/* <section id="rsvp">

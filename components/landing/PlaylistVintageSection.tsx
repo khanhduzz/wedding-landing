@@ -1,6 +1,6 @@
 export default function PlaylistVintageSection() {
   return (
-    <section className="bg-[#f9f6f1] py-20 px-6 lg:px-12">
+    <section className="bg-[#f4eee8] py-20 px-6 lg:px-12">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-12">
         {/* Left side: text */}
         <div className="lg:w-1/2 text-center lg:text-left">
