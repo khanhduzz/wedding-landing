@@ -11,6 +11,16 @@ import HealthProtocol from "@/components/landing/HealthProtocol";
 import TimelineSection from "@/components/landing/TimelineSection";
 import CalendarSection from "@/components/landing/CalendarSection";
 import CalendarTimelineSection from "@/components/landing/CalendarTimelineSection";
+import WeddingVintageSection from "@/components/landing/WeddingVintageSection";
+import WeddingInfoVintage from "@/components/landing/WeddingInfoVintage";
+import CountdownSectionVintage from "@/components/landing/CountdownSectionVintage";
+import GalleryVintage from "@/components/landing/GalleryVintage";
+import PlaylistVintageSection from "@/components/landing/PlaylistVintageSection";
+import RSVPFormVintage from "@/components/landing/RSVPFormVintage";
+import MessageFormVintage from "@/components/landing/Guestbook/MessageFormVintage";
+import Guestbook from "@/components/landing/Guestbook/Guestbook";
+import GiftSectionVintage from "@/components/landing/GiftSectionVintage";
+import FooterVintage from "@/components/shared/FooterVintage";
 
 const Gallery = dynamic(() => import("@/components/landing/Gallery"), {
   ssr: false,
@@ -19,10 +29,10 @@ const PlaylistSection = dynamic(
   () => import("@/components/landing/PlaylistSection"),
   { ssr: false }
 );
-const Guestbook = dynamic(
-  () => import("@/components/landing/Guestbook/MessageList"),
-  { ssr: false }
-);
+// const Guestbook = dynamic(
+//   () => import("@/components/landing/Guestbook/MessageList"),
+//   { ssr: false }
+// );
 const MessageForm = dynamic(
   () => import("@/components/landing/Guestbook/MessageForm"),
   { ssr: false }
@@ -50,8 +60,18 @@ export default function Page() {
         </section>
 
         {/* Bride & Groom Info */}
-        <section id="info">
+        {/* <section id="info">
           <WeddingInfo />
+        </section> */}
+
+        {/* Countdown Vintage */}
+        <section id="wedding-vintage">
+          <CountdownSectionVintage />
+        </section>
+
+        {/* Wedding Vintage Section */}
+        <section id="wedding-vintage">
+          <WeddingInfoVintage />
         </section>
 
         {/* Venue & Schedule */}
@@ -75,13 +95,20 @@ export default function Page() {
         </section> */}
 
         {/* Gallery */}
-        <section id="gallery">
+        {/* <section id="gallery">
           <Gallery />
+        </section> */}
+
+        <section id="gallery-vintage">
+          <GalleryVintage />
         </section>
 
         {/* Playlist (optional) */}
-        <section id="playlist">
+        {/* <section id="playlist">
           <PlaylistSection />
+        </section> */}
+        <section id="playlist-vintage">
+          <PlaylistVintageSection />
         </section>
 
         {/* Calendar Timeline (optional) */}
@@ -100,29 +127,29 @@ export default function Page() {
         </section> */}
 
         {/* Guestbook (Wishes) */}
-        <section id="guestbook" className="py-16 bg-gray-50">
-          <div className="max-w-3xl mx-auto px-4">
-            <h2 className="text-3xl font-heading mb-6 text-primary text-center">
-              Leave Us a Note
-            </h2>
-            <MessageForm />
-            <div className="mt-10">
-              <Guestbook />
-            </div>
-          </div>
+
+        <section id="guestbook">
+          <Guestbook />
         </section>
 
         {/* RSVP */}
-        <section id="rsvp">
+        {/* <section id="rsvp">
           <RSVPForm />
+        </section> */}
+        <section id="rsvp-vintage">
+          <RSVPFormVintage />
         </section>
 
         {/* Gift Section */}
-        <section id="gift">
+        {/* <section id="gift">
           <GiftSection />
+        </section> */}
+        <section id="gift-vintage">
+          <GiftSectionVintage />
         </section>
       </main>
-      <Footer />
+      {/* <Footer /> */}
+      <FooterVintage />
     </div>
   );
 }

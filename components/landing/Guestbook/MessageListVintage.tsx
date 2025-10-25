@@ -1,0 +1,55 @@
+"use client";
+import useSWR from "swr";
+import { motion } from "framer-motion";
+
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
+
+export default function MessageListVintage() {
+  const { data } = useSWR("/api/messages", fetcher, {
+    refreshInterval: 30_000,
+  });
+
+  const messages = data?.messages ?? [];
+
+  return (
+    <div className="relative">
+      {/* Subtle paper background */}
+      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-15 pointer-events-none" />
+
+      <div className="relative p-8 bg-[#faf7f2] rounded-3xl shadow-inner border border-[#e7dfd4]/40">
+        {messages.length > 0 ? (
+          <div className="space-y-4 text-left">
+            {messages.map((m: any, i: number) => (
+              <motion.div
+                key={m.id}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.03 }}
+                className="text-[#3d3327]"
+              >
+                <span className="font-serif text-lg text-[#3a2f23]">
+                  {m.name}
+                </span>
+                {m.email && (
+                  <span className="text-[#a59a8a] text-sm ml-1">
+                    ({m.email})
+                  </span>
+                )}
+                <span className="text-[#9a8b77] text-xs italic ml-2">
+                  {new Date(m.created_at).toLocaleString()}
+                </span>
+                <p className="mt-1 ml-2 text-[#4d3f33] leading-relaxed italic border-l-[2px] border-[#d9cbb8]/50 pl-3">
+                  {m.message}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center text-[#9b8f7e] italic">
+            Chưa có lời nhắn nào — hãy là người đầu tiên gửi lời chúc ✨
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
