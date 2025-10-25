@@ -9,6 +9,8 @@ import CountdownSection from "@/components/landing/CountdownSection";
 import LiveStreamSection from "@/components/landing/LiveStreamSection";
 import HealthProtocol from "@/components/landing/HealthProtocol";
 import TimelineSection from "@/components/landing/TimelineSection";
+import CalendarSection from "@/components/landing/CalendarSection";
+import CalendarTimelineSection from "@/components/landing/CalendarTimelineSection";
 
 const Gallery = dynamic(() => import("@/components/landing/Gallery"), {
   ssr: false,
@@ -82,10 +84,20 @@ export default function Page() {
           <PlaylistSection />
         </section>
 
-        {/* Timelien section */}
-        <section id="timeline">
-          <TimelineSection />
+        {/* Calendar Timeline (optional) */}
+        <section id="calendar-timeline">
+          <CalendarTimelineSection />
         </section>
+
+        {/* Calendar (optional) */}
+        {/* <section id="calendar">
+          <CalendarSection />
+        </section> */}
+
+        {/* Timeline section */}
+        {/* <section id="timeline">
+          <TimelineSection />
+        </section> */}
 
         {/* Guestbook (Wishes) */}
         <section id="guestbook" className="py-16 bg-gray-50">
