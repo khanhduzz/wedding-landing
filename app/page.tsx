@@ -23,6 +23,8 @@ import GiftSectionVintage from "@/components/landing/GiftSectionVintage";
 import FooterVintage from "@/components/shared/FooterVintage";
 import Guestbook from "@/components/landing/Guestbook/Guestbook";
 import StorySectionVintage from "@/components/landing/StorySectionVintage";
+import HeroSectionVintage from "@/components/landing/HeroSectionVintage";
+import BackToTop from "@/components/shared/BackToTop";
 
 const Gallery = dynamic(() => import("@/components/landing/Gallery"), {
   ssr: false,
@@ -55,6 +57,9 @@ export default function Page() {
         <section id="hero">
           <HeroSection />
         </section>
+        {/* <section id="hero-vintage">
+          <HeroSectionVintage />
+        </section> */}
 
         {/* Love Story */}
         <section id="love-story">
@@ -157,6 +162,7 @@ export default function Page() {
         </section>
       </main>
       {/* <Footer /> */}
+      <BackToTop />
       <FooterVintage />
     </div>
   );

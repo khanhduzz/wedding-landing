@@ -18,23 +18,6 @@ export default function HeroSection() {
       {/* Subtle vignette for depth */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/30" />
 
-      {/* Masked couple color overlay */}
-      {/* <img
-        src="/images/gallery3.jpg"
-        alt="Wedding couple color overlay"
-        className="absolute inset-0 w-full h-full object-cover mix-blend-color-dodge opacity-80"
-        style={{
-          WebkitMaskImage: "url('/images/couple-mask.png')",
-          WebkitMaskRepeat: "no-repeat",
-          WebkitMaskPosition: "center",
-          WebkitMaskSize: "contain",
-          maskImage: "url('/images/couple-mask.png')",
-          maskRepeat: "no-repeat",
-          maskPosition: "center",
-          maskSize: "contain",
-        }}
-      /> */}
-
       {/* Right-aligned text, wider layout */}
       <div className="relative z-10 flex justify-end items-center w-full h-full px-8 sm:px-16 md:px-28 lg:px-40">
         <motion.div
