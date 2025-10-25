@@ -21,7 +21,7 @@ export default function GuestbookVintage() {
           </div>
 
           {/* Right (on mobile appears first): Title + Message List */}
-          <div className="w-full md:w-1/2 flex flex-col min-h-[600px]">
+          <div className="w-full md:w-1/2 flex flex-col">
             {/* Title & Subtitle */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
