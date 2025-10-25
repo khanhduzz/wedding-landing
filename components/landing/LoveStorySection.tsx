@@ -9,7 +9,7 @@ export default function StorySection() {
       {/* Subtle paper texture */}
       <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
 
-      <div className="relative mx-auto max-w-6xl px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+      <div className="relative mx-auto max-w-6xl px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 lg:gap-20 items-start">
         {/* Left: Story Text */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -64,7 +64,7 @@ export default function StorySection() {
               src="/images/gallery1.jpg"
               alt="Couple in the field"
               fill
-              className="object-cover saturate-[0.9] brightness-[0.95] hover:scale-[1.03] transition-transform duration-500"
+              className="object-cover saturate-[0.9] brightness-[0.95] hover:scale-[1.1] transition-transform duration-1000"
             />
           </div>
 
@@ -74,7 +74,7 @@ export default function StorySection() {
               src="/images/gallery2.jpg"
               alt="Couple laughing"
               fill
-              className="object-cover saturate-[0.9] brightness-[0.95] hover:scale-[1.03] transition-transform duration-500"
+              className="object-cover saturate-[0.9] brightness-[0.95] hover:scale-[1.1] transition-transform duration-1000"
             />
           </div>
 
@@ -84,7 +84,7 @@ export default function StorySection() {
               src="/images/gallery2.jpg"
               alt="Couple laughing"
               fill
-              className="object-cover saturate-[0.9] brightness-[0.95]"
+              className="object-cover saturate-[0.9] brightness-[0.95] hover:scale-[1.1] transition-transform duration-1000"
             />
           </div>
 
@@ -94,7 +94,7 @@ export default function StorySection() {
               src="/images/gallery3.jpg"
               alt="Wedding kiss"
               fill
-              className="object-cover saturate-[0.85] brightness-[0.95]"
+              className="object-cover saturate-[0.85] brightness-[0.95] hover:scale-[1.1] transition-transform duration-1000"
             />
             <div className="absolute bottom-0 w-full bg-white/80 py-1 text-center text-sm font-serif text-[#6a5240] italic">
               “Love in every glance”

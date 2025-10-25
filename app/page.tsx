@@ -8,6 +8,7 @@ import WeddingDetails from "@/components/landing/WeddingDetails";
 import CountdownSection from "@/components/landing/CountdownSection";
 import LiveStreamSection from "@/components/landing/LiveStreamSection";
 import HealthProtocol from "@/components/landing/HealthProtocol";
+import TimelineSection from "@/components/landing/TimelineSection";
 
 const Gallery = dynamic(() => import("@/components/landing/Gallery"), {
   ssr: false,
@@ -79,6 +80,11 @@ export default function Page() {
         {/* Playlist (optional) */}
         <section id="playlist">
           <PlaylistSection />
+        </section>
+
+        {/* Timelien section */}
+        <section id="timeline">
+          <TimelineSection />
         </section>
 
         {/* Guestbook (Wishes) */}
