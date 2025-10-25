@@ -35,9 +35,6 @@ export default function MessageFormVintage() {
 
   return (
     <section className="relative overflow-hidden h-full min-h-[500px]">
-      {/* Paper background */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-15 pointer-events-none" />
-
       <div className="relative mx-auto h-full flex flex-col">
         <motion.form
           onSubmit={onSubmit}

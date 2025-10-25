@@ -14,7 +14,7 @@ import CalendarTimelineSection from "@/components/landing/CalendarTimelineSectio
 import WeddingVintageSection from "@/components/landing/WeddingVintageSection";
 import WeddingInfoVintage from "@/components/landing/WeddingInfoVintage";
 import CountdownSectionVintage from "@/components/landing/CountdownSectionVintage";
-import GalleryVintage from "@/components/landing/GalleryVintage";
+// import GalleryVintage from "@/components/landing/GalleryVintage";
 import PlaylistVintageSection from "@/components/landing/PlaylistVintageSection";
 import RSVPFormVintage from "@/components/landing/RSVPFormVintage";
 import MessageFormVintage from "@/components/landing/Guestbook/MessageFormVintage";
@@ -47,6 +47,10 @@ const GiftSection = dynamic(() => import("@/components/landing/GiftSection"), {
 const RSVPForm = dynamic(() => import("@/components/landing/RSVPForm"), {
   ssr: false,
 });
+const GalleryVintage = dynamic(
+  () => import("@/components/landing/GalleryVintage"),
+  { ssr: false }
+);
 
 export default function Page() {
   return (

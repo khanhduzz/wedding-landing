@@ -13,12 +13,9 @@ export default function MessageListVintage() {
 
   return (
     <div className="relative">
-      {/* Subtle paper background */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-15 pointer-events-none" />
-
       <div className="relative p-8">
         {messages.length > 0 ? (
-          <div className="space-y-4 text-left max-h-[23rem] overflow-y-auto">
+          <div className="space-y-4 text-left max-h-[21.5rem] overflow-y-auto">
             {messages.map((m: any, i: number) => (
               <motion.div
                 key={m.id}

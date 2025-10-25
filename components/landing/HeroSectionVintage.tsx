@@ -5,13 +5,6 @@ import { motion } from "framer-motion";
 export default function HeroSectionVintage() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#f5efe6]">
-      {/* Vintage paper texture overlay */}
-      <img
-        src="/images/vintage-paper-texture.jpg"
-        alt="Paper texture"
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
-      />
-
       {/* Background photo with warm filter */}
       <img
         src="/images/gallery3.jpg"

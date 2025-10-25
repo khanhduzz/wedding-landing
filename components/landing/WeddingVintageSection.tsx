@@ -6,9 +6,6 @@ import Image from "next/image";
 export default function WeddingVintageSection() {
   return (
     <section className="relative py-24 bg-[#faf7f3] overflow-hidden">
-      {/* Background texture */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-25 mix-blend-multiply pointer-events-none" />
-
       <div className="relative mx-auto max-w-6xl px-6 flex flex-col lg:flex-row items-center gap-12">
         {/* Left: Image */}
         <motion.div
@@ -24,19 +21,30 @@ export default function WeddingVintageSection() {
               alt="Wedding couple"
               fill
               className="object-cover"
+              sizes="auto"
             />
             {/* Vintage overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#f9f6f1]/60 to-transparent" />
           </div>
 
           {/* Floating decorative circles */}
-          <div className="absolute -top-6 -left-6 flex -space-x-5">
+          {/* <div className="absolute -top-6 -left-6 flex -space-x-5">
             {["#9b6a3b", "#e7c8a2", "#e8b5a0", "#a4383e", "#f3d9c2"].map(
               (color, i) => (
                 <span
                   key={i}
                   className="w-10 h-10 rounded-full shadow-md"
                   style={{ backgroundColor: color, zIndex: 5 - i }}
+                />
+              )
+            )}
+          </div> */}
+          <div className="absolute -top-6 -left-6 flex -space-x-5">
+            {["#9b6a3b", "#e7c8a2", "#e8b5a0", "#a4383e", "#f3d9c2"].map(
+              (color, i) => (
+                <span
+                  key={i}
+                  className={`w-10 h-10 rounded-full shadow-md bg-[${color}] z-[${5 - i}]`}
                 />
               )
             )}

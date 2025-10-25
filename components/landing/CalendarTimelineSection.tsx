@@ -30,9 +30,6 @@ export default function CalendarTimelineSection() {
 
   return (
     <section className="relative py-24 bg-[#f9f6f1] overflow-hidden">
-      {/* Background texture */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
-
       <div className="relative mx-auto max-w-6xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         {/* === CALENDAR === */}
         <div className="flex flex-col items-center text-center">
@@ -135,7 +132,7 @@ export default function CalendarTimelineSection() {
           Dress code
         </h3>
       </div>
-      <div className="flex justify-center -space-x-5">
+      {/* <div className="flex justify-center -space-x-5">
         {["#9b6a3b", "#e7c8a2", "#e8b5a0", "#a4383e", "#f3d9c2"].map(
           (color, i) => (
             <span
@@ -145,6 +142,16 @@ export default function CalendarTimelineSection() {
                 backgroundColor: color,
                 zIndex: 5 - i,
               }}
+            />
+          )
+        )}
+      </div> */}
+      <div className="flex justify-center -space-x-5">
+        {["#9b6a3b", "#e7c8a2", "#e8b5a0", "#a4383e", "#f3d9c2"].map(
+          (color, i) => (
+            <span
+              key={i}
+              className={`w-13 h-13 rounded-full shadow-lg hover:scale-150 transition-transform duration-500 bg-[${color}] z-[${5 - i}]`}
             />
           )
         )}

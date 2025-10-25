@@ -7,9 +7,6 @@ import MessageListVintage from "./MessageListVintage";
 export default function GuestbookVintage() {
   return (
     <section className="relative py-24 bg-[#f4eee8] overflow-hidden">
-      {/* Paper texture overlay */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
-
       <div className="relative max-w-6xl mx-auto px-6">
         {/* ✅ Reverse on mobile, normal on desktop */}
         <div className="flex flex-col-reverse md:flex-row gap-12 items-start justify-between">

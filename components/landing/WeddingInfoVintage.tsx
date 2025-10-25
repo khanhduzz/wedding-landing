@@ -21,9 +21,6 @@ export default function WeddingInfoVintage() {
 
   return (
     <section className="relative py-24 bg-[#faf7f3] overflow-hidden">
-      {/* Vintage paper texture */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-25 mix-blend-multiply pointer-events-none" />
-
       <div className="relative max-w-6xl mx-auto px-6">
         {/* Title */}
         <motion.h2
@@ -53,6 +50,7 @@ export default function WeddingInfoVintage() {
                   src={p.img}
                   alt={p.title}
                   fill
+                  sizes="auto"
                   className="object-cover transition-transform duration-700 hover:scale-110"
                 />
                 {/* Vintage overlay gradient */}

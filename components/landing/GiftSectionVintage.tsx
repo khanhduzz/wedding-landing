@@ -16,9 +16,6 @@ export default function GiftSectionVintage() {
       id="gift-vintage"
       className="relative py-24 bg-[#f4eee8] overflow-hidden"
     >
-      {/* Subtle paper texture overlay */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
-
       <div className="relative max-w-5xl mx-auto px-6 text-center">
         {/* Title */}
         <motion.h2

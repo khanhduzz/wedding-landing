@@ -29,9 +29,6 @@ export default function RSVPFormVintage() {
 
   return (
     <section className="relative py-24 bg-white overflow-hidden">
-      {/* Background paper texture */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
-
       <div className="relative max-w-xl mx-auto px-6 text-center">
         <h2 className="text-5xl font-script text-[#4b3a2f] mb-3">
           Chung vui cùng chúng mình nhé?

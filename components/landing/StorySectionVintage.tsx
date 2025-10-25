@@ -6,9 +6,6 @@ import { motion } from "framer-motion";
 export default function StorySectionVintage() {
   return (
     <section className="relative py-32 bg-[#f7f1e8] overflow-hidden">
-      {/* Vintage paper texture */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-30 mix-blend-multiply pointer-events-none" />
-
       <div className="relative mx-auto max-w-6xl px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 lg:gap-20 items-start">
         {/* Left: Story Text */}
         <motion.div
@@ -20,6 +17,7 @@ export default function StorySectionVintage() {
           {/* Decorative Icon */}
           <div className="absolute -top-10 left-1/2 -translate-x-1/2">
             <Image
+              sizes="auto"
               src="/icons/icon3.png"
               alt="decorative icon"
               width={72}
@@ -53,6 +51,7 @@ export default function StorySectionVintage() {
           {/* Subtle floral underline */}
           <div className="mt-8 flex justify-center opacity-60">
             <Image
+              sizes="auto"
               src="/icons/floral-line.png"
               alt="decorative floral line"
               width={120}
@@ -74,6 +73,7 @@ export default function StorySectionVintage() {
               src="/images/gallery1.jpg"
               alt="Couple in the field"
               fill
+              sizes="auto"
               className="object-cover saturate-[0.9] brightness-[0.95] sepia-[0.05] hover:scale-[1.05] transition-transform duration-1000"
             />
           </div>
@@ -84,6 +84,7 @@ export default function StorySectionVintage() {
               src="/images/gallery2.jpg"
               alt="Couple laughing"
               fill
+              sizes="auto"
               className="object-cover saturate-[0.9] brightness-[0.95] sepia-[0.05] hover:scale-[1.05] transition-transform duration-1000"
             />
           </div>
@@ -94,6 +95,7 @@ export default function StorySectionVintage() {
               src="/images/gallery2.jpg"
               alt="Couple laughing"
               fill
+              sizes="auto"
               className="object-cover saturate-[0.9] brightness-[0.95] sepia-[0.05] hover:scale-[1.05] transition-transform duration-1000"
             />
           </div>
@@ -104,6 +106,7 @@ export default function StorySectionVintage() {
               src="/images/gallery3.jpg"
               alt="Wedding kiss"
               fill
+              sizes="auto"
               className="object-cover saturate-[0.85] brightness-[0.94] sepia-[0.1] hover:scale-[1.1] transition-transform duration-1000"
             />
             <div className="absolute bottom-0 w-full bg-white/85 py-1 text-center text-sm font-serif text-[#70553e] italic tracking-wide">

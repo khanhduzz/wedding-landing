@@ -36,7 +36,7 @@
 //   return (
 //     <section className="relative py-24 bg-white overflow-hidden">
 //       {/* Paper texture overlay */}
-//       <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
+//       {/* <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" /> */}
 
 //       <div className="relative mx-auto max-w-6xl px-6 text-center">
 //         {/* Title */}
@@ -158,7 +158,7 @@
 //   return (
 //     <section className="relative py-24 bg-white overflow-hidden">
 //       {/* Paper texture overlay */}
-//       <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
+//       {/* <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" /> */}
 
 //       <div className="relative mx-auto max-w-6xl px-6 text-center">
 //         {/* Title */}
@@ -299,9 +299,6 @@ export default function GalleryVintage() {
 
   return (
     <section className="relative py-24 bg-white overflow-hidden">
-      {/* Background texture */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
-
       <div className="relative mx-auto max-w-6xl px-6 text-center">
         {/* Title */}
         <motion.h2

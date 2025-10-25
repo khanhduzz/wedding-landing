@@ -26,9 +26,6 @@ export default function TimelineSection() {
 
   return (
     <section className="relative py-24 bg-[#f9f6f1] overflow-hidden">
-      {/* Background texture */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-15 mix-blend-multiply pointer-events-none" />
-
       <div className="relative mx-auto max-w-[400px] px-6">
         {/* Timeline list */}
         <div className="flex flex-col items-center gap-10">
@@ -80,7 +77,7 @@ export default function TimelineSection() {
           <span className="w-10 h-10 rounded-full bg-[#f3d9c2]" />
         </div> */}
 
-        <div className="flex justify-center -space-x-5">
+        {/* <div className="flex justify-center -space-x-5">
           {["#9b6a3b", "#e7c8a2", "#e8b5a0", "#a4383e", "#f3d9c2"].map(
             (color, i) => (
               <span
@@ -90,6 +87,16 @@ export default function TimelineSection() {
                   backgroundColor: color,
                   zIndex: 5 - i,
                 }}
+              />
+            )
+          )}
+        </div> */}
+        <div className="flex justify-center -space-x-5">
+          {["#9b6a3b", "#e7c8a2", "#e8b5a0", "#a4383e", "#f3d9c2"].map(
+            (color, i) => (
+              <span
+                key={i}
+                className={`w-20 h-20 rounded-full shadow-lg hover:scale-150 transition-transform duration-300 bg-[${color}] z-[${5 - i}]`}
               />
             )
           )}

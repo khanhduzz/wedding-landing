@@ -6,9 +6,6 @@ import { motion } from "framer-motion";
 export default function StorySection() {
   return (
     <section className="relative py-32 bg-[#f4eee8] overflow-hidden">
-      {/* Subtle paper texture */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
-
       <div className="relative mx-auto max-w-6xl px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 lg:gap-20 items-start">
         {/* Left: Story Text */}
         <motion.div
@@ -61,6 +58,7 @@ export default function StorySection() {
           {/* Mobile layout: stacked images */}
           <div className="relative w-full max-w-[500px] aspect-[3/2] md:w-[480px] md:h-[320px] rounded-2xl overflow-hidden border-[3px] border-[#d3c2b3] shadow-lg rotate-[-1deg] bg-[#f5ede5]">
             <Image
+              sizes="auto"
               src="/images/gallery1.jpg"
               alt="Couple in the field"
               fill
@@ -71,6 +69,7 @@ export default function StorySection() {
           {/* Desktop: layered look */}
           <div className="hidden md:block absolute top-[280px] left-[40px] w-[380px] h-[260px] rounded-2xl overflow-hidden border-[3px] border-[#d3c2b3] shadow-lg rotate-[3deg] bg-[#f5ede5]">
             <Image
+              sizes="auto"
               src="/images/gallery2.jpg"
               alt="Couple laughing"
               fill
@@ -81,6 +80,7 @@ export default function StorySection() {
           {/* Mobile: show second image normally below */}
           <div className="md:hidden relative w-full max-w-[400px] aspect-[3/2] rounded-2xl overflow-hidden border-[3px] border-[#d3c2b3] shadow-lg bg-[#f5ede5]">
             <Image
+              sizes="auto"
               src="/images/gallery2.jpg"
               alt="Couple laughing"
               fill
@@ -91,6 +91,7 @@ export default function StorySection() {
           {/* Polaroid Style */}
           <div className="relative md:absolute md:top-[520px] md:right-[20px] w-full max-w-[300px] md:w-[260px] md:h-[200px] bg-[#f9f3ec] border-[3px] border-[#d3c2b3] shadow-lg rounded-[12px] rotate-[-2deg] overflow-hidden hover:scale-[1.03] transition-transform duration-500">
             <Image
+              sizes="auto"
               src="/images/gallery3.jpg"
               alt="Wedding kiss"
               fill

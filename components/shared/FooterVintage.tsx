@@ -6,7 +6,7 @@ export default function FooterVintage() {
   return (
     <footer className="relative py-10 bg-white text-center overflow-hidden">
       {/* Paper texture background */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" /> */}
 
       {/* Decorative subtle border top */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#cbb79e] to-transparent opacity-60" />

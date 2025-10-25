@@ -9,9 +9,6 @@ export default function CalendarSection() {
 
   return (
     <section className="relative py-24 bg-[#f9f6f1] overflow-hidden">
-      {/* Background texture */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
-
       <div className="relative mx-auto max-w-[600px] text-center px-6">
         {/* Title */}
         <motion.h2

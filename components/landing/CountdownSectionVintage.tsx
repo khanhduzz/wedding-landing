@@ -34,9 +34,6 @@ export default function CountdownSectionVintage() {
 
   return (
     <section className="relative py-24 bg-white overflow-hidden">
-      {/* Background paper texture */}
-      <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
-
       <div className="relative text-center px-6">
         {/* Title */}
         <motion.h2
@@ -47,8 +44,6 @@ export default function CountdownSectionVintage() {
           className="font-script text-3xl md:text-3xl text-[#4b3a2f] mb-6"
         >
           Cùng đếm ngược nào...
-          {/* Đếm Ngược Đến Ngày Trọng Đại */}
-          {/* Cùng nhau chờ đón khoảnh khắc ngọt ngào */}
         </motion.h2>
 
         {/* Subtext */}
