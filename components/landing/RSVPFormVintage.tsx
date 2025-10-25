@@ -33,11 +33,11 @@ export default function RSVPFormVintage() {
       <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-20 mix-blend-multiply pointer-events-none" />
 
       <div className="relative max-w-xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-script text-[#4b3a2f] mb-3">
-          Will You Join Us?
+        <h2 className="text-5xl font-script text-[#4b3a2f] mb-3">
+          Chung vui cùng chúng mình nhé?
         </h2>
         <p className="text-[#6a5647] font-serif italic mb-10">
-          Chúng tôi rất hạnh phúc khi có bạn cùng chia sẻ ngày đặc biệt này 💖
+          Chúng mình rất hạnh phúc khi có bạn cùng chia sẻ ngày đặc biệt này 💖
         </p>
 
         <form

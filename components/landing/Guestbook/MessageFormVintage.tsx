@@ -38,7 +38,7 @@ export default function MessageFormVintage() {
       {/* Paper background */}
       <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-15 pointer-events-none" />
 
-      <div className="relative pt-2 max-w-3xl mx-auto px-4 h-full flex flex-col">
+      <div className="relative mx-auto h-full flex flex-col">
         <motion.form
           onSubmit={onSubmit}
           initial={{ opacity: 0, y: 10 }}

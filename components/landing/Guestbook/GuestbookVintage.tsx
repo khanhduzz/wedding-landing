@@ -15,7 +15,7 @@ export default function GuestbookVintage() {
         <div className="flex flex-col-reverse md:flex-row gap-12 items-start justify-between">
           {/* Left (on desktop): Message Form */}
           <div className="w-full md:w-1/2 min-h-[600px] flex">
-            <div className="w-full bg-[#f9f6f1]/70 rounded-3xl shadow-inner backdrop-blur-sm flex flex-col justify-center p-6">
+            <div className="w-full backdrop-blur-sm flex flex-col justify-center">
               <MessageFormVintage />
             </div>
           </div>
@@ -40,7 +40,7 @@ export default function GuestbookVintage() {
             </motion.div>
 
             {/* Message List */}
-            <div className="flex-1 overflow-y-auto flex flex-col-reverse bg-[#f9f6f1]/70 rounded-3xl shadow-inner backdrop-blur-sm p-6">
+            <div className="overflow-y-auto flex flex-col-reverse bg-[#f9f6f1]/70 rounded-3xl shadow-inner backdrop-blur-sm p-6">
               <MessageListVintage />
             </div>
           </div>

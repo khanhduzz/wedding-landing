@@ -16,9 +16,9 @@ export default function MessageListVintage() {
       {/* Subtle paper background */}
       <div className="absolute inset-0 bg-[url('/images/paper-texture.png')] opacity-15 pointer-events-none" />
 
-      <div className="relative p-8 bg-[#faf7f2] rounded-3xl shadow-inner border border-[#e7dfd4]/40">
+      <div className="relative p-8">
         {messages.length > 0 ? (
-          <div className="space-y-4 text-left">
+          <div className="space-y-4 text-left max-h-[23rem] overflow-y-auto">
             {messages.map((m: any, i: number) => (
               <motion.div
                 key={m.id}
@@ -27,7 +27,7 @@ export default function MessageListVintage() {
                 transition={{ delay: i * 0.03 }}
                 className="text-[#3d3327]"
               >
-                <span className="font-serif text-lg text-[#3a2f23]">
+                <span className="font-script text-2xl text-[#3a2f23]">
                   {m.name}
                 </span>
                 {m.email && (
@@ -38,7 +38,7 @@ export default function MessageListVintage() {
                 <span className="text-[#9a8b77] text-xs italic ml-2">
                   {new Date(m.created_at).toLocaleString()}
                 </span>
-                <p className="mt-1 ml-2 text-[#4d3f33] leading-relaxed italic border-l-[2px] border-[#d9cbb8]/50 pl-3">
+                <p className="mt-1 ml-2 text-justify text-[#4d3f33] leading-relaxed italic border-l-[2px] border-[#d9cbb8]/50 pl-3">
                   {m.message}
                 </p>
               </motion.div>
