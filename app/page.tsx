@@ -145,6 +145,7 @@ export default function Page() {
         <section id="guestbook">
           <GuestbookVintage />
         </section>
+
         {/* <section id="guestbook">
           <Guestbook />
         </section> */}

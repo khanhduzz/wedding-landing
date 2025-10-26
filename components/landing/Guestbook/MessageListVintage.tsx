@@ -24,7 +24,8 @@ export default function MessageListVintage() {
                 transition={{ delay: i * 0.03 }}
                 className="text-[#3d3327]"
               >
-                <span className="font-script text-2xl text-[#3a2f23]">
+                <span className="font-serif italic text-2xl text-[#3a2f23]">
+                  {/* <span className="font-serif italic text-2xl text-[#1c15d4]"> */}
                   {m.name}
                 </span>
                 {m.email && (
