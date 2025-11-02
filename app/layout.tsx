@@ -3,6 +3,7 @@ import "../styles/theme.css";
 import "../styles/components.css";
 import "react-photo-view/dist/react-photo-view.css";
 import type { Metadata } from "next";
+import SessionProviderWrapper from "./providers/SessionProviderWrapper";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yourdomain.com"),
@@ -23,7 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-body bg-background text-ink">{children}</body>
+      <body className="font-body bg-background text-ink">
+        <SessionProviderWrapper>{children}</SessionProviderWrapper>
+      </body>
     </html>
   );
 }
