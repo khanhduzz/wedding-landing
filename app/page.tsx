@@ -25,6 +25,7 @@ import Guestbook from "@/components/landing/Guestbook/Guestbook";
 import StorySectionVintage from "@/components/landing/StorySectionVintage";
 import HeroSectionVintage from "@/components/landing/HeroSectionVintage";
 import BackToTop from "@/components/shared/BackToTop";
+import WeddingInvitationCard from "@/components/landing/WeddingInvitationCard";
 
 const Gallery = dynamic(() => import("@/components/landing/Gallery"), {
   ssr: false,
@@ -86,6 +87,11 @@ export default function Page() {
         {/* Wedding Vintage Section */}
         <section id="wedding-vintage">
           <WeddingInfoVintage />
+        </section>
+
+        {/* Wedding Invitation Card */}
+        <section id="wedding-vintage">
+          <WeddingInvitationCard />
         </section>
 
         {/* Venue & Schedule */}
