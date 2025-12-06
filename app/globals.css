@@ -2,11 +2,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600&display=swap");
 
 .font-script {
-  font-family: "Great Vibes", cursive;
+  /* font-family: "Great Vibes", cursive; */
+  font-family: "Dancing Script", cursive;
+  /* font-family: "Be Vietnam Pro", cursive; */
+  /* font-family: "Pacifico", cursive; */
 }
 
 .font-serif {
-  font-family: "Playfair Display", serif;
+  /* font-family: "Playfair Display", serif; */
+  font-family: "Merriweather", serif;
+  /* font-family: "Lora", serif; */
+  /* font-family: "Noto Serif", serif; */
 }
 
 .text-primary {
