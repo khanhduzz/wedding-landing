@@ -13,9 +13,11 @@ module.exports = {
         ink: "var(--color-ink)",
       },
       fontFamily: {
-        heading: ['"Playfair Display"', "serif"],
-        body: ['"Inter"', "system-ui", "sans-serif"],
-        script: ['"Great Vibes"', "cursive"],
+        // heading: ['"Playfair Display"', "serif"],
+        // body: ['"Inter"', "system-ui", "sans-serif"],
+        // script: ['"Great Vibes"', "cursive"],
+        serif: ["var(--font-serif)"],
+        script: ["var(--font-script)"],
       },
       width: {
         13: "3.25rem", // custom size (52px)
