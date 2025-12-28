@@ -59,60 +59,121 @@ export default function WeddingInvitationCard() {
               className="absolute flex items-center justify-center bg-[#faf7f3] border-[2px] border-[#c4a484] shadow-md rounded-full p-4 z-30 cursor-pointer pointer-events-auto"
               onClick={() => setIsOpen(!isOpen)}
             >
-              <span className="text-2xl translate-y-1 font-script text-[#9b6a3b]">
-                ♥
-              </span>
+              <span className="text-2xl font-script text-[#9b6a3b]">♥</span>
             </motion.div>
           </motion.div>
 
           {/* INNER CONTENT */}
           <motion.div
-            className="absolute inset-0 flex flex-col items-center justify-center text-center p-10"
+            className="absolute inset-0 flex flex-col items-center justify-center text-center p-2 xs:p-3 sm:p-4 md:p-8 lg:p-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: isOpen ? 1 : 0 }}
             transition={{ duration: 0.6, delay: isOpen ? 0.35 : 0 }}
           >
-            {/* Background */}
+            {/* LAYERED PAPER BACKGROUND (3D effect) */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: isOpen ? 0.92 : 0 }}
-              transition={{ duration: 0.6, delay: isOpen ? 0.25 : 0 }}
-              className="absolute inset-0 border-[2px] border-[#c4a484] rounded-xl"
+              initial={{ opacity: 0, scale: 0.97, y: 20 }}
+              animate={{
+                opacity: isOpen ? 1 : 0,
+                scale: isOpen ? 1 : 0.97,
+                y: isOpen ? 0 : 20,
+              }}
+              transition={{ duration: 0.7, delay: isOpen ? 0.25 : 0 }}
+              className="absolute inset-0 rounded-xl shadow-[0_25px_60px_rgba(0,0,0,0.15)]"
               style={{
                 backgroundImage: "url('/images/vintage-paper-light.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                filter: "brightness(1.02) contrast(1.01)",
               }}
             />
 
+            {/* SECOND LAYER (cut-paper effect) */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 20 }}
-              transition={{ duration: 0.6, delay: isOpen ? 0.45 : 0 }}
-              className="relative z-10 bg-[#fdfaf6]/90 border-[2px] border-[#d7c2a6] rounded-lg p-4 xs:p-5 sm:p-6 md:p-8 max-w-full xs:max-w-[95%] sm:max-w-[90%] md:max-w-[80%] shadow-md"
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={{
+                opacity: isOpen ? 0.6 : 0,
+                scale: isOpen ? 1 : 0.94,
+              }}
+              transition={{ duration: 0.7, delay: isOpen ? 0.28 : 0 }}
+              className="absolute inset-0 rounded-xl border-[2px] border-[#d7c2a6] pointer-events-none"
+              style={{
+                boxShadow: "inset 0 0 40px rgba(0,0,0,0.12)",
+              }}
+            />
+
+            {/* POP-UP CONTENT CARD */}
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 0.93 }}
+              animate={{
+                opacity: isOpen ? 1 : 0,
+                y: isOpen ? 0 : 40,
+                scale: isOpen ? 1 : 0.93,
+              }}
+              transition={{
+                duration: 0.65,
+                delay: isOpen ? 0.45 : 0,
+                ease: [0.25, 0.8, 0.25, 1],
+              }}
+              className="
+                relative z-10 w-full h-full max-w-[100%] sm:max-w-[100%] md:max-w-[100%]
+                bg-[#fdfaf6]/95 rounded-2xl border-[3px] border-[#d7c2a6]
+                shadow-[0_12px_35px_rgba(0,0,0,0.15)]
+                px-4 xs:px-5 sm:px-7 md:px-10 py-6 
+                xs:py-5 sm:py-6 md:py-8
+                flex flex-col items-center gap-4 sm:gap-5
+                backdrop-blur-[1px]
+              "
             >
-              <div className="flex justify-center mb-3 xs:mb-4 sm:mb-5">
+              {/* Decorative top vine */}
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -10 }}
+                transition={{ duration: 0.6, delay: isOpen ? 0.55 : 0 }}
+              >
                 <Image
                   src="/icons/card-icon-2.png"
-                  alt="Chibi Wedding Couple"
-                  width={160}
-                  height={160}
-                  className="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 object-contain"
+                  alt="Wedding decorative"
+                  width={180}
+                  height={180}
+                  className="w-24 xs:w-28 sm:w-32 md:w-40 object-contain opacity-90"
                 />
-              </div>
+              </motion.div>
 
-              <h3 className="font-serif text-[#9b6a3b] mb-2 text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+              {/* Names */}
+              <motion.h3
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 15 }}
+                transition={{ duration: 0.6, delay: isOpen ? 0.6 : 0 }}
+                className="font-serif italic text-[#9b6a3b] text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl"
+              >
                 Nguyễn Nhật Anh & Trần Thị Bích Ngọc
-              </h3>
+              </motion.h3>
 
-              <p className="text-[#6a5647] mb-3 xs:mb-4 sm:mb-5 font-serif text-xs xs:text-sm sm:text-base md:text-lg">
+              {/* Invitation text */}
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 10 }}
+                transition={{ duration: 0.6, delay: isOpen ? 0.7 : 0 }}
+                className="text-[#6a5647] font-serif max-w-[90%]
+                 text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed"
+              >
                 Trân trọng kính mời bạn đến chung vui trong ngày hạnh phúc của
                 chúng tôi.
-              </p>
+              </motion.p>
 
-              <p className="italic text-[#6a5647] text-[10px] xs:text-xs sm:text-sm md:text-base">
-                11:00 - 01.10.2025 | Hội trường Ánh Kim
-              </p>
+              {/* Date line with gold accent */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 10 }}
+                transition={{ duration: 0.6, delay: isOpen ? 0.75 : 0 }}
+                className="flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-[2px] bg-[#c4a484] rounded-full"></div>
+                <p className="italic text-[#6a5647] text-[10px] xs:text-xs sm:text-sm md:text-base">
+                  11:00 — 01.10.2025 | Hội trường Ánh Kim
+                </p>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>

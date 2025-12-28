@@ -68,29 +68,6 @@ export default function TimelineSection() {
           Dress code
         </h3>
 
-        {/* Palette */}
-        {/* <div className="flex justify-center -space-x-4">
-          <span className="w-10 h-10 rounded-full bg-[#9b6a3b]" />
-          <span className="w-10 h-10 rounded-full bg-[#e7c8a2]" />
-          <span className="w-10 h-10 rounded-full bg-[#e8b5a0]" />
-          <span className="w-10 h-10 rounded-full bg-[#a4383e]" />
-          <span className="w-10 h-10 rounded-full bg-[#f3d9c2]" />
-        </div> */}
-
-        {/* <div className="flex justify-center -space-x-5">
-          {["#9b6a3b", "#e7c8a2", "#e8b5a0", "#a4383e", "#f3d9c2"].map(
-            (color, i) => (
-              <span
-                key={i}
-                className="w-20 h-20 rounded-full shadow-lg hover:scale-150 transition-transform duration-300"
-                style={{
-                  backgroundColor: color,
-                  zIndex: 5 - i,
-                }}
-              />
-            )
-          )}
-        </div> */}
         <div className="flex justify-center -space-x-5">
           {["#9b6a3b", "#e7c8a2", "#e8b5a0", "#a4383e", "#f3d9c2"].map(
             (color, i) => (

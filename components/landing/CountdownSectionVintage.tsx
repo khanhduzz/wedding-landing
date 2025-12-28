@@ -81,11 +81,6 @@ export default function CountdownSectionVintage() {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* <div className="w-24 h-[2px] bg-[#c4a484] mx-auto mt-16 opacity-60" />
-        <p className="text-[#6a5647] font-serif italic mt-8 text-lg">
-          Hẹn gặp lại bạn trong ngày hạnh phúc nhất của chúng tôi.
-        </p> */}
       </div>
     </section>
   );

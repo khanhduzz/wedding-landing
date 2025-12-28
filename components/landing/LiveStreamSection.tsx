@@ -1,4 +1,3 @@
-// components/landing/LiveStreamSection.tsx
 import { FaInstagram, FaYoutube, FaVideo } from "react-icons/fa";
 
 export default function LiveStreamSection() {

@@ -1,4 +1,3 @@
-// components/landing/WeddingDetails.tsx
 export default function WeddingDetails() {
   return (
     <div className="py-16 bg-white text-center">
@@ -22,13 +21,6 @@ export default function WeddingDetails() {
           <p className="mt-2 text-gray-700 font-medium">
             Masjid Raya Baiturrahman, Banda Aceh, Indonesia
           </p>
-          {/* <a
-            href="https://maps.google.com"
-            target="_blank"
-            className="text-primary underline text-sm mt-1"
-          >
-            Get Directions
-          </a> */}
         </div>
         <div className="flex flex-col items-center">
           <img

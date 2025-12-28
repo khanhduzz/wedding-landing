@@ -9,7 +9,9 @@ export default function Timeline() {
   return (
     <div className="bg-ink/5 py-16">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-heading text-primary mb-6">Schedule of Events</h2>
+        <h2 className="text-3xl font-heading text-primary mb-6">
+          Schedule of Events
+        </h2>
         <ol className="relative border-l border-ink/20 pl-6">
           {events.map((e, i) => (
             <li key={i} className="mb-6">

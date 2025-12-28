@@ -1,4 +1,3 @@
-// components/landing/HealthProtocol.tsx
 import { FaHandsWash, FaHeadSideMask, FaUserFriends } from "react-icons/fa";
 import { MdSocialDistance, MdDoNotTouch, MdGroups } from "react-icons/md";
 

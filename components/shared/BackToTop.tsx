@@ -7,7 +7,7 @@ export default function BackToTop() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 300); // show button after 300px
+      setVisible(window.scrollY > 300);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

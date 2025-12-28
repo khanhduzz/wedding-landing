@@ -20,7 +20,7 @@ export default function GiftSectionVintage() {
       id="gift-vintage"
       className="relative py-24 bg-[#f4eee8] overflow-hidden"
     >
-      {/* ✅ Floating toast message */}
+      {/* Floating toast message */}
       <AnimatePresence>
         {copied && (
           <motion.div
