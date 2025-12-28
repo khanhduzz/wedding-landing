@@ -533,8 +533,8 @@ export default function WeddingInvitationCard() {
                   className="space-y-6"
                 >
                   <p className="text-[#5E584F] font-serif italic text-lg md:text-xl max-w-sm mx-auto leading-relaxed">
-                    "Trân trọng kính mời bạn đến chung vui trong ngày hạnh phúc
-                    nhất của chúng tôi."
+                    &quot;Trân trọng kính mời bạn đến chung vui trong ngày hạnh
+                    phúc nhất của chúng tôi.&quot;
                   </p>
                   <div className="flex flex-col items-center gap-4">
                     <div className="h-10 w-[1px] bg-[#BC8A5F]/40" />

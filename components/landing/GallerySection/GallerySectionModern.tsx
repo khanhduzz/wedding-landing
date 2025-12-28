@@ -82,8 +82,8 @@ export default function GalleryVintage() {
             </span>
           </motion.h2>
           <p className="mt-6 text-[#6a5647] font-serif italic max-w-2xl mx-auto opacity-80 text-lg">
-            "Những khoảnh khắc ngọt ngào và kỷ niệm đáng nhớ trên hành trình yêu
-            thương."
+            &quot;Những khoảnh khắc ngọt ngào và kỷ niệm đáng nhớ trên hành
+            trình yêu thương.&quot;
           </p>
         </div>
 

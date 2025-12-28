@@ -67,11 +67,11 @@ export default function LoveStoryModernSection() {
 
           <div className="relative p-1 border-l border-[#BC8A5F]/30 pl-8">
             <p className="text-[#5E584F] leading-[2] font-serif text-lg font-light text-justify italic">
-              "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
-              faucibus ex sapien vitae pellentesque sem placerat. In id cursus
-              mi pretium tellus duis convallis. Tempus leo eu aenean sed diam
-              urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum
-              egestas."
+              &quot;Lorem ipsum dolor sit amet consectetur adipiscing elit.
+              Quisque faucibus ex sapien vitae pellentesque sem placerat. In id
+              cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed
+              diam urna tempor. Pulvinar vivamus fringilla lacus nec metus
+              bibendum egestas.&quot;
             </p>
 
             <p className="mt-6 text-[#5E584F] leading-[1.8] font-sans text-base font-light text-justify">

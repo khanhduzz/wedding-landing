@@ -27,8 +27,8 @@ export default function PlaylistSectionModern() {
             <div className="h-[1px] w-20 bg-[#BC8A5F]/40 my-8 mx-auto lg:mx-0" />
 
             <p className="text-[#5E584F] font-serif italic text-xl leading-relaxed">
-              "Âm nhạc là ngôn ngữ của trái tim, kể lại hành trình mà chúng mình
-              đã đi qua."
+              &quot;Âm nhạc là ngôn ngữ của trái tim, kể lại hành trình mà chúng
+              mình đã đi qua.&quot;
             </p>
 
             <p className="mt-6 text-[#7c6a58]/90 leading-relaxed font-light">

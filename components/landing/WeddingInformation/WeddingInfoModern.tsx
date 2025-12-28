@@ -143,8 +143,8 @@ export default function WeddingInfoModern() {
           className="mt-24 text-center"
         >
           <p className="text-[#8C7851] font-serif italic text-xl max-w-xl mx-auto leading-relaxed">
-            "Chúng tôi mong được đón tiếp bạn trong ngày tràn ngập yêu thương
-            này."
+            &quot;Chúng tôi mong được đón tiếp bạn trong ngày tràn ngập yêu
+            thương này.&quot;
           </p>
           <div className="mt-8 flex justify-center gap-2">
             {[...Array(3)].map((_, i) => (
