@@ -12,6 +12,19 @@ import GiftSectionVintage from "@/components/landing/GiftSectionVintage";
 import FooterVintage from "@/components/shared/FooterVintage";
 import BackToTop from "@/components/shared/BackToTop";
 import WeddingInvitationCard from "@/components/landing/WeddingInvitationCard";
+import HeroSectionModernVintage from "@/components/landing/HeroSection/HeroSectionModernVintage";
+import NavbarModern from "@/components/shared/NavbarModern";
+import LoveStoryModernSection from "@/components/landing/LoveStorySection/LoveStorySectionModern";
+import CountdownSectionModern from "@/components/landing/Counting/CountdownSectionModern";
+import WeddingInfoModern from "@/components/landing/WeddingInformation/WeddingInfoModern";
+import WeddingInvitationCardModern from "@/components/landing/WeddingCard/WeddingInvitationCardModern";
+import GallerySectionModern from "@/components/landing/GallerySection/GallerySectionModern";
+import PlaylistSectionModern from "@/components/landing/PlaylistSection/PlaylistSectionModern";
+import CalendarTimelineModern from "@/components/landing/CalendarTimeline/CalendarTimelineModern";
+import RSVPFormModern from "@/components/landing/RSVPForm/RSVPFormModern";
+import GuestbookModern from "@/components/landing/Guestbook/GuestBookModern";
+import GiftSectionModern from "@/components/landing/GiftSection/GiftSectionModern";
+import FooterModern from "@/components/shared/FooterModern";
 
 const Gallery = dynamic(() => import("@/components/landing/Gallery"), {
   ssr: false,
@@ -38,55 +51,55 @@ const GalleryVintage = dynamic(
 export default function Page() {
   return (
     <div>
-      <Navbar />
+      <NavbarModern />
       <main>
         <section id="hero">
-          <HeroSection />
+          <HeroSectionModernVintage />
         </section>
 
         <section id="love-story">
-          <LoveStorySection />
+          <LoveStoryModernSection />
         </section>
 
         <section id="wedding-vintage">
-          <CountdownSectionVintage />
+          <CountdownSectionModern />
         </section>
 
         <section id="wedding-vintage">
-          <WeddingInfoVintage />
+          <WeddingInfoModern />
         </section>
 
         <section id="wedding-vintage">
-          <WeddingInvitationCard />
+          <WeddingInvitationCardModern />
         </section>
 
         <section id="gallery-vintage">
-          <GalleryVintage />
+          <GallerySectionModern />
         </section>
 
         <section id="playlist-vintage">
-          <PlaylistVintageSection />
+          <PlaylistSectionModern />
         </section>
 
         <section id="calendar-timeline">
-          <CalendarTimelineSection />
+          <CalendarTimelineModern />
         </section>
 
         <section id="guestbook">
-          <GuestbookVintage />
+          <GuestbookModern />
         </section>
 
         <section id="rsvp-vintage">
-          <RSVPFormVintage />
+          <RSVPFormModern />
         </section>
 
         <section id="gift-vintage">
-          <GiftSectionVintage />
+          <GiftSectionModern />
         </section>
       </main>
 
       <BackToTop />
-      <FooterVintage />
+      <FooterModern />
     </div>
   );
 }
