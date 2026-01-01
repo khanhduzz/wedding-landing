@@ -33,7 +33,10 @@ const FloatingLeaf = ({
   </motion.svg>
 );
 
-export default function CountdownSectionOrigin() {
+export default function CountdownSectionOrigin({ dict }: { dict: any }) {
+  // Shortcut cho countdown dict
+  const c = dict.countdown;
+
   const weddingDate = new Date("2026-01-20T10:00:00");
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -59,7 +62,15 @@ export default function CountdownSectionOrigin() {
       });
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [weddingDate]);
+
+  // Array để map dữ liệu với key tương ứng trong dict
+  const timeUnits = [
+    { key: "days", value: timeLeft.days },
+    { key: "hours", value: timeLeft.hours },
+    { key: "minutes", value: timeLeft.minutes },
+    { key: "seconds", value: timeLeft.seconds },
+  ];
 
   return (
     <section className="relative py-32 bg-[#FAF7F2] overflow-hidden">
@@ -78,13 +89,10 @@ export default function CountdownSectionOrigin() {
           className="mb-16"
         >
           <span className="block text-[#BC8A5F] text-[10px] uppercase tracking-[0.6em] font-bold mb-4">
-            Save The Date
+            {c.saveTheDate}
           </span>
           <h2 className="text-4xl md:text-5xl font-light text-[#3D3831]">
-            {/* Cùng đếm ngược{" "} */}
-            <span className="font-serif italic text-[#BC8A5F]">
-              Cùng đếm ngược đến ngày vui...
-            </span>
+            <span className="font-serif italic text-[#BC8A5F]">{c.title}</span>
           </h2>
           <div className="mt-6 flex items-center justify-center gap-4">
             <div className="w-8 h-[1px] bg-[#BC8A5F]/40" />
@@ -95,14 +103,9 @@ export default function CountdownSectionOrigin() {
 
         {/* 2. THE COUNTDOWN UNITS */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {[
-            { label: "Ngày", value: timeLeft.days },
-            { label: "Giờ", value: timeLeft.hours },
-            { label: "Phút", value: timeLeft.minutes },
-            { label: "Giây", value: timeLeft.seconds },
-          ].map((t, i) => (
+          {timeUnits.map((t, i) => (
             <motion.div
-              key={t.label}
+              key={t.key}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1, duration: 0.8 }}
@@ -118,17 +121,15 @@ export default function CountdownSectionOrigin() {
 
               {/* Main Circle */}
               <div className="relative w-28 h-28 md:w-32 md:h-32 bg-white rounded-full flex flex-col items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-[#D4A373]/20 overflow-hidden">
-                {/* Subtle Inner Glow */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_50%,#FAF7F2_100%)] opacity-50" />
 
                 <span className="relative z-10 text-3xl md:text-4xl font-light text-[#3D3831] tracking-tighter">
                   {t.value.toString().padStart(2, "0")}
                 </span>
                 <span className="relative z-10 text-[9px] uppercase tracking-[0.3em] font-bold text-[#BC8A5F] mt-2">
-                  {t.label}
+                  {c.units[t.key]}
                 </span>
 
-                {/* Shimmer Effect on hover */}
                 <motion.div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#BC8A5F]/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               </div>
             </motion.div>

@@ -10,7 +10,7 @@ const FloatingLeaf = ({ delay, x }: { delay: number; x: string }) => (
       y: "100vh",
       opacity: [0, 0.7, 0.7, 0],
       rotate: 360,
-      x: [0, 15, -15, 0],
+      x: [0, 15, -15, 0], // Giữ nguyên x animation của bạn
     }}
     transition={{ duration: 12, repeat: Infinity, delay, ease: "linear" }}
     className="absolute w-6 h-6 text-[#8B5E3C]/30 pointer-events-none z-0"
@@ -22,9 +22,11 @@ const FloatingLeaf = ({ delay, x }: { delay: number; x: string }) => (
   </motion.svg>
 );
 
-export default function GiftSectionOrigin() {
+export default function GiftSectionOrigin({ dict }: { dict: any }) {
+  const g = dict.gift;
   const [copied, setCopied] = useState(false);
 
+  // Giữ nguyên các biến account trong code
   const account1 = "1234 5678 9012";
   const account2 = "5678 9012 3456";
 
@@ -50,7 +52,7 @@ export default function GiftSectionOrigin() {
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             className="fixed bottom-10 left-1/2 -translate-x-1/2 bg-[#3D3831] text-[#FAF7F2] font-serif px-8 py-3 rounded-full shadow-2xl z-[100] text-sm tracking-wide"
           >
-            Đã sao chép số tài khoản 💝
+            {g.copySuccess}
           </motion.div>
         )}
       </AnimatePresence>
@@ -64,15 +66,13 @@ export default function GiftSectionOrigin() {
           className="mb-16"
         >
           <span className="text-[#BC8A5F] text-[10px] uppercase tracking-[0.5em] font-bold block mb-4">
-            Wedding Gift
+            {g.label}
           </span>
           <h2 className="font-serif italic text-4xl md:text-5xl text-[#3D3831] mb-6">
-            {/* Gửi Trao  */}
-            <span className="text-[#BC8A5F]">Gửi Trao Yêu Thương</span>
+            <span className="text-[#BC8A5F]">{g.title}</span>
           </h2>
           <p className="text-[#6a5647] font-serif italic max-w-xl mx-auto opacity-80 leading-relaxed">
-            Sự hiện diện của bạn là món quà quý giá nhất đối với chúng tôi. Nếu
-            bạn muốn gửi thêm yêu thương, xin vui lòng quét mã QR bên dưới.
+            {g.description}
           </p>
         </motion.div>
 
@@ -130,7 +130,7 @@ export default function GiftSectionOrigin() {
                   <div className="absolute inset-0 w-full h-full bg-[#3D3831] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
                   <div className="absolute inset-0 w-full h-full border border-[#3D3831] rounded-full" />
                   <span className="relative z-10 text-[#3D3831] group-hover:text-[#FAF7F2] text-[10px] font-bold tracking-widest uppercase transition-colors duration-500">
-                    Sao chép số tài khoản
+                    {g.copyBtn}
                   </span>
                 </motion.button>
               </div>

@@ -3,10 +3,13 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
-export default function MessageFormOrigin() {
+export default function MessageFormOrigin({ dict }: { dict: any }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<string | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Shortcut để code gọn hơn
+  const f = dict;
 
   useEffect(() => {
     if (textareaRef.current) {
@@ -24,11 +27,12 @@ export default function MessageFormOrigin() {
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ ...form, is_public: true }),
     });
+
     if (res.ok) {
-      setStatus("Cảm ơn bạn vì những lời chúc 💌");
+      setStatus(f.success); // Lấy từ JSON
       setForm({ name: "", email: "", message: "" });
     } else {
-      setStatus("Có lỗi xảy ra. Vui lòng thử lại sau.");
+      setStatus(f.error); // Lấy từ JSON
     }
   }
 
@@ -46,14 +50,14 @@ export default function MessageFormOrigin() {
           <div className="grid sm:grid-cols-2 gap-8">
             <div className="relative group">
               <label className="block text-[10px] font-bold text-[#BC8A5F] uppercase tracking-widest mb-1">
-                Tên của bạn
+                {f.nameLabel}
               </label>
               <input
                 type="text"
-                placeholder="Nhập tên..."
+                placeholder={f.namePlaceholder}
                 value={form.name}
                 onChange={(e) =>
-                  setForm((f) => ({ ...f, name: e.target.value }))
+                  setForm((prev) => ({ ...prev, name: e.target.value }))
                 }
                 required
                 className="w-full bg-transparent border-b border-[#BC8A5F]/30 py-2 text-[#3D3831] placeholder-[#BC8A5F]/40 outline-none focus:border-[#BC8A5F] transition-colors font-serif"
@@ -61,14 +65,14 @@ export default function MessageFormOrigin() {
             </div>
             <div className="relative group">
               <label className="block text-[10px] font-bold text-[#BC8A5F] uppercase tracking-widest mb-1">
-                Email
+                {f.emailLabel}
               </label>
               <input
                 type="email"
-                placeholder="không bắt buộc..."
+                placeholder={f.emailPlaceholder}
                 value={form.email}
                 onChange={(e) =>
-                  setForm((f) => ({ ...f, email: e.target.value }))
+                  setForm((prev) => ({ ...prev, email: e.target.value }))
                 }
                 className="w-full bg-transparent border-b border-[#BC8A5F]/30 py-2 text-[#3D3831] placeholder-[#BC8A5F]/40 outline-none focus:border-[#BC8A5F] transition-colors font-serif"
               />
@@ -77,14 +81,14 @@ export default function MessageFormOrigin() {
 
           <div className="relative flex-grow flex flex-col">
             <label className="block text-[10px] font-bold text-[#BC8A5F] uppercase tracking-widest mb-1">
-              Lời chúc của bạn
+              {f.messageLabel}
             </label>
             <textarea
               ref={textareaRef}
-              placeholder="Viết lời chúc tại đây..."
+              placeholder={f.messagePlaceholder}
               value={form.message}
               onChange={(e) =>
-                setForm((f) => ({ ...f, message: e.target.value }))
+                setForm((prev) => ({ ...prev, message: e.target.value }))
               }
               required
               className="w-full flex-grow bg-transparent border-b border-[#BC8A5F]/30 py-2 text-[#3D3831] placeholder-[#BC8A5F]/40 outline-none focus:border-[#BC8A5F] transition-all font-serif resize-none leading-relaxed"
@@ -99,11 +103,9 @@ export default function MessageFormOrigin() {
               className="group relative inline-flex items-center justify-center px-10 py-3.5 overflow-hidden rounded-full transition-all"
             >
               <div className="absolute inset-0 w-full h-full bg-[#3D3831] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
-
               <div className="absolute inset-0 w-full h-full border border-[#3D3831] rounded-full" />
-
               <span className="relative z-10 text-[#3D3831] group-hover:text-[#FAF7F2] text-[11px] font-bold tracking-[0.2em] uppercase transition-colors duration-500">
-                Gửi lời chúc 💌
+                {f.submitBtn}
               </span>
             </motion.button>
 

@@ -11,52 +11,52 @@ import GuestbookOrigin from "../Guestbook/GuestBookOrigin";
 import HeroSectionOrigin from "@/components/landing/HeroSection/HeroSectionOrigin";
 import LoveStorySectionOrigin from "@/components/landing/LoveStorySection/LoveStorySectionOrigin";
 
-export default function OriginTheme() {
+export default function OriginTheme({ dict }: { dict: any }) {
   return (
     <div>
       <main>
         <section id="hero">
-          <HeroSectionOrigin />
+          <HeroSectionOrigin dict={dict} />
         </section>
 
         <section id="love-story">
-          <LoveStorySectionOrigin />
+          <LoveStorySectionOrigin dict={dict} />
         </section>
 
         <section id="countdown">
-          <CountdownSectionOrigin />
+          <CountdownSectionOrigin dict={dict} />
         </section>
 
         <section id="info">
-          <WeddingInfoOrigin />
+          <WeddingInfoOrigin dict={dict} />
         </section>
 
         <section id="invidation-card">
-          <WeddingInvitationCardOrigin />
+          <WeddingInvitationCardOrigin dict={dict} />
         </section>
 
         <section id="gallery">
-          <GallerySectionOrigin />
+          <GallerySectionOrigin dict={dict} />
         </section>
 
         <section id="playlist">
-          <PlaylistSectionOrigin />
+          <PlaylistSectionOrigin dict={dict} />
         </section>
 
         <section id="timeline">
-          <CalendarTimelineOrigin />
+          <CalendarTimelineOrigin dict={dict} />
         </section>
 
         <section id="guestbook">
-          <GuestbookOrigin />
+          <GuestbookOrigin dict={dict} />
         </section>
 
         <section id="rsvp">
-          <RSVPFormOrigin />
+          <RSVPFormOrigin dict={dict} />
         </section>
 
         <section id="gift">
-          <GiftSectionOrigin />
+          <GiftSectionOrigin dict={dict} />
         </section>
       </main>
       <BackToTop />

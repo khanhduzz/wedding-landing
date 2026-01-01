@@ -10,14 +10,141 @@
     "gallery": "Gallery",
     "gift": "Wedding Gift"
   },
-  "hero": {
-    "title": "Our Journey",
-    "subTitle": "Sweet moments and unforgettable memories."
+"hero": {
+    "upperTitle": "The Union Of",
+    "names": {
+      "first": "Lorem",
+      "and": "&",
+      "second": "Ipsum"
+    },
+    "date": "Twenty-fifth of December",
+    "location": "Hà Nội | Sài Gòn",
+    "cta": "View Invitation"
   },
   "footer": {
     "thankYou": "Thank you for sharing our special day with us",
     "subThankYou": "Every wish and smile from you is the most precious gift.",
     "madeWithLove": "Made with love",
     "adminLink": "Admin Panel"
+  },
+  "story": {
+    "label": "Our Journey",
+    "title": "Our Story",
+    "paragraph1": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.",
+    "paragraph2": "Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Quisque faucibus ex sapien vitae pellentesque sem placerat.",
+    "signature": "D & L",
+    "polaroidCaption": "Sweet Memories"
+  },
+  "countdown": {
+    "saveTheDate": "Save The Date",
+    "title": "Counting down to the big day...",
+    "units": {
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "seconds": "Seconds"
+    }
+  },
+  "weddingInfo": {
+    "label": "The Celebration",
+    "title": "The Big Day",
+    "viewMap": "View on Map",
+    "footerNote": "\"We look forward to welcoming you to this day filled with love.\"",
+    "places": [
+      {
+        "title": "Wedding Ceremony",
+        "time": "10:00 AM",
+        "location": "Grand Palace",
+        "desc": "A sacred ceremony held at Grand Palace — where love begins a new journey.",
+        "map": "https://maps.app.goo.gl/tFmp2cmgL6ptUM9M9"
+      },
+      {
+        "title": "Wedding Reception",
+        "time": "06:00 PM",
+        "location": "The Adora",
+        "desc": "Join us in the warm atmosphere at The Adora — where music and joy intertwine.",
+        "map": "https://maps.app.goo.gl/gSwWkvh2tbyZ6DgLA"
+      }
+    ]
+  },
+  "invitation": {
+    "label": "Private Invitation",
+    "title": "Wedding Card",
+    "upperTitle": "The Union Of",
+    "names": {
+      "first": "Nhat Anh",
+      "and": "&",
+      "second": "Bich Ngoc"
+    },
+    "seal": "N&B",
+    "message": "\"We cordially invite you to join us in celebrating our happiest day.\"",
+    "dateTime": "Dec 20th . 2025 — 11:00 AM",
+    "btnOpen": "Open Invitation",
+    "btnClose": "Close Card"
+  },
+  "gallery": {
+    "label": "Our Gallery",
+    "title": "Our Journey",
+    "subTitle": "\"Sweet moments and unforgettable memories on our journey of love.\"",
+    "btnMore": "View more moments",
+    "footerNote": "Every photo is a story, every moment is a memory."
+  },
+  "playlist": {
+    "label": "Our Playlist",
+    "title": "Melodies <br /> Of Love",
+    "quote": "\"Music is the language of the heart, retelling the journey we've traveled together.\"",
+    "description": "These songs carry memories, laughter, and the moments that brought us closer. Listen and immerse yourself in the beat of our story.",
+    "videoUrl": "https://www.youtube.com/embed/327_OFjUOfo"
+  },
+"calendarTimeline": {
+    "month": "Month",
+    "weddingDayLabel": "Wedding Day",
+    "inviteNote": "We cordially invite you to our intimate wedding ceremony",
+    "timelineTitle": "Event Timeline",
+    "dresscodeTitle": "Dress Code",
+    "dresscodeNote": "To make our photos more harmonious",
+    "eventLabels": ["Guest Welcome", "Wedding Ceremony", "Wedding Feast"]
+  },
+  "guestbook": {
+    "label": "Guestbook",
+    "title": "Wedding Guestbook",
+    "description": "Please leave your wishes, memories, or loving messages for us 💌",
+    "form": {
+      "nameLabel": "Your Name",
+      "namePlaceholder": "Enter your name...",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Optional...",
+      "messageLabel": "Your Wishes",
+      "messagePlaceholder": "Write your wishes here...",
+      "submitBtn": "Send Wishes 💌",
+      "success": "Thank you for your lovely wishes 💌",
+      "error": "Something went wrong. Please try again later."
+    },
+    "list": {
+      "empty": "No messages yet ✨",
+      "locale": "en-US"
+    }
+  },
+  "rsvp": {
+    "label": "Confirm Attendance",
+    "title": "Will You Join Us?",
+    "subTitle": "We would be so happy to have you share this special day with us 💖",
+    "nameLabel": "Your Name *",
+    "namePlaceholder": "John Doe...",
+    "emailLabel": "Email (optional)",
+    "attendingLabel": "Attendance:",
+    "yes": "I'll be there 💕",
+    "no": "Regretfully, I can't attend 😢",
+    "guestsLabel": "Number of guests:",
+    "submitBtn": "Send Response 💌",
+    "success": "Thank you for your response 💌",
+    "error": "Something went wrong, please try again."
+  },
+  "gift": {
+    "label": "Wedding Gift",
+    "title": "Gifts & Well Wishes",
+    "description": "Your presence is the greatest gift of all. However, if you wish to honor us with a gift, you can use the bank information below.",
+    "copyBtn": "Copy Account Number",
+    "copySuccess": "Account number copied 💝"
   }
 }

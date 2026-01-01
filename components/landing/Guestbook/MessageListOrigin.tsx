@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
-export default function MessageListOrigin() {
+export default function MessageListOrigin({ dict }: { dict: any }) {
   const { data } = useSWR("/api/messages", fetcher, {
     refreshInterval: 15_000,
   });
@@ -36,8 +36,16 @@ export default function MessageListOrigin() {
                         </span>
                       )}
                     </div>
+                    {/* Sử dụng locale từ dict để format ngày tháng */}
                     <span className="text-[9px] font-bold tracking-widest text-[#BC8A5F]/60 uppercase">
-                      {new Date(m.created_at).toLocaleDateString("vi-VN")}
+                      {new Date(m.created_at).toLocaleDateString(
+                        dict.locale || "vi-VN",
+                        {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        }
+                      )}
                     </span>
                   </div>
 
@@ -52,7 +60,8 @@ export default function MessageListOrigin() {
           </div>
         ) : (
           <div className="h-full flex flex-col items-center justify-center text-[#BC8A5F]/60 italic font-serif py-10">
-            <p className="text-sm">Chưa có lời nhắn nào ✨</p>
+            {/* Chữ hiển thị khi chưa có tin nhắn */}
+            <p className="text-sm">{dict.empty}</p>
           </div>
         )}
       </div>

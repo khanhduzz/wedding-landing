@@ -11,13 +11,140 @@
     "gift": "Mừng cưới"
   },
   "hero": {
-    "title": "Hành Trình Của Chúng Tôi",
-    "subTitle": "Những khoảnh khắc ngọt ngào và kỷ niệm đáng nhớ."
+    "upperTitle": "Lễ Thành Hôn Của",
+    "names": {
+      "first": "Lorem",
+      "and": "&",
+      "second": "Ipsum"
+    },
+    "date": "Ngày 25 tháng Mười Hai",
+    "location": "Hà Nội | Sài Gòn",
+    "cta": "Xem Thiệp Mời"
   },
   "footer": {
     "thankYou": "Cảm ơn bạn đã cùng chúng tôi chia sẻ ngày trọng đại này",
     "subThankYou": "Mỗi lời chúc và nụ cười của bạn là món quà quý giá nhất.",
     "madeWithLove": "Made with love",
     "adminLink": "Trang quản trị"
+  },
+  "story": {
+    "label": "Hành trình của chúng mình",
+    "title": "Chuyện chúng mình",
+    "paragraph1": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.",
+    "paragraph2": "Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Quisque faucibus ex sapien vitae pellentesque sem placerat.",
+    "signature": "D & L",
+    "polaroidCaption": "Kỷ niệm ngọt ngào"
+  },
+  "countdown": {
+    "saveTheDate": "Save The Date",
+    "title": "Cùng đếm ngược đến ngày vui...",
+    "units": {
+      "days": "Ngày",
+      "hours": "Giờ",
+      "minutes": "Phút",
+      "seconds": "Giây"
+    }
+  },
+  "weddingInfo": {
+    "label": "The Celebration",
+    "title": "Ngày Trọng Đại",
+    "viewMap": "Xem bản đồ",
+    "footerNote": "\"Chúng tôi mong được đón tiếp bạn trong ngày tràn ngập yêu thương này.\"",
+    "places": [
+      {
+        "title": "Lễ Thành Hôn",
+        "time": "10:00 AM",
+        "location": "Grand Palace",
+        "desc": "Buổi lễ thiêng liêng được tổ chức tại Grand Palace — nơi tình yêu bắt đầu một hành trình mới.",
+        "map": "https://maps.app.goo.gl/tFmp2cmgL6ptUM9M9"
+      },
+      {
+        "title": "Tiệc Chiêu Đãi",
+        "time": "06:00 PM",
+        "location": "The Adora",
+        "desc": "Cùng chung vui trong không gian ấm áp tại The Adora — nơi âm nhạc và niềm vui hòa quyện.",
+        "map": "https://maps.app.goo.gl/gSwWkvh2tbyZ6DgLA"
+      }
+    ]
+  },
+  "invitation": {
+    "label": "Lời Mời Riêng Tư",
+    "title": "Thiệp Cưới",
+    "upperTitle": "Sự Giao Thoa Của",
+    "names": {
+      "first": "Nhật Anh",
+      "and": "&",
+      "second": "Bích Ngọc"
+    },
+    "seal": "N&B",
+    "message": "\"Trân trọng kính mời bạn đến chung vui trong ngày hạnh phúc nhất của chúng tôi.\"",
+    "dateTime": "20 . 12 . 2025 — 11:00 AM",
+    "btnOpen": "Mở Thiệp Mời",
+    "btnClose": "Đóng Thiệp"
+  },
+  "gallery": {
+    "label": "Album Ảnh",
+    "title": "Hành Trình Của Chúng Tôi",
+    "subTitle": "\"Những khoảnh khắc ngọt ngào và kỷ niệm đáng nhớ trên hành trình yêu thương.\"",
+    "btnMore": "Xem thêm khoảnh khắc",
+    "footerNote": "Mỗi bức hình là một câu chuyện, mỗi khoảnh khắc là một kỷ niệm."
+  },
+  "playlist": {
+    "label": "Danh sách nhạc",
+    "title": "Giai Điệu <br /> Tình Yêu",
+    "quote": "\"Âm nhạc là ngôn ngữ của trái tim, kể lại hành trình mà chúng mình đã đi qua.\"",
+    "description": "Những bản nhạc này mang theo ký ức, tiếng cười và những khoảnh khắc đưa chúng mình đến gần nhau hơn. Hãy cùng lắng nghe và hòa mình vào nhịp đập câu chuyện của chúng mình nhé.",
+    "videoUrl": "https://www.youtube.com/embed/327_OFjUOfo"
+  },
+"calendarTimeline": {
+    "month": "Tháng",
+    "weddingDayLabel": "Lễ cưới",
+    "inviteNote": "Thân mời quý khách đến dự lễ cưới thân mật",
+    "timelineTitle": "Chương Trình",
+    "dresscodeTitle": "Trang Phục",
+    "dresscodeNote": "Để những khung hình thêm phần đồng điệu",
+    "eventLabels": ["Đón Khách", "Lễ Thành Hôn", "Khai Tiệc"]
+  },
+  "guestbook": {
+    "label": "Lưu bút",
+    "title": "Sổ Lưu Bút",
+    "description": "Hãy gửi những lời chúc, kỷ niệm, hoặc thông điệp yêu thương dành cho chúng tôi 💌",
+    "form": {
+      "nameLabel": "Tên của bạn",
+      "namePlaceholder": "Nhập tên...",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Không bắt buộc...",
+      "messageLabel": "Lời chúc của bạn",
+      "messagePlaceholder": "Viết lời chúc tại đây...",
+      "submitBtn": "Gửi lời chúc 💌",
+      "success": "Cảm ơn bạn vì những lời chúc 💌",
+      "error": "Có lỗi xảy ra. Vui lòng thử lại sau."
+    },
+    "list": {
+      "empty": "Chưa có lời nhắn nào ✨",
+      "locale": "vi-VN"
+    }
+  },
+  "rsvp": {
+    "label": "Xác nhận tham dự",
+    "title": "Chung vui cùng chúng mình nhé?",
+    "subTitle": "Chúng mình rất hạnh phúc khi có bạn cùng chia sẻ ngày đặc biệt này 💖",
+    "nameLabel": "Tên của bạn *",
+    "namePlaceholder": "Nguyễn Văn A...",
+    "emailLabel": "Email (tùy chọn)",
+    "attendingLabel": "Sự tham dự:",
+    "yes": "Sẽ tham dự 💕",
+    "no": "Rất tiếc, không thể tham dự 😢",
+    "guestsLabel": "Số khách đi cùng:",
+    "submitBtn": "Gửi phản hồi 💌",
+    "success": "Cảm ơn bạn đã phản hồi 💌",
+    "error": "Có lỗi xảy ra, vui lòng thử lại."
+  },
+  "gift": {
+    "label": "Gửi Trao Yêu Thương",
+    "title": "Gửi Trao Yêu Thương",
+    "description": "Sự hiện diện của bạn là món quà quý giá nhất đối với chúng tôi. Nếu bạn muốn gửi thêm yêu thương, xin vui lòng quét mã QR hoặc sao chép số tài khoản bên dưới.",
+    "copyBtn": "Sao chép số tài khoản",
+    "copySuccess": "Đã sao chép số tài khoản 💝"
   }
 }

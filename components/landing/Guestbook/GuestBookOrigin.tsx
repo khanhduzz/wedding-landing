@@ -23,7 +23,10 @@ const FloatingLeaf = ({ delay, x }: { delay: number; x: string }) => (
   </motion.svg>
 );
 
-export default function GuestbookOrigin() {
+export default function GuestbookOrigin({ dict }: { dict: any }) {
+  // Shortcut truy cập guestbook dict
+  const gb = dict.guestbook;
+
   return (
     <section className="relative py-24 bg-[#FAF7F2] overflow-hidden">
       {/* 1. Background Elements */}
@@ -46,7 +49,8 @@ export default function GuestbookOrigin() {
             <div className="w-full relative group">
               <div className="absolute -inset-2 bg-[#E9DCC9]/40 rounded-[2.5rem] -rotate-1 blur-sm pointer-events-none" />
               <div className="relative w-full h-full bg-white/60 backdrop-blur-md rounded-[2.5rem] shadow-[0_20px_50px_rgba(188,138,95,0.1)] border border-white p-2">
-                <MessageFormOrigin />
+                {/* Truyền dict form xuống cho component con */}
+                <MessageFormOrigin dict={gb.form} />
               </div>
             </div>
           </motion.div>
@@ -61,15 +65,13 @@ export default function GuestbookOrigin() {
               className="text-center lg:text-left mb-10"
             >
               <span className="text-[#BC8A5F] text-[10px] uppercase tracking-[0.5em] font-bold block mb-4">
-                Guestbook
+                {gb.label}
               </span>
               <h2 className="text-4xl md:text-5xl font-serif italic text-[#3D3831] mb-6">
-                {/* Sổ  */}
-                <span className="text-[#BC8A5F]">Sổ Lưu Bút</span>
+                <span className="text-[#BC8A5F]">{gb.title}</span>
               </h2>
               <p className="text-[#6a5647] font-serif italic text-lg opacity-80 leading-relaxed">
-                Hãy gửi những lời chúc, kỷ niệm, hoặc thông điệp yêu thương dành
-                cho chúng tôi 💌
+                {gb.description}
               </p>
             </motion.div>
 
@@ -83,7 +85,9 @@ export default function GuestbookOrigin() {
               <div className="absolute inset-0 bg-[#E9DCC9]/20 rounded-[2rem] translate-x-2 translate-y-2 pointer-events-none" />
 
               <div className="relative flex flex-col bg-white/40 border border-white rounded-[2rem] shadow-xl backdrop-blur-md p-6 h-[500px] overflow-y-auto scrollbar-thin scrollbar-thumb-[#BC8A5F]/20">
-                <MessageListOrigin />
+                {/* List tin nhắn thường không cần dịch nội dung người dùng nhập, 
+                    nhưng có thể cần dịch chữ "No messages yet" nếu bạn có */}
+                <MessageListOrigin dict={gb.list} />
               </div>
 
               <div className="absolute -bottom-6 -right-6 w-24 h-24 text-[#BC8A5F]/20 pointer-events-none rotate-12">

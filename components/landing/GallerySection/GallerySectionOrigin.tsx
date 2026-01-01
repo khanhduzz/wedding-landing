@@ -2,7 +2,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
-export default function GalleryVintage() {
+export default function GallerySectionOrigin({ dict }: { dict: any }) {
+  const g = dict.gallery; // Shortcut truy cập gallery dict
+
   const imgs = [
     "/images/gallery1.jpg",
     "/images/gallery2.jpg",
@@ -26,7 +28,6 @@ export default function GalleryVintage() {
     "/images/hero.jpg",
   ];
 
-  // State for processed images
   const [mounted, setMounted] = useState(false);
   const [randomized, setRandomized] = useState<any[]>([]);
   const [visibleCount, setVisibleCount] = useState(4);
@@ -34,7 +35,6 @@ export default function GalleryVintage() {
   const [selected, setSelected] = useState<string | null>(null);
 
   useEffect(() => {
-    // 1. Handle Responsive Logic
     const handleResize = () => {
       const mobile = window.matchMedia("(max-width: 767px)").matches;
       setIsMobile(mobile);
@@ -43,7 +43,6 @@ export default function GalleryVintage() {
       );
     };
 
-    // 2. Generate Random Sizes ONLY on the Client
     const sizes = ["h-48", "h-64", "h-80", "h-[24rem]"];
     const data = imgs.map((src, i) => ({
       src,
@@ -52,7 +51,7 @@ export default function GalleryVintage() {
     }));
 
     setRandomized(data);
-    setMounted(true); // Signal that we are ready to show the randomized content
+    setMounted(true);
     handleResize();
 
     window.addEventListener("resize", handleResize);
@@ -61,7 +60,6 @@ export default function GalleryVintage() {
 
   const showMore = () => setVisibleCount((v) => v + (isMobile ? 4 : 6));
 
-  // If not mounted yet, return a consistent shell to prevent Hydration Error
   if (!mounted) {
     return <section id="gallery" className="py-24 bg-[#FAF7F2] min-h-screen" />;
   }
@@ -81,7 +79,7 @@ export default function GalleryVintage() {
             whileInView={{ opacity: 1 }}
             className="text-[#BC8A5F] text-[10px] uppercase tracking-[0.6em] font-bold block mb-4"
           >
-            Our Gallery
+            {g.label}
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -90,13 +88,10 @@ export default function GalleryVintage() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-light text-[#3D3831]"
           >
-            <span className="font-serif italic text-[#BC8A5F]">
-              Hành Trình Của Chúng Tôi
-            </span>
+            <span className="font-serif italic text-[#BC8A5F]">{g.title}</span>
           </motion.h2>
           <p className="mt-6 text-[#6a5647] font-serif italic max-w-2xl mx-auto opacity-80 text-lg">
-            &quot;Những khoảnh khắc ngọt ngào và kỷ niệm đáng nhớ trên hành
-            trình yêu thương.&quot;
+            {g.subTitle}
           </p>
         </div>
 
@@ -140,7 +135,7 @@ export default function GalleryVintage() {
               <div className="absolute inset-0 w-full h-full bg-[#3D3831] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
               <div className="absolute inset-0 w-full h-full border border-[#3D3831] rounded-full" />
               <span className="relative z-10 text-[#3D3831] group-hover:text-[#FAF7F2] text-[11px] font-bold tracking-[0.3em] uppercase transition-colors duration-500">
-                Xem thêm khoảnh khắc
+                {g.btnMore}
               </span>
             </motion.button>
           </div>
@@ -148,7 +143,7 @@ export default function GalleryVintage() {
 
         <div className="w-24 h-[1px] bg-[#BC8A5F]/40 mx-auto mt-20" />
         <p className="text-[#6a5647] font-serif italic mt-8 text-center text-lg opacity-70">
-          Mỗi bức hình là một câu chuyện, mỗi khoảnh khắc là một kỷ niệm.
+          {g.footerNote}
         </p>
       </div>
 

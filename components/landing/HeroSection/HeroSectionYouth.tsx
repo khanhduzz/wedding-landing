@@ -1,8 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useState, useRef } from "react";
-import { THEMES } from "@/constants/themes";
+import { useRef } from "react";
 
 // 1. Máy bay giấy và Ngôi sao (Thay thế cho cánh hoa)
 const FloatingElement = ({

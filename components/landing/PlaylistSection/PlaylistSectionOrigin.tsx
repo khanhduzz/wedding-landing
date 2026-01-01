@@ -1,7 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 
-export default function PlaylistSectionOrigin() {
+export default function PlaylistSectionOrigin({ dict }: { dict: any }) {
+  // Shortcut truy cập playlist dict
+  const p = dict.playlist;
+
   return (
     <section className="relative bg-[#FAF7F2] py-24 px-6 lg:px-12 overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')] pointer-events-none" />
@@ -16,27 +19,23 @@ export default function PlaylistSectionOrigin() {
             viewport={{ once: true }}
           >
             <span className="text-[#BC8A5F] text-[10px] uppercase tracking-[0.6em] font-bold block mb-4">
-              Our Playlist
+              {p.label}
             </span>
             <h2 className="text-4xl md:text-6xl font-light text-[#3D3831] leading-tight">
-              {/* Giai Điệu <br /> */}
-              <span className="font-serif italic text-[#BC8A5F]">
-                Giai Điệu <br />
-                Tình Yêu
-              </span>
+              <span
+                className="font-serif italic text-[#BC8A5F]"
+                dangerouslySetInnerHTML={{ __html: p.title }}
+              />
             </h2>
 
             <div className="h-[1px] w-20 bg-[#BC8A5F]/40 my-8 mx-auto lg:mx-0" />
 
             <p className="text-[#5E584F] font-serif italic text-xl leading-relaxed">
-              &quot;Âm nhạc là ngôn ngữ của trái tim, kể lại hành trình mà chúng
-              mình đã đi qua.&quot;
+              {p.quote}
             </p>
 
             <p className="mt-6 text-[#7c6a58]/90 leading-relaxed font-light">
-              Những bản nhạc này mang theo ký ức, tiếng cười và những khoảnh
-              khắc đưa chúng mình đến gần nhau hơn. Hãy cùng lắng nghe và hòa
-              mình vào nhịp đập câu chuyện của chúng mình nhé.
+              {p.description}
             </p>
           </motion.div>
         </div>
@@ -56,7 +55,7 @@ export default function PlaylistSectionOrigin() {
               <div className="relative aspect-video overflow-hidden rounded-sm">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/327_OFjUOfo"
+                  src={p.videoUrl}
                   title="Wedding Playlist"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

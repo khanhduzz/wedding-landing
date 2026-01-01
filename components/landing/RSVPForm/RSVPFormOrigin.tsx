@@ -20,7 +20,9 @@ const FloatingLeaf = ({ delay, x }: { delay: number; x: string }) => (
   </motion.svg>
 );
 
-export default function RSVPFormOrigin() {
+export default function RSVPFormOrigin({ dict }: { dict: any }) {
+  const r = dict.rsvp; // Shortcut
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -32,8 +34,9 @@ export default function RSVPFormOrigin() {
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus(null);
+    // Giả lập gửi form
     setTimeout(() => {
-      setStatus("Cảm ơn bạn đã phản hồi 💌");
+      setStatus(r.success);
       setForm({ name: "", email: "", attending: true, guest_count: 1 });
     }, 1000);
   }
@@ -53,56 +56,41 @@ export default function RSVPFormOrigin() {
             whileInView={{ opacity: 1 }}
             className="text-[#BC8A5F] text-[10px] uppercase tracking-[0.6em] font-bold block mb-4"
           >
-            Confirm Attendance
+            {r.label}
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-serif italic text-[#3D3831] mb-6"
           >
-            Chung vui cùng chúng mình nhé?
+            {r.title}
           </motion.h2>
           <div className="w-16 h-[1px] bg-[#BC8A5F]/40 mx-auto mb-6" />
           <p className="text-[#6a5647] font-serif italic opacity-80 max-w-md mx-auto">
-            Chúng mình rất hạnh phúc khi có bạn cùng chia sẻ ngày đặc biệt này
-            💖
+            {r.subTitle}
           </p>
         </div>
 
-        {/* Form Card Container */}
+        {/* Form Card */}
         <div className="relative">
           <div className="absolute -inset-4 bg-[#E9DCC9]/20 rounded-[3.5rem] blur-2xl pointer-events-none" />
-
           <div className="absolute inset-0 bg-[#E9DCC9]/30 rounded-[3rem] rotate-1 pointer-events-none" />
 
-          {/* Main Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="relative bg-white/80 backdrop-blur-xl rounded-[3rem] shadow-[0_40px_100px_rgba(61,56,49,0.07)] border border-white p-10 md:p-16 overflow-hidden"
           >
-            <div className="absolute -top-10 -right-10 w-48 h-48 opacity-[0.05] pointer-events-none rotate-12">
-              <svg
-                viewBox="0 0 100 100"
-                fill="none"
-                stroke="#3D3831"
-                strokeWidth="1"
-              >
-                <path d="M10,90 Q30,10 90,10" />
-                <path d="M30,90 Q50,30 90,30" />
-              </svg>
-            </div>
-
             <form onSubmit={onSubmit} className="space-y-10 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                 <div className="group">
                   <label className="block text-[10px] font-bold text-[#BC8A5F] tracking-[0.2em] uppercase mb-2 ml-1">
-                    Tên của bạn *
+                    {r.nameLabel}
                   </label>
                   <input
                     className="w-full bg-transparent border-b border-[#BC8A5F]/20 focus:border-[#3D3831] py-3 outline-none text-[#3D3831] font-serif transition-all duration-500 placeholder-[#BC8A5F]/30"
-                    placeholder="Nguyễn Văn A..."
+                    placeholder={r.namePlaceholder}
                     value={form.name}
                     onChange={(e) =>
                       setForm((f) => ({ ...f, name: e.target.value }))
@@ -112,11 +100,11 @@ export default function RSVPFormOrigin() {
                 </div>
                 <div className="group">
                   <label className="block text-[10px] font-bold text-[#BC8A5F] tracking-[0.2em] uppercase mb-2 ml-1">
-                    Email (tùy chọn)
+                    {r.emailLabel}
                   </label>
                   <input
                     className="w-full bg-transparent border-b border-[#BC8A5F]/20 focus:border-[#3D3831] py-3 outline-none text-[#3D3831] font-serif transition-all duration-500 placeholder-[#BC8A5F]/30"
-                    placeholder="email@example.com"
+                    placeholder="email@example.com" // Đã thêm dấu " ở cuối
                     value={form.email}
                     onChange={(e) =>
                       setForm((f) => ({ ...f, email: e.target.value }))
@@ -127,7 +115,7 @@ export default function RSVPFormOrigin() {
 
               <div className="space-y-6">
                 <p className="text-[10px] font-bold text-[#BC8A5F] tracking-[0.2em] uppercase ml-1">
-                  Sự tham dự:
+                  {r.attendingLabel}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-8 pl-1">
                   <label className="flex items-center gap-4 cursor-pointer group">
@@ -144,7 +132,7 @@ export default function RSVPFormOrigin() {
                       <div className="absolute w-2.5 h-2.5 bg-[#3D3831] rounded-full opacity-0 peer-checked:opacity-100 transition-opacity" />
                     </div>
                     <span className="text-[#3D3831] font-serif text-lg">
-                      Sẽ tham dự 💕
+                      {r.yes}
                     </span>
                   </label>
                   <label className="flex items-center gap-4 cursor-pointer group">
@@ -160,8 +148,10 @@ export default function RSVPFormOrigin() {
                       />
                       <div className="absolute w-2.5 h-2.5 bg-[#3D3831] rounded-full opacity-0 peer-checked:opacity-100 transition-opacity" />
                     </div>
-                    <span className="text-[#3D3831]/50 font-serif text-lg italic">
-                      Rất tiếc, không thể tham dự 😢
+                    <span
+                      className={`font-serif text-lg italic ${!form.attending ? "text-[#3D3831]" : "text-[#3D3831]/50"}`}
+                    >
+                      {r.no}
                     </span>
                   </label>
                 </div>
@@ -172,24 +162,22 @@ export default function RSVPFormOrigin() {
                   htmlFor="number"
                   className="text-[10px] font-bold text-[#BC8A5F] tracking-[0.2em] uppercase"
                 >
-                  Số khách đi cùng:
+                  {r.guestsLabel}
                 </label>
-                <div className="relative">
-                  <input
-                    id="number"
-                    type="number"
-                    min={1}
-                    max={10}
-                    className="bg-[#FAF7F2] border border-[#BC8A5F]/20 rounded-xl px-4 py-2 w-20 text-[#3D3831] font-serif focus:ring-1 focus:ring-[#3D3831] outline-none transition-all"
-                    value={form.guest_count}
-                    onChange={(e) =>
-                      setForm((f) => ({
-                        ...f,
-                        guest_count: Number(e.target.value),
-                      }))
-                    }
-                  />
-                </div>
+                <input
+                  id="number"
+                  type="number"
+                  min={1}
+                  max={10}
+                  className="bg-[#FAF7F2] border border-[#BC8A5F]/20 rounded-xl px-4 py-2 w-20 text-[#3D3831] font-serif focus:ring-1 focus:ring-[#3D3831] outline-none transition-all"
+                  value={form.guest_count}
+                  onChange={(e) =>
+                    setForm((f) => ({
+                      ...f,
+                      guest_count: Number(e.target.value),
+                    }))
+                  }
+                />
               </div>
 
               <div className="pt-4 text-center">
@@ -202,7 +190,7 @@ export default function RSVPFormOrigin() {
                   <div className="absolute inset-0 w-full h-full bg-[#3D3831] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                   <div className="absolute inset-0 w-full h-full border border-[#3D3831] rounded-full" />
                   <span className="relative z-10 text-[#3D3831] group-hover:text-[#FAF7F2] text-[11px] font-bold tracking-[0.3em] uppercase transition-colors duration-500">
-                    Gửi phản hồi 💌
+                    {r.submitBtn}
                   </span>
                 </motion.button>
               </div>

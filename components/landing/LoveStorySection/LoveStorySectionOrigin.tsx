@@ -34,7 +34,10 @@ const FloatingLeaf = ({
   </motion.svg>
 );
 
-export default function LoveStorySectionOrigin() {
+export default function LoveStorySectionOrigin({ dict }: { dict: any }) {
+  // Shortcut truy cập story dict
+  const s = dict.story;
+
   return (
     <section id="info" className="relative py-32 bg-[#FAF7F2] overflow-hidden">
       {/* 1. Background Decor */}
@@ -56,36 +59,26 @@ export default function LoveStorySectionOrigin() {
         >
           {/* Section Label */}
           <span className="block text-[#BC8A5F] text-[10px] uppercase tracking-[0.5em] font-bold mb-4">
-            Our Journey
+            {s.label}
           </span>
 
           <h2 className="text-4xl md:text-6xl font-light text-[#3D3831] leading-tight mb-8">
-            {/* Chuyện{" "} */}
-            <span className="font-serif italic text-[#BC8A5F]">
-              Chuyện chúng mình
-            </span>
+            <span className="font-serif italic text-[#BC8A5F]">{s.title}</span>
           </h2>
 
           <div className="relative p-1 border-l border-[#BC8A5F]/30 pl-8">
             <p className="text-[#5E584F] leading-[2] font-serif text-lg font-light text-justify italic">
-              &quot;Lorem ipsum dolor sit amet consectetur adipiscing elit.
-              Quisque faucibus ex sapien vitae pellentesque sem placerat. In id
-              cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed
-              diam urna tempor. Pulvinar vivamus fringilla lacus nec metus
-              bibendum egestas.&quot;
+              &quot;{s.paragraph1}&quot;
             </p>
 
             <p className="mt-6 text-[#5E584F] leading-[1.8] font-sans text-base font-light text-justify">
-              Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut
-              hendrerit semper vel class aptent taciti sociosqu. Ad litora
-              torquent per conubia nostra inceptos himenaeos. Quisque faucibus
-              ex sapien vitae pellentesque sem placerat.
+              {s.paragraph2}
             </p>
 
             {/* Signature style closing */}
             <div className="mt-12">
               <span className="font-serif italic text-2xl text-[#3D3831]">
-                D & L
+                {s.signature}
               </span>
             </div>
           </div>
@@ -145,7 +138,7 @@ export default function LoveStorySectionOrigin() {
               />
             </div>
             <p className="absolute bottom-2 left-0 w-full text-center font-serif italic text-xs text-[#8C7851]">
-              Sweet Memories
+              {s.polaroidCaption}
             </p>
           </motion.div>
 
