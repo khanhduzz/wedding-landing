@@ -1,137 +1,3 @@
-// "use client";
-
-// import { motion } from "framer-motion";
-// import { useState } from "react";
-
-// export default function HeroSectionStunningVintage() {
-//   const [imageLoaded, setImageLoaded] = useState(false);
-
-//   return (
-//     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#F2EDE4]">
-//       {/* 1. STUNNING CSS BACKUP: Animated Gradient Background */}
-//       {/* This shows immediately and stays if no image is present */}
-//       <div className="absolute inset-0 z-0 bg-[#F2EDE4]">
-//         <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_50%_50%,#D4A373_0%,transparent_50%),radial-gradient(circle_at_100%_0%,#E9C46A_0%,transparent_30%)] animate-pulse" />
-//       </div>
-
-//       {/* 2. THE IMAGE: With a transition for "Smooth Loading" */}
-//       <motion.div
-//         initial={{ opacity: 0 }}
-//         animate={{ opacity: imageLoaded ? 0.4 : 0 }}
-//         transition={{ duration: 1.5 }}
-//         className="absolute inset-0 z-10"
-//       >
-//         <img
-//           src="/images/gallery3.jpg"
-//           alt="Wedding"
-//           onLoad={() => setImageLoaded(true)}
-//           className="w-full h-full object-cover sepia-[0.3] brightness-90 contrast-110"
-//         />
-//       </motion.div>
-
-//       {/* 3. RETRO OVERLAYS: Grain & Vignette */}
-//       <div className="absolute inset-0 z-20 pointer-events-none">
-//         {/* Grain Texture (CSS trick) */}
-//         <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-//         {/* Soft Vignette to focus center */}
-//         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(242,237,228,0.4)_100%)]" />
-//       </div>
-
-//       {/* 4. CONTENT: High Contrast for Readability */}
-//       <div className="relative z-30 flex flex-col items-center max-w-5xl px-6 text-center">
-//         {/* Floating Frames (Surprise UI) */}
-//         <motion.div
-//           initial={{ opacity: 0, scale: 0.8 }}
-//           animate={{ opacity: 1, scale: 1 }}
-//           transition={{ duration: 1.2 }}
-//           className="absolute -top-20 md:-top-32 w-48 md:w-64 h-48 md:h-64 border-[0.5px] border-[#8C7851]/20 rounded-full flex items-center justify-center pointer-events-none"
-//         >
-//           <div className="w-[90%] h-[90%] border-[0.5px] border-[#8C7851]/10 rounded-full" />
-//         </motion.div>
-
-//         <motion.div
-//           initial="hidden"
-//           whileInView="visible"
-//           viewport={{ once: true }}
-//           variants={{
-//             hidden: { opacity: 0, y: 30 },
-//             visible: {
-//               opacity: 1,
-//               y: 0,
-//               transition: {
-//                 staggerChildren: 0.2,
-//                 duration: 0.8,
-//                 ease: "easeOut",
-//               },
-//             },
-//           }}
-//           className="space-y-8"
-//         >
-//           {/* Top Label */}
-//           <motion.p
-//             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-//             className="font-serif italic text-[#8C7851] text-lg tracking-[0.3em] uppercase"
-//           >
-//             Save the Date
-//           </motion.p>
-
-//           {/* Main Typography: Mix of Classic & Modern */}
-//           <motion.div
-//             variants={{
-//               hidden: { opacity: 0, y: 20 },
-//               visible: { opacity: 1, y: 0 },
-//             }}
-//           >
-//             <h1 className="text-[12vw] md:text-8xl lg:text-9xl font-light text-[#3D3831] leading-none flex flex-col md:flex-row items-center justify-center gap-x-6">
-//               <span>Lorem</span>
-//               <span className="font-serif italic text-[#BC8A5F] text-[15vw] md:text-9xl">
-//                 &
-//               </span>
-//               <span>Ipsum</span>
-//             </h1>
-//           </motion.div>
-
-//           {/* Date with a sophisticated line element */}
-//           <motion.div
-//             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-//             className="flex flex-col items-center gap-4"
-//           >
-//             <div className="w-12 h-[1px] bg-[#BC8A5F]/50" />
-//             <div className="text-[#5E584F] text-sm md:text-base tracking-[0.4em] font-medium">
-//               25 . 12 . 2020 <span className="mx-2 text-[#BC8A5F]">✦</span> 09 .
-//               01 . 2021
-//             </div>
-//             <p className="text-[#8C7851] font-serif italic text-lg tracking-wide">
-//               Hà Nội — Sài Gòn
-//             </p>
-//           </motion.div>
-
-//           {/* Elegant Button */}
-//           <motion.div
-//             variants={{
-//               hidden: { opacity: 0, y: 20 },
-//               visible: { opacity: 1, y: 0 },
-//             }}
-//             className="pt-6"
-//           >
-//             <motion.a
-//               href="#details"
-//               whileHover={{ scale: 1.05 }}
-//               whileTap={{ scale: 0.95 }}
-//               className="inline-block px-10 py-4 bg-white/40 backdrop-blur-md border border-[#BC8A5F]/30 text-[#433E37] text-xs font-bold tracking-[0.2em] uppercase rounded-sm shadow-sm hover:shadow-xl hover:bg-[#BC8A5F] hover:text-white transition-all duration-500"
-//             >
-//               Explore Our Story
-//             </motion.a>
-//           </motion.div>
-//         </motion.div>
-//       </div>
-
-//       {/* Aesthetic Border Frame */}
-//       <div className="absolute inset-6 border-[0.5px] border-[#8C7851]/10 pointer-events-none z-40 hidden md:block" />
-//     </section>
-//   );
-// }
-
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -197,7 +63,7 @@ export default function HeroSectionWeddingVintage() {
       </div>
 
       {/* 2. OPTIONAL IMAGE LAYER */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: imageLoaded ? 0.25 : 0 }}
         className="absolute inset-0 z-10"
@@ -208,7 +74,7 @@ export default function HeroSectionWeddingVintage() {
           onLoad={() => setImageLoaded(true)}
           className="w-full h-full object-cover mix-blend-multiply filter sepia-[0.2] contrast-[0.8]"
         />
-      </motion.div>
+      </motion.div> */}
 
       {/* 3. SURPRISE UI: The "Living Flourishes" */}
       <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden">
