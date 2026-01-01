@@ -106,6 +106,7 @@ export default function LoveStoryModernSection() {
               src="/images/gallery1.jpg"
               alt="Main Story"
               fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
               className="object-cover grayscale-[0.2] sepia-[0.1]"
             />
           </motion.div>
@@ -122,6 +123,7 @@ export default function LoveStoryModernSection() {
               src="/images/gallery2.jpg"
               alt="Detail"
               fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
               className="object-cover"
             />
           </motion.div>
@@ -139,6 +141,7 @@ export default function LoveStoryModernSection() {
                 src="/images/gallery3.jpg"
                 alt="Polaroid"
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
                 className="object-cover saturate-50"
               />
             </div>
