@@ -59,7 +59,6 @@ export default function OriginTheme() {
           <GiftSectionOrigin />
         </section>
       </main>
-
       <BackToTop />
     </div>
   );
