@@ -69,8 +69,10 @@ export default function WeddingInfoModern() {
             The Celebration
           </span>
           <h2 className="text-4xl md:text-6xl font-light text-[#3D3831]">
-            Ngày{" "}
-            <span className="font-serif italic text-[#BC8A5F]">Trọng Đại</span>
+            {/* Ngày{" "} */}
+            <span className="font-serif italic text-[#BC8A5F]">
+              Ngày Trọng Đại
+            </span>
           </h2>
           <div className="w-12 h-[1px] bg-[#BC8A5F] mx-auto mt-6" />
         </motion.div>

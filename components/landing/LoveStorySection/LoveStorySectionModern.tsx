@@ -37,7 +37,7 @@ const FloatingLeaf = ({
 
 export default function LoveStoryModernSection() {
   return (
-    <section className="relative py-32 bg-[#FAF7F2] overflow-hidden">
+    <section id="info" className="relative py-32 bg-[#FAF7F2] overflow-hidden">
       {/* 1. Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
@@ -61,8 +61,10 @@ export default function LoveStoryModernSection() {
           </span>
 
           <h2 className="text-4xl md:text-6xl font-light text-[#3D3831] leading-tight mb-8">
-            Chuyện{" "}
-            <span className="font-serif italic text-[#BC8A5F]">chúng mình</span>
+            {/* Chuyện{" "} */}
+            <span className="font-serif italic text-[#BC8A5F]">
+              Chuyện chúng mình
+            </span>
           </h2>
 
           <div className="relative p-1 border-l border-[#BC8A5F]/30 pl-8">

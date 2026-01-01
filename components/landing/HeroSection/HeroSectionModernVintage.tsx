@@ -40,6 +40,7 @@ export default function HeroSectionWeddingVintage() {
   return (
     <section
       ref={containerRef}
+      id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#FAF7F2] selection:bg-[#D4A373] selection:text-white"
     >
       {/* 1. BACKGROUND GRADIENT & PETALS */}

@@ -20,8 +20,11 @@ export default function PlaylistSectionModern() {
               Our Playlist
             </span>
             <h2 className="text-4xl md:text-6xl font-light text-[#3D3831] leading-tight">
-              Giai Điệu <br />
-              <span className="font-serif italic text-[#BC8A5F]">Tình Yêu</span>
+              {/* Giai Điệu <br /> */}
+              <span className="font-serif italic text-[#BC8A5F]">
+                Giai Điệu <br />
+                Tình Yêu
+              </span>
             </h2>
 
             <div className="h-[1px] w-20 bg-[#BC8A5F]/40 my-8 mx-auto lg:mx-0" />

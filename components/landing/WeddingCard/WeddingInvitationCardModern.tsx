@@ -451,7 +451,10 @@ export default function WeddingInvitationCard() {
   const leafColors = ["#BC8A5F", "#A27B5C", "#D4A373"];
 
   return (
-    <section className="relative py-16 md:py-32 bg-[#FAF7F2] flex flex-col items-center overflow-hidden min-h-[750px]">
+    <section
+      id="card"
+      className="relative py-16 md:py-32 bg-[#FAF7F2] flex flex-col items-center overflow-hidden min-h-[750px]"
+    >
       {/* HEADER TƯƠNG TỰ HERO SECTION CỦA BẠN */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -462,7 +465,8 @@ export default function WeddingInvitationCard() {
           Private Invitation
         </span>
         <h2 className="text-4xl md:text-6xl font-light text-[#3D3831] tracking-tight">
-          Thiệp <span className="font-serif italic text-[#BC8A5F]">Cưới</span>
+          {/* Thiệp  */}
+          <span className="font-serif italic text-[#BC8A5F]">Thiệp Cưới</span>
         </h2>
       </motion.div>
 

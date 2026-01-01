@@ -56,7 +56,10 @@ export default function GalleryVintage() {
   const showMore = () => setVisibleCount((v) => v + (isMobile ? 4 : 6));
 
   return (
-    <section className="relative py-24 bg-[#FAF7F2] overflow-hidden">
+    <section
+      id="gallery"
+      className="relative py-24 bg-[#FAF7F2] overflow-hidden"
+    >
       <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')] pointer-events-none" />
 
       <div className="relative mx-auto max-w-6xl px-6">
@@ -76,9 +79,9 @@ export default function GalleryVintage() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-light text-[#3D3831]"
           >
-            Hành Trình{" "}
+            {/* Hành Trình{" "} */}
             <span className="font-serif italic text-[#BC8A5F]">
-              Của Chúng Tôi
+              Hành Trình Của Chúng Tôi
             </span>
           </motion.h2>
           <p className="mt-6 text-[#6a5647] font-serif italic max-w-2xl mx-auto opacity-80 text-lg">

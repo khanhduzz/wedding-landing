@@ -36,10 +36,7 @@ export default function GiftSectionModern() {
   }
 
   return (
-    <section
-      id="gift-vintage"
-      className="relative py-24 bg-[#FAF7F2] overflow-hidden"
-    >
+    <section id="gift" className="relative py-24 bg-[#FAF7F2] overflow-hidden">
       {/* Background Decor */}
       <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')] pointer-events-none" />
       <FloatingLeaf delay={0} x="15%" />
@@ -71,7 +68,8 @@ export default function GiftSectionModern() {
             Wedding Gift
           </span>
           <h2 className="font-serif italic text-4xl md:text-5xl text-[#3D3831] mb-6">
-            Gửi Trao <span className="text-[#BC8A5F]">Yêu Thương</span>
+            {/* Gửi Trao  */}
+            <span className="text-[#BC8A5F]">Gửi Trao Yêu Thương</span>
           </h2>
           <p className="text-[#6a5647] font-serif italic max-w-xl mx-auto opacity-80 leading-relaxed">
             Sự hiện diện của bạn là món quà quý giá nhất đối với chúng tôi. Nếu
@@ -85,13 +83,13 @@ export default function GiftSectionModern() {
             {
               acc: account1,
               bank: "Ngân hàng ACB",
-              name: "NGUYỄN VĂN A",
+              name: "Lorem",
               delay: 0,
             },
             {
               acc: account2,
               bank: "Ngân hàng Vietcombank",
-              name: "TRẦN THỊ B",
+              name: "Isbum",
               delay: 0.2,
             },
           ].map((item, idx) => (
@@ -110,7 +108,7 @@ export default function GiftSectionModern() {
                 <div className="relative mb-6">
                   <div className="absolute -inset-2 border border-[#BC8A5F]/20 rounded-2xl rotate-3" />
                   <img
-                    src="/qr/placeholder.png"
+                    src="/qr/qr-sample.png"
                     alt="QR"
                     className="relative z-10 w-40 h-40 rounded-xl shadow-sm bg-white p-2 object-contain"
                   />

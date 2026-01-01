@@ -67,7 +67,8 @@ export default function GuestbookModern() {
                 Guestbook
               </span>
               <h2 className="text-4xl md:text-5xl font-serif italic text-[#3D3831] mb-6">
-                Sổ <span className="text-[#BC8A5F]">Lưu Bút</span>
+                {/* Sổ  */}
+                <span className="text-[#BC8A5F]">Sổ Lưu Bút</span>
               </h2>
               <p className="text-[#6a5647] font-serif italic text-lg opacity-80 leading-relaxed">
                 Hãy gửi những lời chúc, kỷ niệm, hoặc thông điệp yêu thương dành

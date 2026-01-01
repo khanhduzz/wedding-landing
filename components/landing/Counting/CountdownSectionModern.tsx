@@ -82,9 +82,9 @@ export default function CountdownSectionModern() {
             Save The Date
           </span>
           <h2 className="text-4xl md:text-5xl font-light text-[#3D3831]">
-            Cùng đếm ngược{" "}
+            {/* Cùng đếm ngược{" "} */}
             <span className="font-serif italic text-[#BC8A5F]">
-              đến ngày vui...
+              Cùng đếm ngược đến ngày vui...
             </span>
           </h2>
           <div className="mt-6 flex items-center justify-center gap-4">

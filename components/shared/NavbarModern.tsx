@@ -6,10 +6,11 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const items = [
-  { href: "#hero", label: "Thiệp mời" },
+  { href: "#card", label: "Thiệp mời" },
   { href: "#info", label: "Câu chuyện" },
-  { href: "#timeline", label: "Dòng thời gian" },
+  { href: "#timeline", label: "Lịch trình" },
   { href: "#gallery", label: "Album" },
+  { href: "#gift", label: "Quà" },
 ];
 
 export default function NavbarModern() {
@@ -32,7 +33,7 @@ export default function NavbarModern() {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         <Link
-          href="/"
+          href="#hero"
           className="group relative flex items-center justify-center"
         >
           {/* 1. The Decorative Crest (SVG) */}
