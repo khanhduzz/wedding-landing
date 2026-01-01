@@ -1,5 +1,4 @@
 import BackToTop from "@/components/shared/BackToTop";
-import NavbarOrigin from "@/components/shared/NavbarOrigin";
 import CountdownSectionOrigin from "@/components/landing/Counting/CountdownSectionOrigin";
 import WeddingInfoOrigin from "@/components/landing/WeddingInformation/WeddingInfoOrigin";
 import WeddingInvitationCardOrigin from "@/components/landing/WeddingCard/WeddingInvitationCardOrigin";
@@ -7,7 +6,6 @@ import GallerySectionOrigin from "@/components/landing/GallerySection/GallerySec
 import PlaylistSectionOrigin from "@/components/landing/PlaylistSection/PlaylistSectionOrigin";
 import RSVPFormOrigin from "@/components/landing/RSVPForm/RSVPFormOrigin";
 import GiftSectionOrigin from "@/components/landing/GiftSection/GiftSectionOrigin";
-import FooterOrigin from "@/components/shared/FooterOrigin";
 import CalendarTimelineOrigin from "@/components/landing/CalendarTimeline/CalendarTimelineOrigin";
 import GuestbookOrigin from "../Guestbook/GuestBookOrigin";
 import HeroSectionOrigin from "@/components/landing/HeroSection/HeroSectionOrigin";
@@ -16,7 +14,6 @@ import LoveStorySectionOrigin from "@/components/landing/LoveStorySection/LoveSt
 export default function OriginTheme() {
   return (
     <div>
-      <NavbarOrigin />
       <main>
         <section id="hero">
           <HeroSectionOrigin />
@@ -26,27 +23,27 @@ export default function OriginTheme() {
           <LoveStorySectionOrigin />
         </section>
 
-        <section id="wedding-vintage">
+        <section id="countdown">
           <CountdownSectionOrigin />
         </section>
 
-        <section id="wedding-vintage">
+        <section id="info">
           <WeddingInfoOrigin />
         </section>
 
-        <section id="wedding-vintage">
+        <section id="invidation-card">
           <WeddingInvitationCardOrigin />
         </section>
 
-        <section id="gallery-vintage">
+        <section id="gallery">
           <GallerySectionOrigin />
         </section>
 
-        <section id="playlist-vintage">
+        <section id="playlist">
           <PlaylistSectionOrigin />
         </section>
 
-        <section id="calendar-timeline">
+        <section id="timeline">
           <CalendarTimelineOrigin />
         </section>
 
@@ -54,7 +51,7 @@ export default function OriginTheme() {
           <GuestbookOrigin />
         </section>
 
-        <section id="rsvp-vintage">
+        <section id="rsvp">
           <RSVPFormOrigin />
         </section>
 
@@ -64,7 +61,6 @@ export default function OriginTheme() {
       </main>
 
       <BackToTop />
-      <FooterOrigin />
     </div>
   );
 }

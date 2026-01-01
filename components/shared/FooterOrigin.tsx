@@ -21,7 +21,7 @@ const FloatingLeaf = ({ delay, x }: { delay: number; x: string }) => (
   </motion.svg>
 );
 
-export default function FooterOrigin() {
+export default function FooterOrigin({ dict }: { dict: any }) {
   return (
     <footer className="relative py-20 bg-[#FAF7F2] text-center overflow-hidden">
       {/* Texture & Leaves */}
@@ -29,7 +29,6 @@ export default function FooterOrigin() {
       <FloatingLeaf delay={1} x="20%" />
       <FloatingLeaf delay={5} x="75%" />
 
-      {/* Decorative Border Top - Mềm mại hơn */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#BC8A5F]/40 to-transparent" />
 
       <div className="relative max-w-3xl mx-auto px-6">
@@ -41,7 +40,7 @@ export default function FooterOrigin() {
         >
           <div className="w-12 h-12 rounded-full border border-[#BC8A5F]/30 flex items-center justify-center mb-4">
             <span className="text-[#BC8A5F] font-serif italic text-xl">
-              A&B
+              D&L
             </span>
           </div>
           <div className="w-[1px] h-10 bg-gradient-to-b from-[#BC8A5F]/40 to-transparent" />
@@ -52,17 +51,17 @@ export default function FooterOrigin() {
           whileInView={{ opacity: 1 }}
           className="text-[#3D3831] font-serif italic text-xl md:text-2xl mb-4 leading-relaxed"
         >
-          Cảm ơn bạn đã cùng chúng tôi chia sẻ ngày trọng đại này 💍
+          {dict.thankYou} 💍
         </motion.p>
 
         <p className="text-[#6a5647] font-serif italic opacity-70 text-base mb-10">
-          Mỗi lời chúc và nụ cười của bạn là món quà quý giá nhất.
+          {dict.subThankYou}
         </p>
 
         {/* Divider & Credits */}
         <div className="relative pt-10 border-t border-[#BC8A5F]/10">
           <p className="text-[#BC8A5F] text-[10px] font-bold tracking-[0.4em] uppercase mb-3">
-            © {new Date().getFullYear()} — Made with love
+            © {new Date().getFullYear()} — {dict.madeWithLove}
           </p>
 
           <div className="flex justify-center gap-6 mt-6">
@@ -70,7 +69,7 @@ export default function FooterOrigin() {
               href="/admin/login"
               className="text-[10px] font-bold tracking-widest text-[#3D3831]/40 hover:text-[#BC8A5F] transition-colors uppercase"
             >
-              Trang quản trị
+              {dict.adminLink}
             </a>
           </div>
         </div>

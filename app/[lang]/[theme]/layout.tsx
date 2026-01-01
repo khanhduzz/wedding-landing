@@ -1,23 +1,32 @@
-import Footer from "@/components/shared/Footer";
 import FooterOrigin from "@/components/shared/FooterOrigin";
-import Navbar from "@/components/shared/Navbar";
 import NavbarOrigin from "@/components/shared/NavbarOrigin";
 import { notFound } from "next/navigation";
 import { THEMES } from "@/constants/themes";
 
-export default function ThemeLayout({
+import { getDictionary } from "@/lib/get-dictionary";
+import NavbarYouth from "@/components/shared/NavbarYouth";
+import FooterYouth from "@/components/shared/FooterYouth";
+
+export default async function ThemeLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { theme: string };
+  params: { theme: string; lang: string };
 }) {
-  const { theme } = params;
+  const { theme, lang } = params;
+
+  const supportedLangs = ["vi", "en"];
+  if (!supportedLangs.includes(lang)) {
+    notFound();
+  }
+
+  const dict = await getDictionary(lang as "vi" | "en");
 
   const themeConfig = {
-    [THEMES.VINTAGE]: {
-      Navbar: Navbar,
-      Footer: Footer,
+    [THEMES.YOUTH]: {
+      Navbar: NavbarYouth,
+      Footer: FooterYouth,
     },
     [THEMES.ORIGIN]: {
       Navbar: NavbarOrigin,
@@ -35,9 +44,9 @@ export default function ThemeLayout({
 
   return (
     <div className={`theme-wrapper ${theme}-theme-styles`}>
-      <SelectedNavbar />
+      <SelectedNavbar dict={dict.navbar} lang={lang} />
       <main>{children}</main>
-      <SelectedFooter />
+      <SelectedFooter dict={dict.footer} />
     </div>
   );
 }

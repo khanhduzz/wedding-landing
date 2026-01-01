@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "gallery": "Album",
+    "timeline": "Timeline"
+  },
+"navbar": {
+    "card": "Invitation",
+    "story": "Our Story",
+    "timeline": "Timeline",
+    "gallery": "Gallery",
+    "gift": "Wedding Gift"
+  },
+  "hero": {
+    "title": "Our Journey",
+    "subTitle": "Sweet moments and unforgettable memories."
+  },
+  "footer": {
+    "thankYou": "Thank you for sharing our special day with us",
+    "subThankYou": "Every wish and smile from you is the most precious gift.",
+    "madeWithLove": "Made with love",
+    "adminLink": "Admin Panel"
+  }
+}

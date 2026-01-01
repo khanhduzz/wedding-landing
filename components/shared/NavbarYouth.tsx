@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, SwatchBook } from "lucide-react";
+import { Menu, X, SwatchBook, Pencil } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useParams, useRouter } from "next/navigation";
 import { THEMES } from "@/constants/themes";
 
-export default function NavbarOrigin({
+export default function NavbarYouth({
   dict,
   lang,
 }: {
@@ -20,10 +20,8 @@ export default function NavbarOrigin({
   const { theme } = useParams();
   const router = useRouter();
 
-  // Chỉ hiển thị 2 theme này ra UI
   const displayThemes = [THEMES.ORIGIN, THEMES.YOUTH];
 
-  // Danh sách menu sử dụng dict từ props
   const navItems = [
     { href: "#card", label: dict?.card || "" },
     { href: "#info", label: dict?.story || "" },
@@ -71,94 +69,82 @@ export default function NavbarOrigin({
   return (
     <nav
       ref={navRef}
-      className={`fixed top-0 inset-x-0 z-[100] transition-all duration-700 ${
+      className={`fixed top-0 inset-x-0 z-[100] transition-all duration-500 ${
         scrolled
-          ? "py-3 bg-white/70 backdrop-blur-lg border-b border-[#BC8A5F]/10 shadow-sm"
+          ? "py-3 bg-[#E3F2FD]/90 backdrop-blur-md border-b-2 border-dashed border-[#1E88E5]/30 shadow-md"
           : "py-6 bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo Section - GIỮ NGUYÊN HOÀN TOÀN */}
+        {/* Logo Section - Phong cách "Lớp học tình yêu" */}
         <Link
           href={`/${lang}/${theme}`}
           onClick={(e) => handleScrollTo(e, "#hero")}
-          className="group relative flex items-center justify-center"
+          className="group relative flex items-center gap-2"
         >
-          <div className="absolute inset-x-0 flex items-center justify-center pointer-events-none">
-            <motion.svg
-              className={`transition-all duration-500 ${
-                scrolled ? "w-16 h-16" : "w-20 h-20"
-              } text-[#BC8A5F]/20 group-hover:text-[#BC8A5F]/40`}
-              viewBox="0 0 100 100"
-            >
-              <path
-                d="M50,10 A40,40 0 1,1 49.9,10"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.5"
-                strokeDasharray="4 2"
-              />
-            </motion.svg>
+          <div className="bg-[#FFEB3B] p-2 rounded-lg rotate-3 group-hover:rotate-0 transition-transform">
+            <Pencil className="w-5 h-5 text-[#1E88E5]" />
           </div>
-          <div className="relative flex items-baseline gap-1 px-4 py-2">
-            <span className="font-serif text-2xl md:text-3xl tracking-tighter text-[#3D3831]">
-              D
-            </span>
+
+          <div className="flex flex-col">
+            <div className="relative flex items-baseline gap-1">
+              <span className="font-sans font-black text-2xl md:text-3xl tracking-tight text-[#1E88E5]">
+                D
+              </span>
+              <motion.span
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="font-serif italic text-xl md:text-2xl text-[#F4511E] mx-0.5"
+              >
+                +
+              </motion.span>
+              <span className="font-sans font-black text-2xl md:text-3xl tracking-tight text-[#1E88E5]">
+                L
+              </span>
+            </div>
             <motion.span
-              animate={{ opacity: [0.6, 1, 0.6], scale: [1, 1.05, 1] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="font-serif italic text-xl md:text-2xl text-[#BC8A5F] mx-0.5"
+              animate={{ opacity: scrolled ? 0 : 1 }}
+              className="text-[8px] font-bold uppercase tracking-wider text-[#1E88E5]/70"
             >
-              &
+              Ký ức thanh xuân
             </motion.span>
-            <span className="font-serif text-2xl md:text-3xl tracking-tighter text-[#3D3831]">
-              L
-            </span>
           </div>
-          <motion.div
-            animate={{ opacity: scrolled ? 0 : 1, y: scrolled ? -5 : 0 }}
-            className="absolute -bottom-2 whitespace-nowrap"
-          >
-            <span className="text-[7px] uppercase tracking-[0.4em] text-[#BC8A5F] font-bold">
-              Hà Nội — Sài Gòn
-            </span>
-          </motion.div>
         </Link>
 
         {/* Desktop Nav + Theme Switcher */}
-        <div className="hidden md:flex items-center gap-8">
-          <div className="flex items-center gap-8 border-r border-[#BC8A5F]/20 pr-8">
+        <div className="hidden md:flex items-center gap-6">
+          <div className="flex items-center gap-6 border-r-2 border-dotted border-[#1E88E5]/20 pr-6">
             {navItems.map((it) => (
               <a
                 key={it.href}
                 href={it.href}
                 onClick={(e) => handleScrollTo(e, it.href)}
-                className="group relative text-[10px] uppercase tracking-[0.3em] font-bold text-[#3D3831] transition-colors hover:text-[#BC8A5F]"
+                className="group relative text-[11px] uppercase tracking-wider font-black text-[#1E88E5] transition-all hover:scale-110"
               >
                 {it.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#BC8A5F] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[#FFEB3B] -z-10 group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </div>
 
-          {/* THEME SWITCHER VỚI HIỆU ỨNG TRƯỢT */}
-          <div className="flex bg-[#3D3831]/5 p-1 rounded-full relative">
+          {/* THEME SWITCHER VỚI TONE MÀU NĂNG ĐỘNG */}
+          <div className="flex bg-[#1E88E5]/10 p-1 rounded-xl relative border border-[#1E88E5]/20">
             {displayThemes.map((t) => (
               <button
                 key={t}
                 type="button"
                 onClick={() => router.push(`/${lang}/${t}`)}
-                className={`relative z-10 px-4 py-1.5 text-[9px] uppercase tracking-widest transition-colors duration-500 ${
+                className={`relative z-10 px-4 py-1.5 text-[9px] uppercase font-black transition-colors duration-500 ${
                   theme === t
                     ? "text-white"
-                    : "text-[#3D3831]/60 hover:text-[#3D3831]"
+                    : "text-[#1E88E5]/60 hover:text-[#1E88E5]"
                 }`}
               >
                 <span className="relative z-10">{t}</span>
                 {theme === t && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute inset-0 bg-[#BC8A5F] rounded-full"
+                    className="absolute inset-0 bg-[#1E88E5] rounded-lg"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -166,17 +152,17 @@ export default function NavbarOrigin({
             ))}
           </div>
 
-          {/* Language Switcher (Desktop) */}
-          <div className="flex gap-2 ml-2">
+          {/* Language Switcher */}
+          <div className="flex bg-white/50 rounded-lg p-1 gap-1">
             {["vi", "en"].map((l) => (
               <button
                 key={l}
                 type="button"
                 onClick={() => toggleLanguage(l)}
-                className={`text-[10px] uppercase font-bold transition-colors ${
+                className={`px-2 py-0.5 text-[10px] uppercase font-bold rounded ${
                   lang === l
-                    ? "text-[#BC8A5F]"
-                    : "text-[#3D3831]/40 hover:text-[#BC8A5F]"
+                    ? "bg-[#F4511E] text-white"
+                    : "text-[#1E88E5]/40 hover:bg-[#1E88E5]/10"
                 }`}
               >
                 {l}
@@ -186,44 +172,34 @@ export default function NavbarOrigin({
         </div>
 
         {/* Mobile Actions */}
-        <div className="md:hidden flex items-center gap-4">
-          {/* Quick Language Toggle */}
+        <div className="md:hidden flex items-center gap-3">
           <button
             type="button"
             onClick={() => toggleLanguage(lang === "vi" ? "en" : "vi")}
-            className="text-[#BC8A5F] p-2 bg-[#BC8A5F]/5 rounded-full active:scale-90 transition-transform"
+            className="text-white font-black text-[10px] w-8 h-8 flex items-center justify-center bg-[#F4511E] rounded-full shadow-lg active:scale-90"
           >
-            <span className="text-[10px] font-bold uppercase">
-              {lang === "vi" ? "EN" : "VI"}
-            </span>
+            {lang === "vi" ? "EN" : "VI"}
           </button>
 
-          {/* Quick Theme Toggle */}
           <button
             type="button"
+            aria-label="Toggle Theme"
             onClick={() =>
               router.push(
-                `/${lang}/${
-                  theme === THEMES.YOUTH ? THEMES.ORIGIN : THEMES.YOUTH
-                }`
+                `/${lang}/${theme === THEMES.YOUTH ? THEMES.ORIGIN : THEMES.YOUTH}`
               )
             }
-            className="text-[#BC8A5F] p-2 bg-[#BC8A5F]/5 rounded-full active:scale-90 transition-transform focus:outline-none"
-            aria-label="Toggle Theme"
+            className="text-[#1E88E5] p-2 bg-[#FFEB3B] rounded-lg shadow-sm active:scale-90"
           >
-            <SwatchBook size={18} strokeWidth={1.5} />
+            <SwatchBook size={18} />
           </button>
 
           <button
             type="button"
-            className="text-[#3D3831] transition-transform active:scale-90 focus:outline-none"
+            className="text-[#1E88E5] bg-white p-2 rounded-lg shadow-sm border border-[#1E88E5]/20"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            {menuOpen ? (
-              <X size={24} strokeWidth={1.5} />
-            ) : (
-              <Menu size={24} strokeWidth={1.5} />
-            )}
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
@@ -232,48 +208,44 @@ export default function NavbarOrigin({
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute top-full inset-x-0 bg-[#FAF7F2]/95 backdrop-blur-xl border-b border-[#BC8A5F]/20 shadow-2xl md:hidden overflow-hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full inset-x-0 bg-[#E3F2FD] border-b-4 border-[#1E88E5] md:hidden overflow-hidden shadow-2xl"
           >
             <div className="flex flex-col items-center py-10 space-y-6">
               {navItems.map((it, idx) => (
                 <motion.a
                   key={it.href}
                   href={it.href}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.05 }}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: idx * 0.1 }}
                   onClick={(e) => handleScrollTo(e, it.href)}
-                  className="text-[#3D3831] text-sm uppercase tracking-[0.4em] font-medium hover:text-[#BC8A5F] py-1 w-full text-center"
+                  className="text-[#1E88E5] text-lg font-black uppercase tracking-widest hover:text-[#F4511E]"
                 >
                   {it.label}
                 </motion.a>
               ))}
 
-              <div className="pt-4 flex flex-col items-center gap-6 w-full px-12">
-                <div className="w-full h-[0.5px] bg-[#BC8A5F]/20" />
-
-                {/* Theme Selector in Mobile Menu */}
-                <div className="flex bg-[#3D3831]/5 p-1 rounded-full w-full max-w-[240px] relative">
+              <div className="pt-6 w-full px-12 space-y-6">
+                <div className="h-1 bg-dotted-pattern" />{" "}
+                {/* Giả lập đường kẻ vở */}
+                <div className="flex bg-white p-1 rounded-xl relative shadow-inner">
                   {displayThemes.map((t) => (
                     <button
                       key={t}
                       type="button"
                       onClick={() => router.push(`/${lang}/${t}`)}
-                      className={`flex-1 relative z-10 py-2 text-[10px] uppercase tracking-[0.2em] transition-colors duration-500 ${
-                        theme === t
-                          ? "text-white font-bold"
-                          : "text-[#3D3831]/50"
+                      className={`flex-1 relative z-10 py-3 text-[10px] uppercase font-black transition-colors ${
+                        theme === t ? "text-white" : "text-[#1E88E5]/50"
                       }`}
                     >
                       {t}
                       {theme === t && (
                         <motion.div
                           layoutId="activeTabMobile"
-                          className="absolute inset-0 bg-[#BC8A5F] rounded-full -z-10"
+                          className="absolute inset-0 bg-[#1E88E5] rounded-lg -z-10"
                         />
                       )}
                     </button>

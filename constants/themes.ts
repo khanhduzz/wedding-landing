@@ -1,6 +1,6 @@
 // constants/themes.ts
 export const THEMES = {
-  VINTAGE: "vintage",
+  YOUTH: "youth",
   ORIGIN: "origin",
 } as const;
 

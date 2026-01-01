@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "gallery": "Album",
+    "timeline": "Lịch trình"
+  },
+  "navbar": {
+    "card": "Thiệp mời",
+    "story": "Câu chuyện",
+    "timeline": "Lịch trình",
+    "gallery": "Album ảnh",
+    "gift": "Mừng cưới"
+  },
+  "hero": {
+    "title": "Hành Trình Của Chúng Tôi",
+    "subTitle": "Những khoảnh khắc ngọt ngào và kỷ niệm đáng nhớ."
+  },
+  "footer": {
+    "thankYou": "Cảm ơn bạn đã cùng chúng tôi chia sẻ ngày trọng đại này",
+    "subThankYou": "Mỗi lời chúc và nụ cười của bạn là món quà quý giá nhất.",
+    "madeWithLove": "Made with love",
+    "adminLink": "Trang quản trị"
+  }
+}
