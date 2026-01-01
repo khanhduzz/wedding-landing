@@ -20,7 +20,7 @@ const FloatingLeaf = ({ delay, x }: { delay: number; x: string }) => (
   </motion.svg>
 );
 
-export default function RSVPFormModern() {
+export default function RSVPFormOrigin() {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -71,10 +71,8 @@ export default function RSVPFormModern() {
 
         {/* Form Card Container */}
         <div className="relative">
-          {/* Lớp bóng đổ mềm mại dưới cùng (Soft Layered Shadow) */}
           <div className="absolute -inset-4 bg-[#E9DCC9]/20 rounded-[3.5rem] blur-2xl pointer-events-none" />
 
-          {/* Lớp nền phụ tạo hiệu ứng giấy (Paper Stack) */}
           <div className="absolute inset-0 bg-[#E9DCC9]/30 rounded-[3rem] rotate-1 pointer-events-none" />
 
           {/* Main Card */}
@@ -84,7 +82,6 @@ export default function RSVPFormModern() {
             viewport={{ once: true }}
             className="relative bg-white/80 backdrop-blur-xl rounded-[3rem] shadow-[0_40px_100px_rgba(61,56,49,0.07)] border border-white p-10 md:p-16 overflow-hidden"
           >
-            {/* Họa tiết Botanical nhỏ ở góc */}
             <div className="absolute -top-10 -right-10 w-48 h-48 opacity-[0.05] pointer-events-none rotate-12">
               <svg
                 viewBox="0 0 100 100"
@@ -195,7 +192,6 @@ export default function RSVPFormModern() {
                 </div>
               </div>
 
-              {/* Nút bấm Fill Background đặc trưng */}
               <div className="pt-4 text-center">
                 <motion.button
                   type="submit"

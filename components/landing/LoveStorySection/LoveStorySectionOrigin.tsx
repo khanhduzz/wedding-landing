@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// Reusing your high-visibility leaf for consistency
 const FloatingLeaf = ({
   delay,
   x,
@@ -35,7 +34,7 @@ const FloatingLeaf = ({
   </motion.svg>
 );
 
-export default function LoveStoryModernSection() {
+export default function LoveStorySectionOrigin() {
   return (
     <section id="info" className="relative py-32 bg-[#FAF7F2] overflow-hidden">
       {/* 1. Background Decor */}

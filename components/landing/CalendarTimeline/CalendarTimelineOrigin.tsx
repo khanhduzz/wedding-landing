@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function CalendarTimelineSection() {
+export default function CalendarTimelineOrigin() {
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   const dates = Array.from({ length: 31 }, (_, i) => i + 1);
   const highlightDay = 20;
@@ -41,7 +41,6 @@ export default function CalendarTimelineSection() {
       id="timeline"
       className="relative py-24 bg-[#FAF7F2] overflow-hidden"
     >
-      {/* Họa tiết Botanical cong mềm mại ở các góc nền */}
       <div className="absolute top-0 right-0 w-64 h-64 opacity-10 pointer-events-none">
         <svg
           viewBox="0 0 100 100"
@@ -55,7 +54,7 @@ export default function CalendarTimelineSection() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-        {/* === CỘT TRÁI: CALENDAR === */}
+        {/* === LEFT: CALENDAR === */}
         <div className="relative flex flex-col items-center">
           <div className="absolute -inset-4 bg-[#E9DCC9]/30 rounded-[3rem] rotate-2 blur-sm pointer-events-none" />
 
@@ -89,7 +88,6 @@ export default function CalendarTimelineSection() {
                         initial={{ scale: 0 }}
                         animate={{ scale: 1.1 }}
                       />
-                      {/* Thêm lại text Lễ cưới dưới ngày highlight */}
                       <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-serif italic text-[#3D3831] whitespace-nowrap">
                         Lễ cưới
                       </span>
@@ -105,13 +103,12 @@ export default function CalendarTimelineSection() {
             </div>
           </div>
 
-          {/* Thêm lại text mời dự tiệc */}
           <p className="text-[#6a5647] font-serif italic text-lg mt-14 opacity-80 text-center leading-relaxed">
             Thân mời quý khách đến dự lễ cưới thân mật
           </p>
         </div>
 
-        {/* === CỘT PHẢI: TIMELINE & DRESSCODE === */}
+        {/* === RIGHT: TIMELINE & DRESSCODE === */}
         <div className="flex flex-col space-y-16">
           <div className="space-y-10">
             <div className="text-center lg:text-left">
@@ -149,7 +146,7 @@ export default function CalendarTimelineSection() {
             </div>
           </div>
 
-          {/* Dresscode với hiệu ứng Hover đẹp và thêm text chú thích */}
+          {/* Dresscode */}
           <div className="bg-[#E9DCC9]/20 p-10 rounded-[2.5rem] border border-[#BC8A5F]/10 text-center">
             <h4 className="font-serif italic text-[#3D3831] mb-10 text-2xl md:text-3xl">
               Dress code
@@ -162,7 +159,7 @@ export default function CalendarTimelineSection() {
                     className="block w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg border-4 border-white cursor-pointer relative"
                     style={{ backgroundColor: color.hex, zIndex: 10 - i }}
                   />
-                  {/* Hiệu ứng hover hiện tên màu sang trọng */}
+
                   <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 z-50 pointer-events-none">
                     <span className="text-[10px] font-bold text-[#BC8A5F] tracking-widest uppercase whitespace-nowrap bg-white px-2 py-1 rounded shadow-sm border border-[#BC8A5F]/10">
                       {color.label}
@@ -171,7 +168,7 @@ export default function CalendarTimelineSection() {
                 </div>
               ))}
             </div>
-            {/* Thêm lại dòng text chú thích dresscode */}
+
             <p className="text-[#6a5647] font-serif italic opacity-60 text-sm">
               Để những khung hình thêm phần đồng điệu
             </p>

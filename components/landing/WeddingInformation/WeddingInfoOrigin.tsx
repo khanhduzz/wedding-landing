@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// Reusing the consistent high-visibility leaf
 const FloatingLeaf = ({
   delay,
   x,
@@ -30,7 +29,7 @@ const FloatingLeaf = ({
   </motion.svg>
 );
 
-export default function WeddingInfoModern() {
+export default function WeddingInfoOrigin() {
   const places = [
     {
       title: "Lễ Thành Hôn",

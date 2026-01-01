@@ -29,7 +29,7 @@ const FloatingPetal = ({ delay, x }: { delay: number; x: string }) => (
   </motion.svg>
 );
 
-export default function HeroSectionWeddingVintage() {
+export default function HeroSectionOrigin() {
   const [imageLoaded, setImageLoaded] = useState(false);
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
@@ -63,21 +63,7 @@ export default function HeroSectionWeddingVintage() {
         <FloatingPetal delay={3} x="90%" />
       </div>
 
-      {/* 2. OPTIONAL IMAGE LAYER */}
-      {/* <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: imageLoaded ? 0.25 : 0 }}
-        className="absolute inset-0 z-10"
-      >
-        <img
-          src="/images/gallery3.jpg"
-          alt="Wedding backdrop"
-          onLoad={() => setImageLoaded(true)}
-          className="w-full h-full object-cover mix-blend-multiply filter sepia-[0.2] contrast-[0.8]"
-        />
-      </motion.div> */}
-
-      {/* 3. SURPRISE UI: The "Living Flourishes" */}
+      {/* 2.SURPRISE UI: The "Living Flourishes" */}
       <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden">
         {/* Top Right Botanical Line - Color darkened for visibility */}
         <motion.svg
@@ -115,11 +101,11 @@ export default function HeroSectionWeddingVintage() {
         </motion.svg>
       </div>
 
-      {/* 4. TEXTURE & VIGNETTE */}
+      {/* 3. TEXTURE & VIGNETTE */}
       <div className="absolute inset-0 z-25 pointer-events-none shadow-[inset_0_0_150px_rgba(0,0,0,0.05)]" />
       <div className="absolute inset-0 opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-30 pointer-events-none" />
 
-      {/* 5. MAIN CONTENT */}
+      {/* 4. MAIN CONTENT */}
       <motion.div
         style={{ y: textY }}
         className="relative z-40 flex flex-col items-center px-6"
@@ -196,7 +182,7 @@ export default function HeroSectionWeddingVintage() {
         </motion.div>
       </motion.div>
 
-      {/* 6. OUTER BORDER FRAME */}
+      {/* 5. OUTER BORDER FRAME */}
       <div className="absolute inset-8 border border-[#D4A373]/30 pointer-events-none z-50 rounded-sm" />
     </section>
   );

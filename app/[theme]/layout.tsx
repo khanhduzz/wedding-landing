@@ -1,8 +1,9 @@
 import Footer from "@/components/shared/Footer";
-import FooterModern from "@/components/shared/FooterModern";
+import FooterOrigin from "@/components/shared/FooterOrigin";
 import Navbar from "@/components/shared/Navbar";
-import NavbarModern from "@/components/shared/NavbarModern";
+import NavbarOrigin from "@/components/shared/NavbarOrigin";
 import { notFound } from "next/navigation";
+import { THEMES } from "@/constants/themes";
 
 export default function ThemeLayout({
   children,
@@ -13,20 +14,30 @@ export default function ThemeLayout({
 }) {
   const { theme } = params;
 
-  // Validation
-  const isValidTheme = theme === "vintage" || theme === "origin";
-  if (!isValidTheme) notFound();
+  const themeConfig = {
+    [THEMES.VINTAGE]: {
+      Navbar: Navbar,
+      Footer: Footer,
+    },
+    [THEMES.ORIGIN]: {
+      Navbar: NavbarOrigin,
+      Footer: FooterOrigin,
+    },
+  };
+
+  const currentConfig = themeConfig[theme as keyof typeof themeConfig];
+
+  if (!currentConfig) {
+    notFound();
+  }
+
+  const { Navbar: SelectedNavbar, Footer: SelectedFooter } = currentConfig;
 
   return (
     <div className={`theme-wrapper ${theme}-theme-styles`}>
-      {/* 1. Conditional Navbar */}
-      {theme === "vintage" ? <Navbar /> : <NavbarModern />}
-
-      {/* 2. Page Content */}
+      <SelectedNavbar />
       <main>{children}</main>
-
-      {/* 3. Conditional Footer */}
-      {theme === "vintage" ? <Footer /> : <FooterModern />}
+      <SelectedFooter />
     </div>
   );
 }

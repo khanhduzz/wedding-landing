@@ -1,14 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 
-export default function PlaylistSectionModern() {
+export default function PlaylistSectionOrigin() {
   return (
     <section className="relative bg-[#FAF7F2] py-24 px-6 lg:px-12 overflow-hidden">
-      {/* Texture nền & Họa tiết trang trí mờ */}
       <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')] pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-        {/* CỘT TRÁI: NỘI DUNG CHỮ */}
+        {/* LEFT: CONTENT */}
         <div className="lg:w-1/2 text-center lg:text-left space-y-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -42,7 +41,7 @@ export default function PlaylistSectionModern() {
           </motion.div>
         </div>
 
-        {/* CỘT PHẢI: VIDEO (FRAME STYLE) */}
+        {/* RIGHT: VIDEO (FRAME STYLE) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -51,7 +50,6 @@ export default function PlaylistSectionModern() {
           className="lg:w-1/2 w-full"
         >
           <div className="relative group">
-            {/* Hiệu ứng bóng đổ và khung ảnh Vintage */}
             <div className="absolute -inset-4 bg-[#BC8A5F]/10 rounded-sm blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
             <div className="relative bg-white p-3 md:p-4 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-[#d9b99b]/20 rounded-sm">
@@ -64,12 +62,10 @@ export default function PlaylistSectionModern() {
                   allowFullScreen
                 />
 
-                {/* Lớp viền mỏng nội khu trang trí */}
                 <div className="absolute inset-4 border border-white/10 pointer-events-none" />
               </div>
             </div>
 
-            {/* Họa tiết Botanical nhỏ ở góc khung video */}
             <svg
               className="absolute -bottom-6 -right-6 w-24 h-24 text-[#BC8A5F]/30 rotate-12"
               viewBox="0 0 100 100"

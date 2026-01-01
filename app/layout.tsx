@@ -25,7 +25,7 @@ const greatVibes = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yourdomain.com"),
-  title: "Loving",
+  title: "For BAE",
   description: "Welcome to our wedding website!",
   openGraph: {
     title: "Our Wedding",

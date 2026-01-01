@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 
-// Hiệu ứng lá rơi đồng bộ màu đậm cho đoạn kết
 const FloatingLeaf = ({ delay, x }: { delay: number; x: string }) => (
   <motion.svg
     initial={{ y: -20, opacity: 0, rotate: 0 }}
@@ -22,7 +21,7 @@ const FloatingLeaf = ({ delay, x }: { delay: number; x: string }) => (
   </motion.svg>
 );
 
-export default function FooterModern() {
+export default function FooterOrigin() {
   return (
     <footer className="relative py-20 bg-[#FAF7F2] text-center overflow-hidden">
       {/* Texture & Leaves */}
@@ -34,7 +33,7 @@ export default function FooterModern() {
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#BC8A5F]/40 to-transparent" />
 
       <div className="relative max-w-3xl mx-auto px-6">
-        {/* Logo/Icon trung tâm */}
+        {/* Logo/Icon */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -48,7 +47,6 @@ export default function FooterModern() {
           <div className="w-[1px] h-10 bg-gradient-to-b from-[#BC8A5F]/40 to-transparent" />
         </motion.div>
 
-        {/* Cảm ơn chính */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -78,7 +76,6 @@ export default function FooterModern() {
         </div>
       </div>
 
-      {/* Trang trí Botanical cuối trang */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 opacity-5 pointer-events-none w-full max-w-4xl">
         <svg
           viewBox="0 0 1000 100"

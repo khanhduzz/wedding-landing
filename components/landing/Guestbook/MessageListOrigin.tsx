@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
-export default function MessageListModern() {
+export default function MessageListOrigin() {
   const { data } = useSWR("/api/messages", fetcher, {
     refreshInterval: 15_000,
   });
@@ -25,7 +25,6 @@ export default function MessageListModern() {
                   transition={{ delay: i * 0.05 }}
                   className="relative group pb-4 border-b border-[#BC8A5F]/10 last:border-0"
                 >
-                  {/* Header: Tên khách & Ngày tháng (Gọn hơn) */}
                   <div className="flex justify-between items-baseline mb-1">
                     <div className="flex items-center gap-2">
                       <span className="font-serif italic text-lg text-[#3D3831] font-semibold">
@@ -42,7 +41,6 @@ export default function MessageListModern() {
                     </span>
                   </div>
 
-                  {/* Nội dung: Gọn gàng và súc tích */}
                   <div className="relative pl-4 border-l border-[#BC8A5F]/20">
                     <p className="text-[#5E584F] font-serif italic text-sm md:text-base leading-relaxed">
                       {m.message}

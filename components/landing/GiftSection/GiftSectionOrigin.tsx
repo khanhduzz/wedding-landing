@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Hiệu ứng lá rơi đồng bộ màu đậm
 const FloatingLeaf = ({ delay, x }: { delay: number; x: string }) => (
   <motion.svg
     initial={{ y: -20, opacity: 0, rotate: 0 }}
@@ -23,7 +22,7 @@ const FloatingLeaf = ({ delay, x }: { delay: number; x: string }) => (
   </motion.svg>
 );
 
-export default function GiftSectionModern() {
+export default function GiftSectionOrigin() {
   const [copied, setCopied] = useState(false);
 
   const account1 = "1234 5678 9012";
@@ -36,13 +35,13 @@ export default function GiftSectionModern() {
   }
 
   return (
-    <section id="gift" className="relative py-24 bg-[#FAF7F2] overflow-hidden">
+    <section className="relative py-24 bg-[#FAF7F2] overflow-hidden">
       {/* Background Decor */}
       <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')] pointer-events-none" />
       <FloatingLeaf delay={0} x="15%" />
       <FloatingLeaf delay={6} x="80%" />
 
-      {/* Toast thông báo mềm mại */}
+      {/* Toast */}
       <AnimatePresence>
         {copied && (
           <motion.div
@@ -101,7 +100,6 @@ export default function GiftSectionModern() {
               viewport={{ once: true }}
               className="relative group w-full max-w-[320px] mx-auto"
             >
-              {/* Lớp nền layering mượt mà */}
               <div className="absolute -inset-3 bg-[#E9DCC9]/40 rounded-[3rem] rotate-2 group-hover:rotate-0 transition-transform duration-500 pointer-events-none" />
 
               <div className="relative bg-white/70 backdrop-blur-md p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(188,138,95,0.08)] border border-white flex flex-col h-full items-center">
@@ -123,7 +121,6 @@ export default function GiftSectionModern() {
                   </p>
                 </div>
 
-                {/* Nút bấm Fill Background đặc trưng */}
                 <motion.button
                   whileHover={{ y: -3 }}
                   whileTap={{ scale: 0.95 }}
@@ -142,7 +139,6 @@ export default function GiftSectionModern() {
         </div>
       </div>
 
-      {/* Họa tiết trang trí Botanical mờ */}
       <div className="absolute bottom-[-5%] left-[-5%] w-64 h-64 opacity-10 pointer-events-none -rotate-45">
         <svg
           viewBox="0 0 100 100"

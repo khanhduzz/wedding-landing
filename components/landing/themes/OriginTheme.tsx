@@ -1,105 +1,70 @@
-import dynamic from "next/dynamic";
-import Navbar from "@/components/shared/Navbar";
-import HeroSection from "@/components/landing/HeroSection";
-import LoveStorySection from "@/components/landing/LoveStorySection";
-import CalendarTimelineSection from "@/components/landing/CalendarTimelineSection";
-import WeddingInfoVintage from "@/components/landing/WeddingInfoVintage";
-import CountdownSectionVintage from "@/components/landing/CountdownSectionVintage";
-import PlaylistVintageSection from "@/components/landing/PlaylistVintageSection";
-import RSVPFormVintage from "@/components/landing/RSVPFormVintage";
-import GuestbookVintage from "@/components/landing/Guestbook/GuestbookVintage";
-import GiftSectionVintage from "@/components/landing/GiftSectionVintage";
-import FooterVintage from "@/components/shared/FooterVintage";
 import BackToTop from "@/components/shared/BackToTop";
-import WeddingInvitationCard from "@/components/landing/WeddingInvitationCard";
-import HeroSectionModernVintage from "@/components/landing/HeroSection/HeroSectionModernVintage";
-import NavbarModern from "@/components/shared/NavbarModern";
-import LoveStoryModernSection from "@/components/landing/LoveStorySection/LoveStorySectionModern";
-import CountdownSectionModern from "@/components/landing/Counting/CountdownSectionModern";
-import WeddingInfoModern from "@/components/landing/WeddingInformation/WeddingInfoModern";
-import WeddingInvitationCardModern from "@/components/landing/WeddingCard/WeddingInvitationCardModern";
-import GallerySectionModern from "@/components/landing/GallerySection/GallerySectionModern";
-import PlaylistSectionModern from "@/components/landing/PlaylistSection/PlaylistSectionModern";
-import CalendarTimelineModern from "@/components/landing/CalendarTimeline/CalendarTimelineModern";
-import RSVPFormModern from "@/components/landing/RSVPForm/RSVPFormModern";
-import GuestbookModern from "@/components/landing/Guestbook/GuestBookModern";
-import GiftSectionModern from "@/components/landing/GiftSection/GiftSectionModern";
-import FooterModern from "@/components/shared/FooterModern";
-
-const Gallery = dynamic(() => import("@/components/landing/Gallery"), {
-  ssr: false,
-});
-const PlaylistSection = dynamic(
-  () => import("@/components/landing/PlaylistSection"),
-  { ssr: false }
-);
-const MessageForm = dynamic(
-  () => import("@/components/landing/Guestbook/MessageForm"),
-  { ssr: false }
-);
-const GiftSection = dynamic(() => import("@/components/landing/GiftSection"), {
-  ssr: false,
-});
-const RSVPForm = dynamic(() => import("@/components/landing/RSVPForm"), {
-  ssr: false,
-});
-const GalleryVintage = dynamic(
-  () => import("@/components/landing/GalleryVintage"),
-  { ssr: false }
-);
+import NavbarOrigin from "@/components/shared/NavbarOrigin";
+import CountdownSectionOrigin from "@/components/landing/Counting/CountdownSectionOrigin";
+import WeddingInfoOrigin from "@/components/landing/WeddingInformation/WeddingInfoOrigin";
+import WeddingInvitationCardOrigin from "@/components/landing/WeddingCard/WeddingInvitationCardOrigin";
+import GallerySectionOrigin from "@/components/landing/GallerySection/GallerySectionOrigin";
+import PlaylistSectionOrigin from "@/components/landing/PlaylistSection/PlaylistSectionOrigin";
+import RSVPFormOrigin from "@/components/landing/RSVPForm/RSVPFormOrigin";
+import GiftSectionOrigin from "@/components/landing/GiftSection/GiftSectionOrigin";
+import FooterOrigin from "@/components/shared/FooterOrigin";
+import CalendarTimelineOrigin from "@/components/landing/CalendarTimeline/CalendarTimelineOrigin";
+import GuestbookOrigin from "../Guestbook/GuestBookOrigin";
+import HeroSectionOrigin from "@/components/landing/HeroSection/HeroSectionOrigin";
+import LoveStorySectionOrigin from "@/components/landing/LoveStorySection/LoveStorySectionOrigin";
 
 export default function OriginTheme() {
   return (
     <div>
-      <NavbarModern />
+      <NavbarOrigin />
       <main>
         <section id="hero">
-          <HeroSectionModernVintage />
+          <HeroSectionOrigin />
         </section>
 
         <section id="love-story">
-          <LoveStoryModernSection />
+          <LoveStorySectionOrigin />
         </section>
 
         <section id="wedding-vintage">
-          <CountdownSectionModern />
+          <CountdownSectionOrigin />
         </section>
 
         <section id="wedding-vintage">
-          <WeddingInfoModern />
+          <WeddingInfoOrigin />
         </section>
 
         <section id="wedding-vintage">
-          <WeddingInvitationCardModern />
+          <WeddingInvitationCardOrigin />
         </section>
 
         <section id="gallery-vintage">
-          <GallerySectionModern />
+          <GallerySectionOrigin />
         </section>
 
         <section id="playlist-vintage">
-          <PlaylistSectionModern />
+          <PlaylistSectionOrigin />
         </section>
 
         <section id="calendar-timeline">
-          <CalendarTimelineModern />
+          <CalendarTimelineOrigin />
         </section>
 
         <section id="guestbook">
-          <GuestbookModern />
+          <GuestbookOrigin />
         </section>
 
         <section id="rsvp-vintage">
-          <RSVPFormModern />
+          <RSVPFormOrigin />
         </section>
 
-        <section id="gift-vintage">
-          <GiftSectionModern />
+        <section id="gift">
+          <GiftSectionOrigin />
         </section>
       </main>
 
       <BackToTop />
-      <FooterModern />
+      <FooterOrigin />
     </div>
   );
 }

@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-// Floating Leaf Component for consistency
 const FloatingLeaf = ({
   delay,
   x,
@@ -34,7 +33,7 @@ const FloatingLeaf = ({
   </motion.svg>
 );
 
-export default function CountdownSectionModern() {
+export default function CountdownSectionOrigin() {
   const weddingDate = new Date("2026-01-20T10:00:00");
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
