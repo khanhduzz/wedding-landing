@@ -39,7 +39,7 @@ export default function LoveStorySectionOrigin({ dict }: { dict: any }) {
   const s = dict.story;
 
   return (
-    <section id="info" className="relative py-32 bg-[#FAF7F2] overflow-hidden">
+    <section className="relative py-32 bg-[#FAF7F2] overflow-hidden">
       {/* 1. Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 

@@ -24,7 +24,7 @@ export default function NavbarYouth({
 
   const navItems = [
     { href: "#card", label: dict?.card || "" },
-    { href: "#info", label: dict?.story || "" },
+    { href: "#story", label: dict?.story || "" },
     { href: "#timeline", label: dict?.timeline || "" },
     { href: "#gallery", label: dict?.gallery || "" },
     { href: "#gift", label: dict?.gift || "" },

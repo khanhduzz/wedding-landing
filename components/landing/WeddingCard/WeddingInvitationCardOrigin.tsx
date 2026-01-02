@@ -38,10 +38,7 @@ export default function WeddingInvitationCard({ dict }: { dict: any }) {
   const inv = dict.invitation;
 
   return (
-    <section
-      id="card"
-      className="relative py-16 md:py-32 bg-[#FAF7F2] flex flex-col items-center overflow-hidden min-h-[750px]"
-    >
+    <section className="relative py-16 md:py-32 bg-[#FAF7F2] flex flex-col items-center overflow-hidden min-h-[750px]">
       {/* HEADER */}
       <motion.div
         initial={{ opacity: 0 }}

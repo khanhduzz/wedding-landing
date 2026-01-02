@@ -19,7 +19,7 @@ export default function OriginTheme({ dict }: { dict: any }) {
           <HeroSectionOrigin dict={dict} />
         </section>
 
-        <section id="love-story">
+        <section id="story">
           <LoveStorySectionOrigin dict={dict} />
         </section>
 
@@ -31,7 +31,7 @@ export default function OriginTheme({ dict }: { dict: any }) {
           <WeddingInfoOrigin dict={dict} />
         </section>
 
-        <section id="invidation-card">
+        <section id="card">
           <WeddingInvitationCardOrigin dict={dict} />
         </section>
 
