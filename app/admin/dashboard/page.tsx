@@ -195,7 +195,7 @@ export default function AdminDashboard() {
                         </>
                       ) : (
                         <td className="p-4 text-sm text-gray-600 italic">
-                          "{item.message}"
+                          &quot;{item.message}&quot;
                         </td>
                       )}
                       <td className="p-4 text-right">
