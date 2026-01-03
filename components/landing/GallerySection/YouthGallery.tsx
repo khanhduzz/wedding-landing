@@ -27,7 +27,7 @@ export default function YouthGalleryColor({ dict }: { dict: any }) {
   useEffect(() => {
     const data = imgs.map((src, i) => ({
       src,
-      rotation: Math.floor(Math.random() * 16) - 8, // Giảm độ xoay một chút cho dễ nhìn
+      rotation: Math.floor(Math.random() * 16) - 8,
       sticker: ["⭐", "💖", "✨", "🔥", "🎀", "🍀", "🌈", "🍭"][i % 8],
       border: [
         "border-blue-400",
@@ -90,28 +90,25 @@ export default function YouthGalleryColor({ dict }: { dict: any }) {
               onClick={() => setSelected(item.src)}
               className="relative group cursor-pointer"
             >
-              {/* Sticker góc ảnh - Luôn hiển thị nhẹ và bùng nổ khi hover */}
+              {/* Sticker */}
               <div className="absolute -top-6 -right-6 text-4xl z-20 transition-transform duration-300 group-hover:scale-150 group-hover:rotate-12">
                 {item.sticker}
               </div>
 
-              {/* Khung ảnh Instant Photo */}
               <div
                 className={`bg-white p-4 pb-14 shadow-[15px_15px_0px_rgba(0,0,0,0.05)] border-2 ${item.border} hover:shadow-[20px_20px_0px_rgba(0,0,0,0.1)] transition-all duration-300`}
               >
                 <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
-                  {/* ĐÃ BỎ GRAYSCALE TẠI ĐÂY */}
                   <img
                     src={item.src}
                     alt="Gallery"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
-                  {/* Overlay màu nhẹ khi hover để tăng độ sâu */}
+                  {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
 
-                {/* Phần text giả viết tay dưới ảnh */}
                 <div className="mt-6 flex justify-between items-center px-2">
                   <div
                     className={`h-3 w-1/2 ${item.bgTag} opacity-20 rounded-full`}
@@ -122,7 +119,7 @@ export default function YouthGalleryColor({ dict }: { dict: any }) {
                 </div>
               </div>
 
-              {/* Băng dính (Washi Tape) - Nhiều màu sắc hơn */}
+              {/* Washi Tape */}
               <div
                 className={`absolute -top-5 left-1/2 -translate-x-1/2 w-24 h-9 opacity-80 mix-blend-multiply rotate-2 ${
                   i % 4 === 0

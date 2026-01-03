@@ -24,7 +24,6 @@ const FloatingLeaf = ({ delay, x }: { delay: number; x: string }) => (
 );
 
 export default function GuestbookOrigin({ dict }: { dict: any }) {
-  // Shortcut truy cập guestbook dict
   const gb = dict.guestbook;
 
   return (
@@ -49,7 +48,6 @@ export default function GuestbookOrigin({ dict }: { dict: any }) {
             <div className="w-full relative group">
               <div className="absolute -inset-2 bg-[#E9DCC9]/40 rounded-[2.5rem] -rotate-1 blur-sm pointer-events-none" />
               <div className="relative w-full h-full bg-white/60 backdrop-blur-md rounded-[2.5rem] shadow-[0_20px_50px_rgba(188,138,95,0.1)] border border-white p-2">
-                {/* Truyền dict form xuống cho component con */}
                 <MessageFormOrigin dict={gb.form} />
               </div>
             </div>
@@ -85,8 +83,6 @@ export default function GuestbookOrigin({ dict }: { dict: any }) {
               <div className="absolute inset-0 bg-[#E9DCC9]/20 rounded-[2rem] translate-x-2 translate-y-2 pointer-events-none" />
 
               <div className="relative flex flex-col bg-white/40 border border-white rounded-[2rem] shadow-xl backdrop-blur-md p-6 h-[500px] overflow-y-auto scrollbar-thin scrollbar-thumb-[#BC8A5F]/20">
-                {/* List tin nhắn thường không cần dịch nội dung người dùng nhập, 
-                    nhưng có thể cần dịch chữ "No messages yet" nếu bạn có */}
                 <MessageListOrigin dict={gb.list} />
               </div>
 

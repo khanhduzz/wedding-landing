@@ -1,9 +1,8 @@
 "use client";
 
-import { useSession, signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import useSWR from "swr";
 import { useState, useMemo } from "react";
-import { motion } from "framer-motion";
 import {
   Users,
   MessageCircle,
@@ -45,7 +44,6 @@ export default function AdminDashboard() {
     };
   }, [rsvpData]);
 
-  // --- Lọc dữ liệu hiển thị ---
   const filteredRsvps = (rsvpData?.rsvps || []).filter((r: any) =>
     r.name.toLowerCase().includes(query.toLowerCase())
   );
@@ -136,6 +134,7 @@ export default function AdminDashboard() {
                 />
               </div>
               <a
+                aria-label="Export CSV"
                 href={`/api/admin/${activeTab}?export=csv`}
                 className="p-2.5 bg-[#3D3831] text-white rounded-xl hover:bg-[#BC8A5F] transition-all"
               >

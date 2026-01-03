@@ -10,7 +10,7 @@ const FloatingLeaf = ({ delay, x }: { delay: number; x: string }) => (
       y: "100vh",
       opacity: [0, 0.7, 0.7, 0],
       rotate: 360,
-      x: [0, 15, -15, 0], // Giữ nguyên x animation của bạn
+      x: [0, 15, -15, 0],
     }}
     transition={{ duration: 12, repeat: Infinity, delay, ease: "linear" }}
     className="absolute w-6 h-6 text-[#8B5E3C]/30 pointer-events-none z-0"
@@ -26,7 +26,6 @@ export default function GiftSectionOrigin({ dict }: { dict: any }) {
   const g = dict.gift;
   const [copied, setCopied] = useState(false);
 
-  // Giữ nguyên các biến account trong code
   const account1 = "1234 5678 9012";
   const account2 = "5678 9012 3456";
 

@@ -17,10 +17,10 @@ export default function YouthGift({ dict }: { dict: any }) {
 
   return (
     <section className="relative py-24 bg-[#FAF7F2] overflow-hidden">
-      {/* Background: Họa tiết những đồng xu và trái tim nhỏ vẽ tay */}
+      {/* Background */}
       <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/notebook.png')] pointer-events-none" />
 
-      {/* Toast thông báo tinh nghịch */}
+      {/* Toast */}
       <AnimatePresence>
         {copied && (
           <motion.div
@@ -84,7 +84,6 @@ export default function YouthGift({ dict }: { dict: any }) {
               viewport={{ once: true }}
               className="relative w-full max-w-[340px]"
             >
-              {/* Thẻ Thư Viện / Thẻ ATM phong cách Retro */}
               <div
                 className={`relative bg-white border-4 border-black p-8 shadow-[15px_15px_0px_rgba(0,0,0,0.1)] transition-transform hover:rotate-0 hover:-translate-y-2`}
                 style={{ transform: `rotate(${item.rotate}deg)` }}
@@ -100,7 +99,7 @@ export default function YouthGift({ dict }: { dict: any }) {
                     alt="QR"
                     className="w-full aspect-square object-contain mix-blend-multiply"
                   />
-                  {/* Hiệu ứng tia sét/trang trí */}
+
                   <div className="absolute -bottom-2 -left-2 text-2xl">⚡</div>
                 </div>
 
@@ -136,7 +135,6 @@ export default function YouthGift({ dict }: { dict: any }) {
           ))}
         </div>
 
-        {/* Phụ kiện trang trí dưới chân */}
         <div className="mt-20 flex justify-center gap-4 opacity-20">
           {[...Array(5)].map((_, i) => (
             <span key={i} className="text-4xl">

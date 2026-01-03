@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export default function GallerySectionOrigin({ dict }: { dict: any }) {
-  const g = dict.gallery; // Shortcut truy cập gallery dict
+  const g = dict.gallery;
 
   const imgs = [
     "/images/gallery1.jpg",

@@ -36,7 +36,7 @@ export default function MessageListOrigin({ dict }: { dict: any }) {
                         </span>
                       )}
                     </div>
-                    {/* Sử dụng locale từ dict để format ngày tháng */}
+
                     <span className="text-[9px] font-bold tracking-widest text-[#BC8A5F]/60 uppercase">
                       {new Date(m.created_at).toLocaleDateString(
                         dict.locale || "vi-VN",
@@ -60,7 +60,6 @@ export default function MessageListOrigin({ dict }: { dict: any }) {
           </div>
         ) : (
           <div className="h-full flex flex-col items-center justify-center text-[#BC8A5F]/60 italic font-serif py-10">
-            {/* Chữ hiển thị khi chưa có tin nhắn */}
             <p className="text-sm">{dict.empty}</p>
           </div>
         )}

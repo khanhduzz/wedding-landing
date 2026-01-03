@@ -8,7 +8,6 @@ export default function MessageFormOrigin({ dict }: { dict: any }) {
   const [status, setStatus] = useState<string | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  // Shortcut để code gọn hơn
   const f = dict;
 
   useEffect(() => {
@@ -29,10 +28,10 @@ export default function MessageFormOrigin({ dict }: { dict: any }) {
     });
 
     if (res.ok) {
-      setStatus(f.success); // Lấy từ JSON
+      setStatus(f.success);
       setForm({ name: "", email: "", message: "" });
     } else {
-      setStatus(f.error); // Lấy từ JSON
+      setStatus(f.error);
     }
   }
 

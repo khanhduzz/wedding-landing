@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Hiệu ứng Ngôi sao lấp lánh (Twinkling Stars) thay cho lá rụng
 const TwinkleStar = ({
   delay,
   x,
@@ -84,7 +83,6 @@ export default function YouthCountdown({ dict }: { dict: any }) {
 
   return (
     <section className="relative py-32 bg-[#e0f2fe] overflow-hidden">
-      {/* Background Decor: Những đám mây trôi */}
       <motion.div
         animate={{ x: [-20, 20, -20] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
@@ -105,7 +103,6 @@ export default function YouthCountdown({ dict }: { dict: any }) {
       <TwinkleStar delay={0.8} x="50%" top="80%" />
 
       <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
-        {/* Header phá cách: Dạng biểu ngữ (Banner) treo dây */}
         <motion.div
           initial={{ y: -50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -134,7 +131,7 @@ export default function YouthCountdown({ dict }: { dict: any }) {
           </div>
         </motion.div>
 
-        {/* Countdown Units: Phong cách Badge đầy màu sắc */}
+        {/* Countdown Units */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
           {timeUnits.map((t, i) => (
             <motion.div
@@ -142,11 +139,10 @@ export default function YouthCountdown({ dict }: { dict: any }) {
               whileHover={{ y: -10, rotate: i % 2 === 0 ? 5 : -5 }}
               className="relative"
             >
-              {/* Box chứa số: Hiệu ứng shadow cứng (Brutalism) */}
+              {/* Box*/}
               <div
                 className={`relative aspect-square ${t.color} rounded-3xl flex flex-col items-center justify-center border-4 border-white shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] overflow-hidden group`}
               >
-                {/* Lớp vân chéo của áo đồng phục thể thao */}
                 <div className="absolute inset-0 opacity-10 bg-[linear-gradient(45deg,#fff_25%,transparent_25%,transparent_50%,#fff_50%,#fff_75%,transparent_75%,transparent)] bg-[length:20px_20px]" />
 
                 <AnimatePresence mode="popLayout">
@@ -166,13 +162,12 @@ export default function YouthCountdown({ dict }: { dict: any }) {
                   {c.units[t.key]}
                 </span>
 
-                {/* Sticker trang trí nhỏ góc box */}
+                {/* Sticker*/}
                 <div className="absolute top-2 right-2 text-xl opacity-0 group-hover:opacity-100 transition-opacity">
                   ⭐
                 </div>
               </div>
 
-              {/* Dấu chấm phẩy ngăn cách kiểu vẽ tay (chỉ hiện trên desktop) */}
               {i < 3 && (
                 <div className="hidden lg:block absolute -right-5 top-1/2 -translate-y-1/2 text-4xl font-black text-blue-300">
                   :
@@ -182,7 +177,7 @@ export default function YouthCountdown({ dict }: { dict: any }) {
           ))}
         </div>
 
-        {/* Footer: Hình ảnh máy bay giấy bay ngang qua */}
+        {/* Footer */}
         <div className="mt-24 relative">
           <motion.div
             animate={{ x: ["-100%", "200%"], y: [0, -50, 0] }}

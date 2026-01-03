@@ -13,7 +13,7 @@ export async function GET(req: Request) {
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
-  // Tính năng xuất CSV dành cho danh sách RSVP
+  // Export CSV
   if (exportCsv) {
     const rows = [
       ["Họ tên", "Email", "Tham gia", "Số người", "Ngày gửi"], 
@@ -38,7 +38,6 @@ export async function GET(req: Request) {
 }
 
 export async function DELETE(req: Request) {
-  // Bạn có thể thêm hàm ensureAdmin tương tự như bên messages vào đây
   const url = new URL(req.url);
   const id = url.searchParams.get("id");
   if (!id) return NextResponse.json({ error: "Missing id" }, { status: 400 });

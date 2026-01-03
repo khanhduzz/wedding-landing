@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 
-// DỮ LIỆU CỐ ĐỊNH - Sửa ở đây sẽ áp dụng cho cả VI và EN
 const WEDDING_CONFIG = {
   monthNumber: "12",
   highlightDay: 20,
@@ -29,7 +28,17 @@ export default function CalendarTimelineOrigin({ dict }: { dict: any }) {
       id="timeline"
       className="relative py-24 bg-[#FAF7F2] overflow-hidden"
     >
-      {/* ... (Phần SVG Decor giữ nguyên) ... */}
+      <div className="absolute top-0 right-0 w-64 h-64 opacity-10 pointer-events-none">
+        <svg
+          viewBox="0 0 100 100"
+          fill="none"
+          stroke="#BC8A5F"
+          strokeWidth="0.5"
+        >
+          <path d="M100,0 Q70,50 100,100" />
+          <path d="M100,20 Q80,50 100,80" />
+        </svg>
+      </div>
 
       <div className="relative mx-auto max-w-6xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
         {/* === LEFT: CALENDAR === */}
@@ -109,7 +118,7 @@ export default function CalendarTimelineOrigin({ dict }: { dict: any }) {
                     <span className="text-sm font-bold text-[#BC8A5F] tracking-widest">
                       {item.time}
                     </span>
-                    {/* Lấy nhãn từ JSON dựa trên index của mảng cố định */}
+
                     <span className="text-xl font-serif text-[#3D3831]">
                       {ct.eventLabels[index]}
                     </span>
@@ -134,7 +143,6 @@ export default function CalendarTimelineOrigin({ dict }: { dict: any }) {
                   <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all z-50">
                     <span className="text-[10px] font-bold text-[#BC8A5F] bg-white px-2 py-1 rounded shadow-sm border border-[#BC8A5F]/10 uppercase">
                       {color.label}{" "}
-                      {/* Label màu này thường giữ nguyên tiếng Anh nên để trong code luôn cũng ổn */}
                     </span>
                   </div>
                 </div>

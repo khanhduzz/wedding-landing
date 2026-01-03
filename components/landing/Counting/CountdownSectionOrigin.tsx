@@ -64,7 +64,6 @@ export default function CountdownSectionOrigin({ dict }: { dict: any }) {
     return () => clearInterval(interval);
   }, [weddingDate]);
 
-  // Array để map dữ liệu với key tương ứng trong dict
   const timeUnits = [
     { key: "days", value: timeLeft.days },
     { key: "hours", value: timeLeft.hours },

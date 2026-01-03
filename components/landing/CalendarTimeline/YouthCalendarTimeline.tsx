@@ -1,11 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 
-// DỮ LIỆU CỐ ĐỊNH (Vì các thông số này không thay đổi theo ngôn ngữ)
 const WEDDING_CONFIG = {
   monthNumber: "12",
   highlightDay: 20,
-  timelineIcons: ["🏫", "🥂", "🎊"], // Icon cho từng mốc trong ct.eventLabels
+  timelineIcons: ["🏫", "🥂", "🎊"],
   dressColors: [
     { hex: "#9b6a3b", label: "Mochaccino" },
     { hex: "#e7c8a2", label: "Latte" },
@@ -27,15 +26,13 @@ export default function CalendarTimelineUltimateDict({ dict }: { dict: any }) {
       id="timeline"
       className="relative py-32 bg-[#2D241E] overflow-hidden font-sans"
     >
-      {/* Nền mặt bàn gỗ tối */}
       <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]" />
 
-      {/* Hiệu ứng ánh đèn bàn */}
       <div className="absolute -top-20 -left-20 w-[600px] h-[600px] bg-yellow-100/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-6 flex flex-col items-center z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 w-full items-start">
-          {/* === CỘT TRÁI: CALENDAR (Trang giấy xé từ sổ tay) === */}
+          {/* === LEFT: CALENDAR === */}
           <div className="lg:col-span-5 relative">
             <motion.div
               initial={{ rotate: -5, y: 20 }}
@@ -44,7 +41,6 @@ export default function CalendarTimelineUltimateDict({ dict }: { dict: any }) {
               className="relative bg-[#fffdf0] p-8 md:p-12 shadow-[20px_20px_60px_rgba(0,0,0,0.5)] border-b-[8px] border-r-[8px] border-gray-300/50"
               style={{ clipPath: "polygon(0% 0%, 100% 1%, 99% 99%, 1% 100%)" }}
             >
-              {/* Lỗ xé giấy ruy-băng */}
               <div className="absolute -top-3 left-0 w-full flex justify-around opacity-20">
                 {[...Array(8)].map((_, i) => (
                   <div
@@ -102,7 +98,7 @@ export default function CalendarTimelineUltimateDict({ dict }: { dict: any }) {
               </div>
             </motion.div>
 
-            {/* STICKY NOTE (Kéo thả được - Dùng Dict) */}
+            {/* STICKY NOTE */}
             <motion.div
               drag
               dragConstraints={{
@@ -114,16 +110,14 @@ export default function CalendarTimelineUltimateDict({ dict }: { dict: any }) {
               className="absolute -bottom-10 -right-4 md:-right-10 bg-yellow-300 p-6 shadow-2xl rotate-12 w-52 cursor-grab active:cursor-grabbing z-20 border-l-4 border-yellow-400"
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-6 bg-white/40 rotate-[-5deg]" />{" "}
-              {/* Băng dính giả */}
               <p className="font-serif text-yellow-900 font-black italic text-xl leading-tight text-center">
                 {ct.inviteNote}
               </p>
             </motion.div>
           </div>
 
-          {/* === CỘT PHẢI: TIMELINE & DRESSCODE === */}
+          {/* === RIGHT: TIMELINE & DRESSCODE === */}
           <div className="lg:col-span-7 flex flex-col gap-12">
-            {/* Timeline Bảng Đen */}
             <div className="relative p-8 md:p-12 border-4 border-dashed border-white/10 rounded-[40px] bg-white/5 backdrop-blur-sm">
               <div className="flex items-center gap-4 mb-12">
                 <h3 className="text-white text-3xl font-black italic tracking-tighter uppercase">
@@ -150,7 +144,6 @@ export default function CalendarTimelineUltimateDict({ dict }: { dict: any }) {
 
                     <div className="flex flex-col">
                       <span className="text-yellow-400 font-black tracking-[0.2em] text-sm uppercase">
-                        {/* Nếu bạn có mảng time trong config, hãy dùng nó ở đây */}
                         {i === 0
                           ? "10:30 AM"
                           : i === 1
@@ -166,7 +159,7 @@ export default function CalendarTimelineUltimateDict({ dict }: { dict: any }) {
               </div>
             </div>
 
-            {/* Dresscode Hộp Màu (Dùng Dict) */}
+            {/* Dresscode */}
             <div className="relative group">
               <div className="flex items-center gap-3 mb-8">
                 <span className="text-2xl">🎨</span>
@@ -201,7 +194,6 @@ export default function CalendarTimelineUltimateDict({ dict }: { dict: any }) {
           </div>
         </div>
 
-        {/* Trang trí chân trang */}
         <div className="mt-24 opacity-5 flex items-center gap-10 select-none">
           <div className="h-1 flex-grow bg-white" />
           <span className="text-white text-9xl font-black">2026</span>

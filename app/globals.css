@@ -1,26 +1,13 @@
 @import "../styles/globals.css";
-/* @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600&display=swap"); */
 
 .font-script {
   font-family: var(--font-script);
-  /* font-family: "Great Vibes", cursive; */
-  /* font-family: "Dancing Script", cursive; */
-  /* font-family: "Be Vietnam Pro", cursive; */
-  /* font-family: "Pacifico", cursive; */
-  /* font-family: "Segoe Script", "Segoe UI", cursive; */
-  /* font-family: Calibri, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
-  /* font-family: "Lucida Grande", "Lucida Sans", sans-serif; */
 }
 
 .font-serif {
   font-family: var(--font-serif);
-  /* font-family: "Playfair Display", serif; */
-  /* font-family: "Merriweather", serif; */
-  /* font-family: "Lora", serif; */
-  /* font-family: "Noto Serif", serif; */
-  /* font-family: "Times New Roman", Times, serif; */
 }
 
 .text-primary {
-  color: #c5a46d; /* soft gold tone */
+  color: #c5a46d;
 }

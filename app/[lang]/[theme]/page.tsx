@@ -1,4 +1,3 @@
-// app/[lang]/[theme]/page.tsx
 import { getDictionary } from "@/lib/get-dictionary";
 import YouthTheme from "@/components/landing/themes/YouthTheme";
 import OriginTheme from "@/components/landing/themes/OriginTheme";

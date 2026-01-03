@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
-// Danh sách màu sắc cho Post-it
 const COLORS = [
   "bg-yellow-100 border-yellow-200",
   "bg-blue-100 border-blue-200",
