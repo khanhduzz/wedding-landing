@@ -1,197 +1,266 @@
+// "use client";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { useState } from "react";
+
+// export default function MusicWeddingCard({ dict }: { dict: any }) {
+//   const [isPlaying, setIsPlaying] = useState(false);
+//   const inv = dict.invitation;
+
+//   return (
+//     <section className="relative py-24 bg-[#FFF4E0] flex flex-col items-center overflow-hidden min-h-[800px]">
+//       <div className="text-center mb-12 z-10">
+//         <h2 className="text-4xl font-black text-[#2D3436] uppercase tracking-tighter italic">
+//           Our Life <span className="text-[#FF7675]">Soundtrack</span>
+//         </h2>
+//       </div>
+
+//       <div className="relative w-80 h-80 md:w-[450px] md:h-[450px]">
+//         {/* VINYL RECORD */}
+//         <motion.div
+//           animate={{
+//             x: isPlaying ? "50%" : "0%",
+//             rotate: isPlaying ? 360 : 0,
+//           }}
+//           transition={{
+//             duration: 1.5,
+//             ease: "circOut",
+//             rotate: { repeat: Infinity, duration: 4, ease: "linear" },
+//           }}
+//           className="absolute inset-0 bg-[#2d2d2d] rounded-full border-[12px] border-[#1a1a1a] flex items-center justify-center shadow-2xl"
+//         >
+//           <div className="w-32 h-32 rounded-full border-4 border-[#FF7675] bg-white flex items-center justify-center overflow-hidden">
+//             <span className="text-[10px] font-bold text-center text-gray-800 px-2 uppercase">
+//               {inv.names.first} & {inv.names.second}
+//             </span>
+//           </div>
+//           {/* Grooves */}
+//           <div className="absolute inset-0 rounded-full border border-white/10 m-4" />
+//           <div className="absolute inset-0 rounded-full border border-white/10 m-12" />
+//         </motion.div>
+
+//         {/* SLEEVE / COVER */}
+//         <motion.div className="absolute inset-0 bg-[#FF7675] z-20 shadow-xl flex flex-col items-center justify-center p-6 border-8 border-white group">
+//           <div className="border-2 border-white/50 w-full h-full flex flex-col items-center justify-center relative overflow-hidden">
+//             <div className="absolute top-4 left-4 text-white font-black text-2xl opacity-20">
+//               SIDE A
+//             </div>
+//             <div className="text-8xl mb-4 group-hover:scale-110 transition-transform">
+//               🎧
+//             </div>
+//             <h3 className="text-white font-black text-3xl text-center leading-none">
+//               THE <br /> WEDDING <br /> ALBUM
+//             </h3>
+//             <button
+//               onClick={() => setIsPlaying(!isPlaying)}
+//               className="mt-8 bg-white text-[#FF7675] px-6 py-2 rounded-full font-black text-sm hover:bg-[#2D3436] hover:text-white transition-colors"
+//             >
+//               {isPlaying ? "PAUSE" : "PLAY NOW"}
+//             </button>
+//           </div>
+//         </motion.div>
+//       </div>
+
+//       {/* REVEALED INFO */}
+//       <AnimatePresence>
+//         {isPlaying && (
+//           <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             className="mt-12 text-center z-10 bg-white p-8 rounded-3xl border-4 border-[#2D3436] shadow-[8px_8px_0_0_#2D3436]"
+//           >
+//             <p className="text-[#2D3436] font-black text-xl mb-2">
+//               {inv.dateTime}
+//             </p>
+//             <p className="text-[#FF7675] font-bold italic">"{inv.message}"</p>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </section>
+//   );
+// }
+
 "use client";
-
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
-// 1. Máy bay giấy bay lượn ngẫu hứng khi mở thiệp
-const PaperPlane = ({ delay }: { delay: number }) => {
+// --- Music Note Component for the burst effect ---
+const MusicNote = ({ delay, color }: { delay: number; color: string }) => {
+  const notes = ["♫", "♪", "♬", "♩"];
+  const randomNote = notes[Math.floor(Math.random() * notes.length)];
   return (
     <motion.div
-      initial={{ x: 0, y: 0, opacity: 0, scale: 0 }}
+      initial={{ y: 0, opacity: 0, scale: 0 }}
       animate={{
-        x: (Math.random() - 0.5) * 800,
-        y: (Math.random() - 0.7) * 500,
+        y: -150 - Math.random() * 100,
+        x: (Math.random() - 0.5) * 200,
         opacity: [0, 1, 0],
-        scale: [0.5, 1.2, 0.5],
+        scale: [0.5, 1.5, 0.5],
         rotate: Math.random() * 360,
       }}
-      transition={{ duration: 3, ease: "easeOut", delay }}
-      className="absolute left-1/2 top-1/2 z-[60] text-4xl pointer-events-none"
+      transition={{ duration: 3, repeat: Infinity, delay }}
+      className={`absolute text-2xl pointer-events-none ${color} z-[60]`}
     >
-      ✈️
+      {randomNote}
     </motion.div>
   );
 };
 
-export default function YouthWeddingCard({ dict }: { dict: any }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function MusicWeddingCard({ dict }: { dict: any }) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const scratchRef = useRef<HTMLAudioElement | null>(null);
   const inv = dict.invitation;
 
+  // Toggle Playback and Sound
+  const togglePlay = () => {
+    if (!isPlaying) {
+      scratchRef.current?.play();
+      setTimeout(() => audioRef.current?.play(), 500);
+    } else {
+      audioRef.current?.pause();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
-    <section className="relative py-24 bg-[#E0F2FE] flex flex-col items-center overflow-hidden min-h-[900px] font-sans">
-      {/* Background Decor: Bầu trời xanh và mây */}
-      <div className="absolute inset-0 z-0 opacity-40 bg-[radial-gradient(#ffffff_2px,transparent_2px)] [background-size:30px_30px]" />
+    <section className="relative py-16 bg-[#FFF4E0] flex flex-col items-center overflow-hidden min-h-[900px] font-sans">
+      {/* Hidden Audio Elements - Replace URLs with your actual assets */}
+      <audio
+        ref={audioRef}
+        loop
+        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+      />
+      <audio
+        ref={scratchRef}
+        src="https://assets.mixkit.co/active_storage/sfx/710/710-preview.mp3"
+      />
 
       <motion.div
-        initial={{ y: -20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        className="text-center mb-16 px-6 z-10"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        className="text-center mb-10 px-6 z-10"
       >
-        <span className="inline-block px-4 py-1 bg-yellow-400 text-blue-900 text-xs font-black uppercase tracking-widest rounded-full shadow-sm mb-4">
-          {inv.label}
-        </span>
-        <h2 className="text-5xl md:text-7xl font-black text-blue-900 tracking-tighter">
-          {inv.title}
-          <span className="text-pink-500">!</span>
+        <h2 className="text-4xl md:text-6xl font-black text-[#2D3436] uppercase tracking-tighter italic">
+          Our Life <span className="text-[#FF7675]">Soundtrack</span>
         </h2>
+        <p className="text-gray-500 font-bold mt-2 uppercase tracking-widest text-xs">
+          Press play to reveal the date
+        </p>
       </motion.div>
 
-      {/* 3D LOCKER / ENVELOPE CONTAINER */}
-      <div className="relative w-[90vw] max-w-[600px] aspect-[3/4] perspective-2000">
-        <div className="relative w-full h-full preserve-3d">
-          {/* --- TRANG TRONG CỦA THIỆP (The Love Letter) --- */}
-          <motion.div
-            animate={{
-              scale: isOpen ? 1 : 0.8,
-              y: isOpen ? 0 : 20,
-              rotate: isOpen ? 0 : -5,
-            }}
-            transition={{ type: "spring", stiffness: 100, damping: 15 }}
-            className="absolute inset-0 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-2xl overflow-hidden border-2 border-blue-100 z-10"
-          >
-            {/* Giấy kẻ ngang học sinh */}
-            <div
-              className="absolute inset-0 opacity-20"
-              style={{
-                backgroundImage:
-                  "linear-gradient(#3b82f6 1px, transparent 1px)",
-                backgroundSize: "100% 2.5rem",
-              }}
-            />
-
-            <div className="relative z-20 h-full flex flex-col items-center justify-center p-8 md:p-12 text-center">
-              <motion.div
-                animate={
-                  isOpen ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }
-                }
-                className="mb-6 text-5xl"
-              >
-                💌
-              </motion.div>
-
-              <div className="space-y-6">
-                <span className="text-blue-500 font-bold tracking-widest text-sm uppercase">
-                  {inv.upperTitle}
-                </span>
-
-                <h3 className="text-4xl md:text-6xl font-black text-blue-900 leading-tight">
-                  {inv.names.first}
-                  <span className="text-pink-500 block text-2xl my-2">&</span>
-                  {inv.names.second}
-                </h3>
-
-                <div className="w-16 h-1.5 bg-yellow-400 mx-auto rounded-full" />
-
-                <p className="text-gray-600 font-medium text-lg italic max-w-sm mx-auto">
-                  &quot;{inv.message}&quot;
-                </p>
-
-                <div className="pt-8 flex flex-col items-center">
-                  <div className="px-6 py-2 bg-blue-600 text-white font-black rounded-lg shadow-lg rotate-2">
-                    {inv.dateTime}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* --- CÁNH CỬA LOCKER (The Cover) --- */}
-          <motion.div
-            animate={{
-              rotateY: isOpen ? -110 : 0,
-              x: isOpen ? "-20%" : "0%",
-            }}
-            transition={{ duration: 1.2, ease: [0.45, 0, 0.55, 1] }}
-            style={{ transformOrigin: "left" }}
-            className="absolute inset-0 bg-blue-500 rounded-2xl z-30 shadow-2xl flex flex-col items-center justify-between p-10 preserve-3d backface-hidden border-4 border-blue-600"
-          >
-            {/* Khe thoáng khí của Locker */}
-            <div className="w-24 h-12 flex flex-col justify-between">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="w-full h-1 bg-blue-700 rounded-full" />
-              ))}
-            </div>
-
-            <div className="text-center">
-              <div className="text-7xl mb-4">🏫</div>
-              <div className="bg-white/20 backdrop-blur-md px-4 py-2 rounded border border-white/30">
-                <span className="text-white font-black tracking-widest text-xl uppercase">
-                  CLASS OF 2026
-                </span>
-              </div>
-            </div>
-
-            <div className="w-full h-1 bg-blue-700/50" />
-          </motion.div>
-
-          {/* THE STICKER SEAL (Nút mở thiệp) */}
-          <AnimatePresence>
-            {!isOpen && (
-              <motion.div
-                exit={{ scale: 0, opacity: 0 }}
-                onClick={() => setIsOpen(true)}
-                className="absolute right-10 top-1/2 -translate-y-1/2 z-50 cursor-pointer group"
-              >
-                <motion.div
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{ repeat: Infinity, duration: 2 }}
-                  className="w-24 h-24 bg-pink-500 rounded-full border-4 border-white shadow-2xl flex items-center justify-center text-white font-black text-center -rotate-12 group-hover:scale-110 transition-transform"
-                >
-                  OPEN <br /> ME!
-                </motion.div>
-                {/* Washi tape giả */}
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-8 bg-yellow-300/80 rotate-12" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* BURST EFFECT: Máy bay giấy bay ra khi mở */}
-          <AnimatePresence>
-            {isOpen && (
-              <>
-                {[...Array(12)].map((_, i) => (
-                  <PaperPlane key={i} delay={i * 0.15} />
-                ))}
-              </>
-            )}
-          </AnimatePresence>
-        </div>
-      </div>
-
-      {/* BUTTON BOTTOM */}
-      <div className="mt-20 z-10">
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => setIsOpen(!isOpen)}
-          className={`px-10 py-4 rounded-2xl font-black uppercase tracking-widest transition-all shadow-[0_8px_0_0_#1e3a8a] active:shadow-none active:translate-y-2
-            ${isOpen ? "bg-red-500 text-white shadow-[0_8px_0_0_#991b1b]" : "bg-yellow-400 text-blue-900"}`}
+      {/* RECORD PLAYER CONTAINER */}
+      <div className="relative w-[320px] h-[320px] md:w-[450px] md:h-[450px]">
+        {/* VINYL RECORD */}
+        <motion.div
+          animate={{
+            // Mobile: Slides Up | Desktop: Slides Right
+            x: isPlaying ? (window.innerWidth < 768 ? 0 : "55%") : "0%",
+            y: isPlaying ? (window.innerWidth < 768 ? "-50%" : 0) : "0%",
+            rotate: isPlaying ? 360 : 0,
+          }}
+          transition={{
+            x: { type: "spring", stiffness: 50 },
+            y: { type: "spring", stiffness: 50 },
+            rotate: { repeat: Infinity, duration: 5, ease: "linear" },
+          }}
+          className="absolute inset-4 bg-[#1a1a1a] rounded-full border-[10px] border-[#2d2d2d] flex items-center justify-center shadow-2xl z-10"
         >
-          {isOpen ? inv.btnClose : inv.btnOpen}
-        </motion.button>
+          {/* Record Label */}
+          <div className="w-24 h-24 md:w-36 md:h-36 rounded-full border-4 border-[#FF7675] bg-white flex flex-col items-center justify-center text-center p-2">
+            <span className="text-[8px] md:text-[10px] font-black text-gray-400 uppercase">
+              Side A
+            </span>
+            <span className="text-[10px] md:text-xs font-bold text-gray-800 leading-tight">
+              {inv.names.first} <br /> & <br /> {inv.names.second}
+            </span>
+          </div>
+          {/* Subtle Grooves */}
+          <div className="absolute inset-0 rounded-full border border-white/5 opacity-20 m-6 md:m-10" />
+          <div className="absolute inset-0 rounded-full border border-white/5 opacity-20 m-12 md:m-20" />
+        </motion.div>
+
+        {/* SLEEVE / COVER */}
+        <motion.div className="absolute inset-0 bg-[#FF7675] z-30 shadow-2xl flex flex-col items-center justify-center p-4 md:p-8 border-[6px] md:border-[10px] border-white group">
+          <div className="border-2 border-white/40 w-full h-full flex flex-col items-center justify-center relative overflow-hidden">
+            <div className="absolute top-2 left-2 md:top-4 md:left-4 text-white font-black text-xl md:text-3xl opacity-30">
+              LP
+            </div>
+
+            <motion.div
+              animate={isPlaying ? { scale: [1, 1.1, 1] } : {}}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="text-7xl md:text-9xl mb-4 drop-shadow-lg"
+            >
+              💿
+            </motion.div>
+
+            <h3 className="text-white font-black text-2xl md:text-5xl text-center leading-none tracking-tighter mb-6">
+              THE <br /> WEDDING <br /> ALBUM
+            </h3>
+
+            <button
+              onClick={togglePlay}
+              className="relative overflow-hidden group bg-white text-[#FF7675] px-8 py-3 rounded-full font-black text-sm md:text-base shadow-lg active:scale-95 transition-all"
+            >
+              <span className="relative z-10">
+                {isPlaying ? "PAUSE TRACK" : "DROP THE NEEDLE"}
+              </span>
+              <motion.div className="absolute inset-0 bg-yellow-400 translate-y-full group-hover:translate-y-0 transition-transform" />
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Floating Notes when playing */}
+        {isPlaying && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            {[...Array(8)].map((_, i) => (
+              <MusicNote
+                key={i}
+                delay={i * 0.4}
+                color={i % 2 === 0 ? "text-pink-500" : "text-yellow-500"}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
-      <style jsx global>{`
-        .perspective-2000 {
-          perspective: 2000px;
-        }
-        .preserve-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-      `}</style>
+      {/* REVEALED INFO BOX */}
+      <div className="mt-16 md:mt-24 px-6 w-full max-w-md z-40">
+        <AnimatePresence>
+          {isPlaying && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              className="bg-white p-8 rounded-3xl border-4 border-[#2D3436] shadow-[10px_10px_0_0_#2D3436] text-center"
+            >
+              <span className="inline-block bg-[#FF7675] text-white text-[10px] font-black px-3 py-1 rounded-full mb-4 uppercase">
+                Now Playing
+              </span>
+              <h4 className="text-3xl font-black text-[#2D3436] mb-2 uppercase italic">
+                {inv.dateTime}
+              </h4>
+              <p className="text-gray-600 font-bold italic leading-relaxed">
+                "{inv.message}"
+              </p>
+              <div className="mt-6 flex justify-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    animate={{ height: [10, 30, 10] }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 0.5,
+                      delay: i * 0.1,
+                    }}
+                    className="w-1.5 bg-[#FF7675] rounded-full"
+                  />
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </section>
   );
 }
