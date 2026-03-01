@@ -83,19 +83,31 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
+const getSecureRandom = () => {
+  if (typeof window === "undefined" || !window.crypto) return Math.random();
+  const array = new Uint32Array(1);
+  window.crypto.getRandomValues(array);
+  // Divide by the maximum possible value of a 32-bit unsigned integer
+  return array[0] / 0xffffffff;
+};
+
 // --- Music Note Component for the burst effect ---
 const MusicNote = ({ delay, color }: { delay: number; color: string }) => {
   const notes = ["♫", "♪", "♬", "♩"];
-  const randomNote = notes[Math.floor(Math.random() * notes.length)];
+  const randomNote = notes[Math.floor(getSecureRandom() * notes.length)];
+  const randomY = -150 - getSecureRandom() * 100;
+  const randomX = (getSecureRandom() - 0.5) * 200;
+  const randomRotate = getSecureRandom() * 360;
+
   return (
     <motion.div
       initial={{ y: 0, opacity: 0, scale: 0 }}
       animate={{
-        y: -150 - Math.random() * 100,
-        x: (Math.random() - 0.5) * 200,
+        y: randomY,
+        x: randomX,
         opacity: [0, 1, 0],
         scale: [0.5, 1.5, 0.5],
-        rotate: Math.random() * 360,
+        rotate: randomRotate,
       }}
       transition={{ duration: 3, repeat: Infinity, delay }}
       className={`absolute text-2xl pointer-events-none ${color} z-[60]`}
@@ -241,7 +253,7 @@ export default function MusicWeddingCard({ dict }: { dict: any }) {
                 {inv.dateTime}
               </h4>
               <p className="text-gray-600 font-bold italic leading-relaxed">
-                "{inv.message}"
+                {inv.message}
               </p>
               <div className="mt-6 flex justify-center gap-1">
                 {[...Array(5)].map((_, i) => (
