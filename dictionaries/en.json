@@ -64,6 +64,20 @@
         "location": "The Adora",
         "desc": "Join us in the warm atmosphere at The Adora — where music and joy intertwine.",
         "map": "https://maps.app.goo.gl/gSwWkvh2tbyZ6DgLA"
+      },
+      {
+        "title": "Wedding Ceremony",
+        "time": "10:00 AM",
+        "location": "Grand Palace",
+        "desc": "A sacred ceremony held at Grand Palace — where love begins a new journey.",
+        "map": "https://maps.app.goo.gl/tFmp2cmgL6ptUM9M9"
+      },
+      {
+        "title": "Wedding Reception",
+        "time": "06:00 PM",
+        "location": "The Adora",
+        "desc": "Join us in the warm atmosphere at The Adora — where music and joy intertwine.",
+        "map": "https://maps.app.goo.gl/gSwWkvh2tbyZ6DgLA"
       }
     ]
   },
@@ -146,5 +160,24 @@
     "description": "Your presence is the greatest gift of all. However, if you wish to honor us with a gift, you can use the bank information below.",
     "copyBtn": "Copy Account Number",
     "copySuccess": "Account number copied 💝"
+  },
+  "giftInfo": {
+  "label": "Gửi Lời Chúc Phúc",
+  "title": "Mừng Cưới",
+  "thankYou": "Sự hiện diện của bạn là món quà quý giá nhất đối với chúng mình!",
+  "accounts": [
+      {
+        "owner": "Chú rể: Nguyễn Văn A",
+        "bankName": "Vietcombank",
+        "accountNumber": "1234567890",
+        "qrImage": "/images/qr-groom.png"
+      },
+      {
+        "owner": "Cô dâu: Trần Thị B",
+        "bankName": "MB Bank",
+        "accountNumber": "0987654321",
+        "qrImage": "/images/qr-bride.png"
+      }
+    ]
   }
 }

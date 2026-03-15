@@ -10,6 +10,7 @@ import CalendarTimelineOrigin from "@/components/landing/CalendarTimeline/Calend
 import GuestbookOrigin from "../Guestbook/GuestBookOrigin";
 import HeroSectionOrigin from "@/components/landing/HeroSection/HeroSectionOrigin";
 import LoveStorySectionOrigin from "@/components/landing/LoveStorySection/LoveStorySectionOrigin";
+import GiftFloatingButton from "@/components/shared/GiftFloatingButton";
 
 export default function OriginTheme({ dict }: { dict: any }) {
   return (
@@ -60,6 +61,7 @@ export default function OriginTheme({ dict }: { dict: any }) {
         </section>
       </main>
       <BackToTop />
+      <GiftFloatingButton dict={dict} />
     </div>
   );
 }

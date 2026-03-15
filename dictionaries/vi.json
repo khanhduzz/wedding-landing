@@ -64,6 +64,20 @@
         "location": "The Adora",
         "desc": "Cùng chung vui trong không gian ấm áp tại The Adora — nơi âm nhạc và niềm vui hòa quyện.",
         "map": "https://maps.app.goo.gl/gSwWkvh2tbyZ6DgLA"
+      },
+      {
+        "title": "Lễ Thành Hôn",
+        "time": "10:00 AM",
+        "location": "Grand Palace",
+        "desc": "Buổi lễ thiêng liêng được tổ chức tại Grand Palace — nơi tình yêu bắt đầu một hành trình mới.",
+        "map": "https://maps.app.goo.gl/tFmp2cmgL6ptUM9M9"
+      },
+      {
+        "title": "Tiệc Chiêu Đãi",
+        "time": "06:00 PM",
+        "location": "The Adora",
+        "desc": "Cùng chung vui trong không gian ấm áp tại The Adora — nơi âm nhạc và niềm vui hòa quyện.",
+        "map": "https://maps.app.goo.gl/gSwWkvh2tbyZ6DgLA"
       }
     ]
   },
@@ -146,5 +160,24 @@
     "description": "Sự hiện diện của bạn là món quà quý giá nhất đối với chúng tôi. Nếu bạn muốn gửi thêm yêu thương, xin vui lòng quét mã QR hoặc sao chép số tài khoản bên dưới.",
     "copyBtn": "Sao chép số tài khoản",
     "copySuccess": "Đã sao chép số tài khoản 💝"
+  },
+  "giftInfo": {
+  "label": "Gửi Lời Chúc Phúc",
+  "title": "Mừng Cưới",
+  "thankYou": "Sự hiện diện của bạn là món quà quý giá nhất đối với chúng mình!",
+  "accounts": [
+      {
+        "owner": "Chú rể: Nguyễn Văn A",
+        "bankName": "Vietcombank",
+        "accountNumber": "1234567890",
+        "qrImage": "/images/qr-groom.png"
+      },
+      {
+        "owner": "Cô dâu: Trần Thị B",
+        "bankName": "MB Bank",
+        "accountNumber": "0987654321",
+        "qrImage": "/images/qr-bride.png"
+      }
+    ]
   }
 }
