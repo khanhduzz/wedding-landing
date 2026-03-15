@@ -64,20 +64,6 @@
         "location": "The Adora",
         "desc": "Join us in the warm atmosphere at The Adora — where music and joy intertwine.",
         "map": "https://maps.app.goo.gl/gSwWkvh2tbyZ6DgLA"
-      },
-      {
-        "title": "Wedding Ceremony",
-        "time": "10:00 AM",
-        "location": "Grand Palace",
-        "desc": "A sacred ceremony held at Grand Palace — where love begins a new journey.",
-        "map": "https://maps.app.goo.gl/tFmp2cmgL6ptUM9M9"
-      },
-      {
-        "title": "Wedding Reception",
-        "time": "06:00 PM",
-        "location": "The Adora",
-        "desc": "Join us in the warm atmosphere at The Adora — where music and joy intertwine.",
-        "map": "https://maps.app.goo.gl/gSwWkvh2tbyZ6DgLA"
       }
     ]
   },
