@@ -148,22 +148,22 @@
     "copySuccess": "Account number copied 💝"
   },
   "giftInfo": {
-  "label": "Gửi Lời Chúc Phúc",
-  "title": "Mừng Cưới",
-  "thankYou": "Sự hiện diện của bạn là món quà quý giá nhất đối với chúng mình!",
+  "label": "Send Your Blessings",
+  "title": "Wedding Gift",
+  "thankYou": "Your presence is the most precious gift to us!",
   "accounts": [
-      {
-        "owner": "Chú rể: Nguyễn Văn A",
-        "bankName": "Vietcombank",
-        "accountNumber": "1234567890",
-        "qrImage": "/images/qr-groom.png"
-      },
-      {
-        "owner": "Cô dâu: Trần Thị B",
-        "bankName": "MB Bank",
-        "accountNumber": "0987654321",
-        "qrImage": "/images/qr-bride.png"
-      }
-    ]
-  }
+    {
+      "owner": "Groom: Nguyen Van A",
+      "bankName": "Vietcombank",
+      "accountNumber": "1234567890",
+      "qrImage": "/images/qr-groom.png"
+    },
+    {
+      "owner": "Bride: Tran Thi B",
+      "bankName": "MB Bank",
+      "accountNumber": "0987654321",
+      "qrImage": "/images/qr-bride.png"
+    }
+  ]
+}
 }

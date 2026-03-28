@@ -10,6 +10,7 @@ import YouthPlaylist from "../PlaylistSection/YouthPlaylist";
 import YouthRSVPForm from "../RSVPForm/YouthRSVPForm";
 import YouthWeddingCard from "../WeddingCard/YouthWeddingCard";
 import YouthWeddingInfo from "../WeddingInformation/YouthWeddingInfo";
+import GiftFloatingButtonYouth from "@/components/shared/GiftFloatingButtonYouth";
 
 export default function YouthTheme({ dict }: { dict: any }) {
   return (
@@ -58,6 +59,7 @@ export default function YouthTheme({ dict }: { dict: any }) {
           <YouthGift dict={dict} />
         </section>
       </main>
+      <GiftFloatingButtonYouth dict={dict} />
       <YouthBackToTop />
     </div>
   );
